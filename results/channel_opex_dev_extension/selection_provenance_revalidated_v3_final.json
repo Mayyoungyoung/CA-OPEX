@@ -1,0 +1,141 @@
+{
+  "candidates": {
+    "identity": [
+      {
+        "adapted_normalized_score_mean": 13.583049440798172,
+        "baseline_normalized_score_mean": 10.037294737100117,
+        "paired_raw_return_difference_mean": 162.77393263014204,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/identity_t2_k8_d2_eta001_seed0_dev10.json",
+        "raw_sha256": "995a33a73e27bd98472038e58cd6eb9a5243aa37eeecdd6a76ae5fec51d45b38",
+        "source_grid": "original",
+        "step_size": 0.01
+      },
+      {
+        "adapted_normalized_score_mean": 13.817093051982045,
+        "baseline_normalized_score_mean": 10.037294737100117,
+        "paired_raw_return_difference_mean": 173.5181047973894,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/identity_t2_k8_d2_eta003_seed0_dev10.json",
+        "raw_sha256": "bcf3c5cd9f65371ba49b138d46c9debca369e4441b13fda84e174cb1943b582f",
+        "source_grid": "original",
+        "step_size": 0.03
+      },
+      {
+        "adapted_normalized_score_mean": 19.54290418211732,
+        "baseline_normalized_score_mean": 10.037294737100117,
+        "paired_raw_return_difference_mean": 436.371255405217,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/identity_t2_k8_d2_eta01_seed0_dev10.json",
+        "raw_sha256": "54a3a637b94dd04035404a73faf20310a4de29b6ae00c36f9928eacbb96666f5",
+        "source_grid": "original",
+        "step_size": 0.1
+      },
+      {
+        "adapted_normalized_score_mean": 31.09817576790631,
+        "baseline_normalized_score_mean": 10.037294737100117,
+        "paired_raw_return_difference_mean": 966.8357561408505,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/identity_t2_k8_d2_eta03_seed0_dev10.json",
+        "raw_sha256": "e32b7dd211a78050c1c9f0e47d3fa03f8a2fe658b940de1ad4c02b11ab96d0e6",
+        "source_grid": "boundary_extension",
+        "step_size": 0.3
+      },
+      {
+        "adapted_normalized_score_mean": 15.06582836989908,
+        "baseline_normalized_score_mean": 10.037294737100117,
+        "paired_raw_return_difference_mean": 230.84343480386582,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/identity_t2_k8_d2_eta1_seed0_dev10.json",
+        "raw_sha256": "5e289fce1df437c60fbbd2e2ac1a022c45a5736a218d0704918fd3e4457b411f",
+        "source_grid": "boundary_extension",
+        "step_size": 1.0
+      }
+    ],
+    "inverse": [
+      {
+        "adapted_normalized_score_mean": 22.92994442842589,
+        "baseline_normalized_score_mean": 24.87332556997909,
+        "paired_raw_return_difference_mean": -89.21423432928114,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta001_seed0_dev10.json",
+        "raw_sha256": "35f33d2721a2588f332af9a492cd1ec29e9c488a8169b7c289f68e4f5e53ca62",
+        "source_grid": "original",
+        "step_size": 0.01
+      },
+      {
+        "adapted_normalized_score_mean": 26.50334897114153,
+        "baseline_normalized_score_mean": 24.87332556997909,
+        "paired_raw_return_difference_mean": 74.82901143997579,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta003_seed0_dev10.json",
+        "raw_sha256": "8da09a90236076a6d6f5fe3c54ff662f04f1fd7e2365ab29b8f518ba4da054aa",
+        "source_grid": "original",
+        "step_size": 0.03
+      },
+      {
+        "adapted_normalized_score_mean": 38.76450111232494,
+        "baseline_normalized_score_mean": 24.87332556997909,
+        "paired_raw_return_difference_mean": 637.6981660702698,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta01_seed0_dev10.json",
+        "raw_sha256": "700276fb6d171976443d111106e9d54926074f58ee37bd4f2648df0db41e299f",
+        "source_grid": "original",
+        "step_size": 0.1
+      },
+      {
+        "adapted_normalized_score_mean": 37.81066314364822,
+        "baseline_normalized_score_mean": 24.87332556997909,
+        "paired_raw_return_difference_mean": 593.9106031315454,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/inverse_t2_k8_d025_eta03_seed0_dev10.json",
+        "raw_sha256": "671d2d01ac4c07f8f235d87216b600d950fdc3dcd38e441a31fd3aacf5b43291",
+        "source_grid": "boundary_extension",
+        "step_size": 0.3
+      },
+      {
+        "adapted_normalized_score_mean": 20.09360529668959,
+        "baseline_normalized_score_mean": 24.87332556997909,
+        "paired_raw_return_difference_mean": -219.42123208464417,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/inverse_t2_k8_d025_eta1_seed0_dev10.json",
+        "raw_sha256": "15aa49cff3c31cc27e008c868465e2333c4e7791efdd5f3a6c3367fce4c9c71c",
+        "source_grid": "boundary_extension",
+        "step_size": 1.0
+      }
+    ]
+  },
+  "evaluator_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+  "evidence_label": "development",
+  "external_baseline_arms_on_confirmation_seeds_preexisting_and_observed": true,
+  "global_confirmation_blindness_claim": false,
+  "historical_v1_confirmation_data_read_field_scope": "The boundary selector process did not read a confirmation result file; this was not a claim that no external baseline result on those seed identifiers had previously been observed.",
+  "pre_evaluation_protocol_path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol_pre_evaluation.json",
+  "pre_evaluation_protocol_sha256": "cba9c40550933fe9e864bafd74013b724b7a3dd95e4117e4274d421fa71796ee",
+  "pre_evaluation_selection_path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/selection.json",
+  "pre_evaluation_selection_sha256": "603d5a700ede8faaac03297b27d56cfc04e78960f24a1cf530c142314fa51f4a",
+  "pre_evaluation_selector_path": "/root/hubl_research_20260914/code/select_channel_opex_boundary_extension_pre_evaluation.py",
+  "pre_evaluation_selector_sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5",
+  "prior_selection_path": "/root/hubl_research_20260914/results/channel_opex_dev/selection.json",
+  "prior_selection_sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+  "prior_selector_dependency_sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+  "protocol_path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol.json",
+  "protocol_sha256": "4b9f560424b3ae82a03fe5563b31d411cd0c0414e389a5e6daf9b482f02d2dfd",
+  "provenance_revalidation_after_evaluations": true,
+  "schema_version": "channel-opex-boundary-extension-selection-revalidated-v3",
+  "selected": {
+    "identity": {
+      "adapted_normalized_score_mean": 31.09817576790631,
+      "baseline_normalized_score_mean": 10.037294737100117,
+      "paired_raw_return_difference_mean": 966.8357561408505,
+      "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/identity_t2_k8_d2_eta03_seed0_dev10.json",
+      "raw_sha256": "e32b7dd211a78050c1c9f0e47d3fa03f8a2fe658b940de1ad4c02b11ab96d0e6",
+      "source_grid": "boundary_extension",
+      "step_size": 0.3
+    },
+    "inverse": {
+      "adapted_normalized_score_mean": 38.76450111232494,
+      "baseline_normalized_score_mean": 24.87332556997909,
+      "paired_raw_return_difference_mean": 637.6981660702698,
+      "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta01_seed0_dev10.json",
+      "raw_sha256": "700276fb6d171976443d111106e9d54926074f58ee37bd4f2648df0db41e299f",
+      "source_grid": "original",
+      "step_size": 0.1
+    }
+  },
+  "selected_adapter_confirmation_outputs_read_before_selection": false,
+  "selected_ca_opex_confirmation_outputs_read_before_selection": false,
+  "selection_rule": "for each anchor select the largest primary metric over the combined grid; exact ties select the smaller step size",
+  "selector_sha256": "2ff6e08195806df58f880098705d7bcfa3a0770da366b5172abb6429d7d163c5",
+  "status": "complete"
+}

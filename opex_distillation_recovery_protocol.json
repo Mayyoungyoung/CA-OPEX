@@ -1,0 +1,64 @@
+{
+  "schema_version": "opex-distillation-recovery-protocol-v1",
+  "evidence_label": "development",
+  "confirmation_evidence_eligible": false,
+  "created_after_training_failure": true,
+  "rerun_training_or_evaluation": false,
+  "scope": "Provenance-only recovery of a completed frozen development training run and an already-written paired diagnostic evaluation; no hyperparameter, checkpoint, seed, episode, return, training step, or evaluation is changed or rerun.",
+  "failure": {
+    "stage": "post-training structural assertion in the single-use runner",
+    "cause": "Two deterministic split SHA declarations were manually transcribed incorrectly. The runner first stopped on the 65-character train-index declaration; its next 65-character audit-index declaration was also wrong. Training did not consume either declaration and had already completed all 5000 updates.",
+    "mistyped_expected_train_indices_sha256": "f90181e680de975cf43be71ff477462513b6e9157453abb96302f9bf46adece5d",
+    "mistyped_expected_audit_indices_sha256": "e122718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+    "actual_recomputed_train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d",
+    "actual_recomputed_audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3"
+  },
+  "recovery_implementation_sha256": "393f2e5fe3c2d6820ef81dcbb9aa9c828b39e676bad3b2757425b32a0f36b34c",
+  "corrected_split": {
+    "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d",
+    "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+    "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c"
+  },
+  "sources": {
+    "original_protocol": {
+      "path": "/root/hubl_research_20260914/code/opex_distillation_dev_protocol.json",
+      "sha256": "42bffb0b358b5afc7491b2894d4541b01379e180ffaa339f62a6c9d545e60902"
+    },
+    "original_runner": {
+      "path": "/root/hubl_research_20260914/code/run_opex_distillation_dev.sh",
+      "sha256": "6dc219e5da1c386ce4011ed4a2dc02381441e9affd557c25269e28bcd5efb45e"
+    },
+    "dataset": {
+      "path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+      "sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+    },
+    "training_config": {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0/config.json",
+      "sha256": "a359ec16b24bbee6d836c628488be27a99871fd32476433da7beff8603982456"
+    },
+    "training_summary": {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0/summary.json",
+      "sha256": "48183ab4897d0f7afeb91605e1adba432b95e6a54547e8188dada62f12fc8157"
+    },
+    "checkpoint": {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0/latest.pt",
+      "sha256": "0d7481df7388b15b087d37599d9ed5ccbe13e0f4334dedb65302b3eb3c7c43b5"
+    },
+    "student_evaluation": {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0/matched_dev10_recovery_diagnostic.json",
+      "sha256": "1be7ae64244bcb0aca8e5b4a2657e89c38b87b00db1251801dda54421237beb9"
+    },
+    "teacher_evaluation": {
+      "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta01_seed0_dev10.json",
+      "sha256": "700276fb6d171976443d111106e9d54926074f58ee37bd4f2648df0db41e299f"
+    },
+    "driver_failure_log": {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0.driver.log",
+      "sha256": "939db747257a36ee8a104cdfa822ca459d63aa46939ee1bd48f4a0c009b65a1f"
+    },
+    "training_console_log": {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0.train.console.log",
+      "sha256": "48183ab4897d0f7afeb91605e1adba432b95e6a54547e8188dada62f12fc8157"
+    }
+  }
+}

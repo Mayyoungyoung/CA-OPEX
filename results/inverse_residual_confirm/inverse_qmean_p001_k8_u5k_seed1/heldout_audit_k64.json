@@ -1,0 +1,179 @@
+{
+  "adapter_checkpoint": "/root/hubl_research_20260914/results/inverse_residual_confirm/inverse_qmean_p001_k8_u5k_seed1/latest.pt",
+  "adapter_checkpoint_sha256": "6c78254282ad8f4292dd4ae5c25975ce85b5c134f5e5807fa0b0ca8e847fe141",
+  "adapter_step": 5000,
+  "audit_channel": {
+    "audit_action_noise_beta": 1.25,
+    "beta": 1.25,
+    "beta_mismatch": true,
+    "checkpoint_contains_generator_state": true,
+    "distribution": "iid_uniform_minus_beta_plus_beta_per_action_dimension",
+    "draw_calls": 391,
+    "exact_training_resume_implemented": true,
+    "global_torch_rng_consumed": false,
+    "half_vectors_drawn": 3201920,
+    "model_or_calibration_beta": 1.2498948872089386,
+    "noise_seed_distinct_from_training_channel": true,
+    "sample_count": 64,
+    "scheme": "resampled_antithetic_per_state",
+    "seed": 987654,
+    "training_noise_seed": 271829
+  },
+  "base_checkpoint": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/latest.pt",
+  "base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+  "base_checkpoint_step": 25000,
+  "base_parameter_sha256": "722268006220148b374b0fd028d6bc9115603510d092d88269a7192e76deac92",
+  "baseline_transform": "inverse",
+  "cost": {
+    "individual_critic_network_rows": 25615360,
+    "physical_action_rows": 12807680
+  },
+  "dataset": {
+    "path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+    "recomputed_split": {
+      "audit_episode_unit_count": 303,
+      "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+      "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+      "audit_observation_count": 100060,
+      "base_critic_training_partition_controlled": false,
+      "boundary_source": "terminals+timeouts",
+      "considered_observation_count": 1000000,
+      "episode_unit_count": 3255,
+      "holdout_scope": "adapter_sgd_and_value_scale_calibration",
+      "max_observations": null,
+      "method": "whole_episode_permutation_to_state_count",
+      "realized_audit_fraction": 0.10006,
+      "requested_audit_fraction": 0.1,
+      "schema": "adapter_observation_split_v1",
+      "seed": 424242,
+      "source_observation_count": 1000000,
+      "storage_layout": "flat",
+      "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d",
+      "train_observation_count": 899940
+    },
+    "recorded_split": {
+      "audit_episode_unit_count": 303,
+      "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+      "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+      "audit_observation_count": 100060,
+      "base_critic_training_partition_controlled": false,
+      "boundary_source": "terminals+timeouts",
+      "considered_observation_count": 1000000,
+      "episode_unit_count": 3255,
+      "holdout_scope": "adapter_sgd_and_value_scale_calibration",
+      "max_observations": null,
+      "method": "whole_episode_permutation_to_state_count",
+      "realized_audit_fraction": 0.10006,
+      "requested_audit_fraction": 0.1,
+      "schema": "adapter_observation_split_v1",
+      "seed": 424242,
+      "source_observation_count": 1000000,
+      "storage_layout": "flat",
+      "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d",
+      "train_observation_count": 899940
+    },
+    "selected_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+    "selected_observations": 100060,
+    "selection": "exact_recorded_held_out_partition",
+    "sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+    "total_observations": 1000000,
+    "train_audit_disjoint": true,
+    "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+  },
+  "implementation": {
+    "audit_sha256": "52d6259bee05147864b27d03b9bc4034525b7b62f1a88f1b28eda28e87810bc4",
+    "core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+    "evaluate_sha256": "38747e3a732362734757e6bde3715eb2ac5eb9ecd0870ccead2193670da89eed",
+    "train_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4"
+  },
+  "interpretation_guardrail": "states are held out from adapter SGD and Q-scale calibration, not from the already-trained base critic; frozen-Q gains are diagnostics and closed-loop returns determine whether the adapter exploits critic error",
+  "metrics": {
+    "adapted_absolute_twin_disagreement": {
+      "max": 9.741222381591797,
+      "mean": 0.6867459556488825,
+      "median": 0.5016403198242188,
+      "min": 0.0,
+      "positive_fraction": 0.9999900059964022,
+      "std": 0.6497881246400337
+    },
+    "adapted_minus_baseline_min_twin": {
+      "max": 2.1161460876464844,
+      "mean": 0.22697586845446474,
+      "median": 0.16033935546875,
+      "min": -0.5483245849609375,
+      "positive_fraction": 0.9452628422946232,
+      "std": 0.22762685414451922
+    },
+    "adapted_minus_baseline_q1": {
+      "max": 2.1161460876464844,
+      "mean": 0.23791465581575857,
+      "median": 0.17134475708007812,
+      "min": -0.42327880859375,
+      "positive_fraction": 0.9642014791125325,
+      "std": 0.228177819857381
+    },
+    "adapted_minus_baseline_q2": {
+      "max": 1.9170455932617188,
+      "mean": 0.2195225136411156,
+      "median": 0.15074539184570312,
+      "min": -0.5483245849609375,
+      "positive_fraction": 0.913541874875075,
+      "std": 0.23485583579032515
+    },
+    "adapted_minus_baseline_twin_disagreement": {
+      "max": 0.891632080078125,
+      "mean": 0.003485432557848044,
+      "median": -0.002254486083984375,
+      "min": -0.8457245826721191,
+      "positive_fraction": 0.48788726763941637,
+      "std": 0.11714235061359446
+    },
+    "baseline_absolute_twin_disagreement": {
+      "max": 10.020606994628906,
+      "mean": 0.6832605230910345,
+      "median": 0.5011806488037109,
+      "min": 7.62939453125e-06,
+      "positive_fraction": 1.0,
+      "std": 0.6435058927422662
+    },
+    "command_saturation_fraction": 0.21608868012525817,
+    "proposed_residual_abs": {
+      "max": 0.2499999850988388,
+      "mean": 0.12085808448604442,
+      "median": 0.11071145907044411,
+      "min": 3.585591912269592e-08,
+      "positive_fraction": 1.0,
+      "std": 0.07939093437846645
+    }
+  },
+  "status": "complete",
+  "training_dataset": {
+    "considered_observation_count": 1000000,
+    "held_out_audit_observation_count": 100060,
+    "path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+    "sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+    "training_observation_count": 899940
+  },
+  "training_observation_split": {
+    "audit_episode_unit_count": 303,
+    "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+    "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+    "audit_observation_count": 100060,
+    "base_critic_training_partition_controlled": false,
+    "boundary_source": "terminals+timeouts",
+    "considered_observation_count": 1000000,
+    "episode_unit_count": 3255,
+    "holdout_scope": "adapter_sgd_and_value_scale_calibration",
+    "max_observations": null,
+    "method": "whole_episode_permutation_to_state_count",
+    "realized_audit_fraction": 0.10006,
+    "requested_audit_fraction": 0.1,
+    "schema": "adapter_observation_split_v1",
+    "seed": 424242,
+    "source_observation_count": 1000000,
+    "storage_layout": "flat",
+    "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d",
+    "train_observation_count": 899940
+  },
+  "wall_time_seconds": 5.910801235993858
+}

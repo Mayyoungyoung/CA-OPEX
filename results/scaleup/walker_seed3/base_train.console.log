@@ -1,0 +1,113 @@
+{
+  "clean": {
+    "episode_seeds": [
+      9200,
+      9201,
+      9202,
+      9203,
+      9204,
+      9205,
+      9206,
+      9207,
+      9208,
+      9209
+    ],
+    "lengths": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "normalized_score_mean": 79.95560619439942,
+    "normalized_score_std": 1.7196164445493465,
+    "return_mean": 3672.12782804405,
+    "return_std": 78.94193329358866,
+    "returns": [
+      3639.4401949790768,
+      3749.3875852100414,
+      3522.3318398460037,
+      3757.4718033195672,
+      3686.6115436733394,
+      3745.1437812344093,
+      3616.540624960783,
+      3565.836625111073,
+      3743.619981577162,
+      3694.8943005290403
+    ]
+  },
+  "elapsed_seconds": 274.5034434259869,
+  "event": "evaluation",
+  "persistent_action_noise": {
+    "action_clip_fraction": 0.13103384841795437,
+    "action_noise_beta": 0.5,
+    "action_noise_distribution": "iid_uniform_minus_beta_plus_beta_per_step",
+    "action_noise_seeds": [
+      19200,
+      19201,
+      19202,
+      19203,
+      19204,
+      19205,
+      19206,
+      19207,
+      19208,
+      19209
+    ],
+    "command_saturation_definition": "fraction_of_scaled_command_values_strictly_outside_environment_bounds_before_clip",
+    "command_saturation_fraction": 0.0,
+    "command_scale": 1.0,
+    "command_transform": "identity",
+    "command_transform_beta": 0.5,
+    "command_transform_saturation_definition": "fraction_of_desired_mean_action_values_outside_the_uniform_clipped_channel_mean_range_achievable_by_bounded_commands",
+    "command_transform_saturation_fraction": 0.0,
+    "environment_seeds": [
+      9200,
+      9201,
+      9202,
+      9203,
+      9204,
+      9205,
+      9206,
+      9207,
+      9208,
+      9209
+    ],
+    "executed_commanded_action_mse": 0.0727708695973975,
+    "lengths": [
+      936,
+      1000,
+      1000,
+      1000,
+      584,
+      1000,
+      1000,
+      1000,
+      540,
+      1000
+    ],
+    "normalized_score_mean": 71.9242997304215,
+    "normalized_score_std": 14.363941155400079,
+    "return_mean": 3303.4369719235947,
+    "return_std": 659.4012799289011,
+    "returns": [
+      3594.7477991642363,
+      3652.815757130394,
+      3681.7464644242978,
+      3639.3014341514413,
+      2070.076888575535,
+      3759.3500571815307,
+      3575.707339352162,
+      3561.6103900529297,
+      1912.3227792905416,
+      3586.690809912877
+    ],
+    "transformed_command_at_bound_fraction": 3.679175864606328e-05
+  },
+  "step": 25000
+}

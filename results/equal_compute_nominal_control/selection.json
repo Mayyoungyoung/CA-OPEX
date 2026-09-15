@@ -1,0 +1,45 @@
+{
+  "candidates": [
+    {
+      "adapted_normalized_score_mean": 12.20466596395589,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p01_seed0_dev10.json",
+      "sha256": "d5449dca0f42404cd85bcb1acfb1562337df119e783fd1d883004d7844271677",
+      "step_size": 0.01
+    },
+    {
+      "adapted_normalized_score_mean": 13.107979926028241,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p03_seed0_dev10.json",
+      "sha256": "28596d93027974c059d30cad5a4b0b1e526318cf9878caa71b03bb146f6c3056",
+      "step_size": 0.03
+    },
+    {
+      "adapted_normalized_score_mean": 20.421452408816656,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p1_seed0_dev10.json",
+      "sha256": "0dd844bc5eed43fd5c9b6656e9f5b7b1200f2fff8d3bb9a5013b8fefa93afe59",
+      "step_size": 0.1
+    },
+    {
+      "adapted_normalized_score_mean": 17.28836592314558,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p3_seed0_dev10.json",
+      "sha256": "576f63c174a7e309f40f2691f15429b716194c836a8d1644527523eeb09afe9e",
+      "step_size": 0.3
+    },
+    {
+      "adapted_normalized_score_mean": 8.451734838169937,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_1_seed0_dev10.json",
+      "sha256": "dac33f19dc2b1f43f5f51d2effcc1423f62b9638e601ede10ea1cf4b5aa16637",
+      "step_size": 1.0
+    }
+  ],
+  "endpoint_extension_step_size": null,
+  "evidence_label": "post_confirmation_fresh_rollout_mechanism_audit",
+  "formal_results_seen_before_protocol_freeze": true,
+  "globally_blind_confirmation_claim": false,
+  "initial_selected_step_size": 0.1,
+  "protocol_path": "/root/hubl_research_20260914/code/equal_compute_nominal_control_protocol.json",
+  "protocol_sha256": "fc8fb274f283cd32ef6d45d8a944bff9cdb6757f3927816af9b8a9f17d7cf034",
+  "runner_sha256": "c5cd5a3631ffc38e8806c16471f77ab48c00894aff266a44e9e9ee6490a564c1",
+  "schema_version": "equal-compute-nominal-control-selection-v1",
+  "selected_step_size": 0.1,
+  "status": "complete"
+}

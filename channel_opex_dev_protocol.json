@@ -1,0 +1,63 @@
+{
+  "schema_version": "channel-opex-development-protocol-v1",
+  "evidence_label": "development",
+  "frozen_before_any_listed_evaluation": true,
+  "purpose": "Select one deployment step size per anchor for the strongest channel-aware OPEX controls before untouched confirmation rollouts.",
+  "method": {
+    "controller_kind": "channel_aware_opex_extension",
+    "baseline_transforms": [
+      "calibrated_uniform_clipped_mean_inverse",
+      "identity"
+    ],
+    "q_reducer": "mean_q1",
+    "gradient_steps": 2,
+    "gradient_noise_samples": 8,
+    "gradient_noise_distribution": "resampled_antithetic_uniform_per_gradient_step",
+    "delta_max_linf_by_anchor": {
+      "inverse": 0.25,
+      "identity": 2.0
+    },
+    "regularization": "fixed-anchor L-infinity projection only",
+    "step_size_grid": [0.01, 0.03, 0.1]
+  },
+  "implementation": {
+    "evaluate_channel_opex_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1"
+  },
+  "selection": {
+    "primary_metric": "adapted normalized-score mean over all 10 listed episodes, evaluated separately for each anchor",
+    "rule": "for each anchor select the largest primary metric; exact ties select the smaller step size",
+    "all_grid_runs_retained": true,
+    "no_confirmation_seed_may_be_read_before_selection": true
+  },
+  "base_checkpoint": {
+    "path": "/root/hubl_research_20260914/results/channel_dev/hubl_constant_executed_beta05_25k_seed0/latest.pt",
+    "sha256": "d29501edf9b6961225bcbc157d7d7034bc5b625856dedcbbf9421eea25898106",
+    "training_seed": 0
+  },
+  "channel_calibration": {
+    "path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001_calibration.json",
+    "sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+    "pair_count": 512,
+    "estimated_beta": 1.2498948872089386
+  },
+  "rollout_protocol": {
+    "environment": "Walker2d-v4",
+    "environment_rollout_beta": 1.25,
+    "episode_count_per_arm": 10,
+    "environment_seed_start": 28300,
+    "action_noise_seed_start": 38300,
+    "gradient_noise_seed_start": 58300,
+    "reference_min_score": 1.629008,
+    "reference_max_score": 4592.3,
+    "normalization_label": "D4RL-style reference normalization on Gymnasium Walker2d-v4"
+  },
+  "output_paths": {
+    "inverse_step_size_0.01": "../results/channel_opex_dev/inverse_t2_k8_d025_eta001_seed0_dev10.json",
+    "inverse_step_size_0.03": "../results/channel_opex_dev/inverse_t2_k8_d025_eta003_seed0_dev10.json",
+    "inverse_step_size_0.1": "../results/channel_opex_dev/inverse_t2_k8_d025_eta01_seed0_dev10.json",
+    "identity_step_size_0.01": "../results/channel_opex_dev/identity_t2_k8_d2_eta001_seed0_dev10.json",
+    "identity_step_size_0.03": "../results/channel_opex_dev/identity_t2_k8_d2_eta003_seed0_dev10.json",
+    "identity_step_size_0.1": "../results/channel_opex_dev/identity_t2_k8_d2_eta01_seed0_dev10.json"
+  },
+  "interpretation": "This is a stronger channel-aware two-step extension, not an unchanged reproduction of the original single-step OPEX evaluator. Development episodes are not confirmation evidence."
+}

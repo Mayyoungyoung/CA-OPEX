@@ -1,0 +1,971 @@
+{
+  "compute_scope": {
+    "base_actor_rows_per_adapted_step": 1,
+    "equal_per_decision_neural_budget": true,
+    "exact_wall_time_or_flop_matching_claim": false,
+    "note": "All holdout controllers match K=8,T=2 neural rows/calls per decision. The inverse controller additionally performs 48 deterministic scalar bisection iterations; total episode cost also varies with achieved horizon.",
+    "q1_backward_calls_per_adapted_step": 2,
+    "q1_backward_rows_per_adapted_step": 16,
+    "q1_forward_rows_per_adapted_step": 16
+  },
+  "controller_scores": [
+    {
+      "K": 8,
+      "T": 2,
+      "adapted_environment_steps": 18359,
+      "adapted_minus_baseline_normalized_mean": 13.035082925795937,
+      "adapted_normalized_score_mean": 24.125126667164096,
+      "adapted_raw_score_mean": 1109.1341996927583,
+      "adapted_wall_time_seconds": 107.47179886698723,
+      "base_actor_rows_per_adapted_step": 1,
+      "base_actor_rows_total": 18359,
+      "baseline_environment_steps": 10164,
+      "baseline_normalized_score_mean": 11.090043741368156,
+      "baseline_raw_score_mean": 510.73642903509943,
+      "baseline_transform": "identity",
+      "controller_id": "nominal_tuned",
+      "delta_max": 2.0,
+      "episode_count_per_arm": 50,
+      "model_beta": 0.0,
+      "paired_evaluation_wall_time_seconds": 115.45258705399465,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/nominal_tuned_seed1_fresh50.json",
+      "q1_backward_calls_per_adapted_step": 2,
+      "q1_backward_calls_total": 36718,
+      "q1_backward_rows_per_adapted_step": 16,
+      "q1_backward_rows_total": 293744,
+      "q1_forward_rows_per_adapted_step": 16,
+      "q1_forward_rows_total": 293744,
+      "semantic_alias": "equal_compute_nominal_q_identity_tuned",
+      "sha256": "8ababfa7389b67ebfd0fb4827e799880b97e71be2e08b7c15b1811018f299f40",
+      "step_size": 0.1,
+      "training_seed": 1
+    },
+    {
+      "K": 8,
+      "T": 2,
+      "adapted_environment_steps": 14814,
+      "adapted_minus_baseline_normalized_mean": 7.007969994641412,
+      "adapted_normalized_score_mean": 18.098013736009566,
+      "adapted_raw_score_mean": 832.4492747071668,
+      "adapted_wall_time_seconds": 86.177710613003,
+      "base_actor_rows_per_adapted_step": 1,
+      "base_actor_rows_total": 14814,
+      "baseline_environment_steps": 10164,
+      "baseline_normalized_score_mean": 11.090043741368156,
+      "baseline_raw_score_mean": 510.73642903509943,
+      "baseline_transform": "identity",
+      "controller_id": "nominal_matched_eta_0.3",
+      "delta_max": 2.0,
+      "episode_count_per_arm": 50,
+      "model_beta": 0.0,
+      "paired_evaluation_wall_time_seconds": 94.4389369020355,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/nominal_matched_eta_0.3_seed1_fresh50.json",
+      "q1_backward_calls_per_adapted_step": 2,
+      "q1_backward_calls_total": 29628,
+      "q1_backward_rows_per_adapted_step": 16,
+      "q1_backward_rows_total": 237024,
+      "q1_forward_rows_per_adapted_step": 16,
+      "q1_forward_rows_total": 237024,
+      "semantic_alias": "equal_compute_nominal_q_identity_eta_0p3",
+      "sha256": "7e733cb667c6ae80f85a7353fcf5b28ad048a1de0b5107186795a08d1788a4e5",
+      "step_size": 0.3,
+      "training_seed": 1
+    },
+    {
+      "K": 8,
+      "T": 2,
+      "adapted_environment_steps": 19205,
+      "adapted_minus_baseline_normalized_mean": 13.37426174844074,
+      "adapted_normalized_score_mean": 24.464305489808893,
+      "adapted_raw_score_mean": 1124.7047835149206,
+      "adapted_wall_time_seconds": 144.8707688919967,
+      "base_actor_rows_per_adapted_step": 1,
+      "base_actor_rows_total": 19205,
+      "baseline_environment_steps": 10164,
+      "baseline_normalized_score_mean": 11.090043741368156,
+      "baseline_raw_score_mean": 510.73642903509943,
+      "baseline_transform": "identity",
+      "controller_id": "calibrated_identity_eta_0.3",
+      "delta_max": 2.0,
+      "episode_count_per_arm": 50,
+      "model_beta": 1.2498948872089386,
+      "paired_evaluation_wall_time_seconds": 153.06487185397418,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/calibrated_identity_eta_0.3_seed1_fresh50.json",
+      "q1_backward_calls_per_adapted_step": 2,
+      "q1_backward_calls_total": 38410,
+      "q1_backward_rows_per_adapted_step": 16,
+      "q1_backward_rows_total": 307280,
+      "q1_forward_rows_per_adapted_step": 16,
+      "q1_forward_rows_total": 307280,
+      "semantic_alias": "equal_compute_calibrated_q_identity_eta_0p3",
+      "sha256": "5a123d8cadffb7b47c77069482262ab82b9e7bbaded1da8b329ba4559247e8fe",
+      "step_size": 0.3,
+      "training_seed": 1
+    },
+    {
+      "K": 8,
+      "T": 2,
+      "adapted_environment_steps": 22982,
+      "adapted_minus_baseline_normalized_mean": 9.56202968814629,
+      "adapted_normalized_score_mean": 32.144719691750176,
+      "adapted_raw_score_mean": 1477.2873303488873,
+      "adapted_wall_time_seconds": 207.91510068799835,
+      "base_actor_rows_per_adapted_step": 1,
+      "base_actor_rows_total": 22982,
+      "baseline_environment_steps": 16860,
+      "baseline_normalized_score_mean": 22.58269000360388,
+      "baseline_raw_score_mean": 1038.3260072087273,
+      "baseline_transform": "inverse",
+      "controller_id": "complete_calibrated_inverse_eta_0.1",
+      "delta_max": 0.25,
+      "episode_count_per_arm": 50,
+      "model_beta": 1.2498948872089386,
+      "paired_evaluation_wall_time_seconds": 253.3232234820025,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/complete_calibrated_inverse_eta_0.1_seed1_fresh50.json",
+      "q1_backward_calls_per_adapted_step": 2,
+      "q1_backward_calls_total": 45964,
+      "q1_backward_rows_per_adapted_step": 16,
+      "q1_backward_rows_total": 367712,
+      "q1_forward_rows_per_adapted_step": 16,
+      "q1_forward_rows_total": 367712,
+      "semantic_alias": "complete_ca_opex_calibrated_inverse_eta_0p1",
+      "sha256": "a962af60ee972428b67ac4ae91fdb619399ab04394aeebf37804570c12670cdc",
+      "step_size": 0.1,
+      "training_seed": 1
+    },
+    {
+      "K": 8,
+      "T": 2,
+      "adapted_environment_steps": 14351,
+      "adapted_minus_baseline_normalized_mean": 7.5295998555651735,
+      "adapted_normalized_score_mean": 18.36501191104651,
+      "adapted_raw_score_mean": 844.7062824777569,
+      "adapted_wall_time_seconds": 84.2950341120013,
+      "base_actor_rows_per_adapted_step": 1,
+      "base_actor_rows_total": 14351,
+      "baseline_environment_steps": 9937,
+      "baseline_normalized_score_mean": 10.835412055481335,
+      "baseline_raw_score_mean": 499.04712609465275,
+      "baseline_transform": "identity",
+      "controller_id": "nominal_tuned",
+      "delta_max": 2.0,
+      "episode_count_per_arm": 50,
+      "model_beta": 0.0,
+      "paired_evaluation_wall_time_seconds": 92.31446854298702,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/nominal_tuned_seed10_fresh50.json",
+      "q1_backward_calls_per_adapted_step": 2,
+      "q1_backward_calls_total": 28702,
+      "q1_backward_rows_per_adapted_step": 16,
+      "q1_backward_rows_total": 229616,
+      "q1_forward_rows_per_adapted_step": 16,
+      "q1_forward_rows_total": 229616,
+      "semantic_alias": "equal_compute_nominal_q_identity_tuned",
+      "sha256": "4f35cedf07cd7af5ebdbcb4bdd7d8a69a6eab46fb77b0a62ea50987fe914a1b3",
+      "step_size": 0.1,
+      "training_seed": 10
+    },
+    {
+      "K": 8,
+      "T": 2,
+      "adapted_environment_steps": 14420,
+      "adapted_minus_baseline_normalized_mean": 7.112504838504437,
+      "adapted_normalized_score_mean": 17.94791689398577,
+      "adapted_raw_score_mean": 825.5588225204724,
+      "adapted_wall_time_seconds": 82.34301744500408,
+      "base_actor_rows_per_adapted_step": 1,
+      "base_actor_rows_total": 14420,
+      "baseline_environment_steps": 9937,
+      "baseline_normalized_score_mean": 10.835412055481335,
+      "baseline_raw_score_mean": 499.04712609465275,
+      "baseline_transform": "identity",
+      "controller_id": "nominal_matched_eta_0.3",
+      "delta_max": 2.0,
+      "episode_count_per_arm": 50,
+      "model_beta": 0.0,
+      "paired_evaluation_wall_time_seconds": 90.40412036998896,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/nominal_matched_eta_0.3_seed10_fresh50.json",
+      "q1_backward_calls_per_adapted_step": 2,
+      "q1_backward_calls_total": 28840,
+      "q1_backward_rows_per_adapted_step": 16,
+      "q1_backward_rows_total": 230720,
+      "q1_forward_rows_per_adapted_step": 16,
+      "q1_forward_rows_total": 230720,
+      "semantic_alias": "equal_compute_nominal_q_identity_eta_0p3",
+      "sha256": "6f10f56aeda12c847bc6ff0d934cba8e4aaa5b02f0f5bf08d92d004e5860b1ed",
+      "step_size": 0.3,
+      "training_seed": 10
+    },
+    {
+      "K": 8,
+      "T": 2,
+      "adapted_environment_steps": 19189,
+      "adapted_minus_baseline_normalized_mean": 14.158645069288358,
+      "adapted_normalized_score_mean": 24.994057124769693,
+      "adapted_raw_score_mean": 1149.023938150712,
+      "adapted_wall_time_seconds": 134.5390530329896,
+      "base_actor_rows_per_adapted_step": 1,
+      "base_actor_rows_total": 19189,
+      "baseline_environment_steps": 9937,
+      "baseline_normalized_score_mean": 10.835412055481335,
+      "baseline_raw_score_mean": 499.04712609465275,
+      "baseline_transform": "identity",
+      "controller_id": "calibrated_identity_eta_0.3",
+      "delta_max": 2.0,
+      "episode_count_per_arm": 50,
+      "model_beta": 1.2498948872089386,
+      "paired_evaluation_wall_time_seconds": 142.67105046397774,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/calibrated_identity_eta_0.3_seed10_fresh50.json",
+      "q1_backward_calls_per_adapted_step": 2,
+      "q1_backward_calls_total": 38378,
+      "q1_backward_rows_per_adapted_step": 16,
+      "q1_backward_rows_total": 307024,
+      "q1_forward_rows_per_adapted_step": 16,
+      "q1_forward_rows_total": 307024,
+      "semantic_alias": "equal_compute_calibrated_q_identity_eta_0p3",
+      "sha256": "2dd7a42d4b54f76f09e7b22856d8c2a663524c653020016977ea569c2f9e05cd",
+      "step_size": 0.3,
+      "training_seed": 10
+    },
+    {
+      "K": 8,
+      "T": 2,
+      "adapted_environment_steps": 22913,
+      "adapted_minus_baseline_normalized_mean": 9.836145280542386,
+      "adapted_normalized_score_mean": 31.96372230710538,
+      "adapted_raw_score_mean": 1468.97833591572,
+      "adapted_wall_time_seconds": 207.00739235704532,
+      "base_actor_rows_per_adapted_step": 1,
+      "base_actor_rows_total": 22913,
+      "baseline_environment_steps": 16645,
+      "baseline_normalized_score_mean": 22.127577026563,
+      "baseline_raw_score_mean": 1017.4332677908839,
+      "baseline_transform": "inverse",
+      "controller_id": "complete_calibrated_inverse_eta_0.1",
+      "delta_max": 0.25,
+      "episode_count_per_arm": 50,
+      "model_beta": 1.2498948872089386,
+      "paired_evaluation_wall_time_seconds": 251.09155271196505,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/complete_calibrated_inverse_eta_0.1_seed10_fresh50.json",
+      "q1_backward_calls_per_adapted_step": 2,
+      "q1_backward_calls_total": 45826,
+      "q1_backward_rows_per_adapted_step": 16,
+      "q1_backward_rows_total": 366608,
+      "q1_forward_rows_per_adapted_step": 16,
+      "q1_forward_rows_total": 366608,
+      "semantic_alias": "complete_ca_opex_calibrated_inverse_eta_0p1",
+      "sha256": "553b7ff3bfca058be2f15684222fa4a2a101357c5f8e04e503596089fbae3dd6",
+      "step_size": 0.1,
+      "training_seed": 10
+    }
+  ],
+  "cross_checkpoint_comparisons": [
+    {
+      "comparison_id": "complete_minus_nominal_tuned",
+      "descriptive_normalized_mean": 10.809151710322476,
+      "n_checkpoint_seeds": 2,
+      "per_checkpoint_normalized_means": [
+        8.01959302458608,
+        13.598710396058873
+      ],
+      "positive_checkpoint_count": 2,
+      "training_seed_interval": null,
+      "training_seeds": [
+        1,
+        10
+      ]
+    },
+    {
+      "comparison_id": "complete_minus_nominal_matched_eta_0.3",
+      "descriptive_normalized_mean": 14.031255684430107,
+      "n_checkpoint_seeds": 2,
+      "per_checkpoint_normalized_means": [
+        14.046705955740608,
+        14.015805413119608
+      ],
+      "positive_checkpoint_count": 2,
+      "training_seed_interval": null,
+      "training_seeds": [
+        1,
+        10
+      ]
+    },
+    {
+      "comparison_id": "complete_minus_calibrated_identity_eta_0.3",
+      "descriptive_normalized_mean": 7.32503969213848,
+      "n_checkpoint_seeds": 2,
+      "per_checkpoint_normalized_means": [
+        7.680414201941273,
+        6.969665182335686
+      ],
+      "positive_checkpoint_count": 2,
+      "training_seed_interval": null,
+      "training_seeds": [
+        1,
+        10
+      ]
+    },
+    {
+      "comparison_id": "calibrated_identity_minus_nominal_tuned",
+      "descriptive_normalized_mean": 3.4841120181839953,
+      "n_checkpoint_seeds": 2,
+      "per_checkpoint_normalized_means": [
+        0.3391788226448043,
+        6.629045213723186
+      ],
+      "positive_checkpoint_count": 2,
+      "training_seed_interval": null,
+      "training_seeds": [
+        1,
+        10
+      ]
+    },
+    {
+      "comparison_id": "calibrated_identity_minus_nominal_matched_eta_0.3",
+      "descriptive_normalized_mean": 6.706215992291627,
+      "n_checkpoint_seeds": 2,
+      "per_checkpoint_normalized_means": [
+        6.36629175379933,
+        7.046140230783923
+      ],
+      "positive_checkpoint_count": 2,
+      "training_seed_interval": null,
+      "training_seeds": [
+        1,
+        10
+      ]
+    }
+  ],
+  "cross_checkpoint_controller_scores": [
+    {
+      "controller_id": "nominal_tuned",
+      "descriptive_adapted_normalized_mean": 21.245069289105302,
+      "descriptive_adapted_raw_mean": 976.9202410852577,
+      "descriptive_baseline_normalized_mean": 10.962727898424745,
+      "descriptive_baseline_raw_mean": 504.89177756487607,
+      "n_checkpoint_seeds": 2,
+      "training_seed_interval": null,
+      "training_seeds": [
+        1,
+        10
+      ]
+    },
+    {
+      "controller_id": "nominal_matched_eta_0.3",
+      "descriptive_adapted_normalized_mean": 18.02296531499767,
+      "descriptive_adapted_raw_mean": 829.0040486138196,
+      "descriptive_baseline_normalized_mean": 10.962727898424745,
+      "descriptive_baseline_raw_mean": 504.89177756487607,
+      "n_checkpoint_seeds": 2,
+      "training_seed_interval": null,
+      "training_seeds": [
+        1,
+        10
+      ]
+    },
+    {
+      "controller_id": "calibrated_identity_eta_0.3",
+      "descriptive_adapted_normalized_mean": 24.729181307289295,
+      "descriptive_adapted_raw_mean": 1136.8643608328161,
+      "descriptive_baseline_normalized_mean": 10.962727898424745,
+      "descriptive_baseline_raw_mean": 504.89177756487607,
+      "n_checkpoint_seeds": 2,
+      "training_seed_interval": null,
+      "training_seeds": [
+        1,
+        10
+      ]
+    },
+    {
+      "controller_id": "complete_calibrated_inverse_eta_0.1",
+      "descriptive_adapted_normalized_mean": 32.05422099942778,
+      "descriptive_adapted_raw_mean": 1473.1328331323036,
+      "descriptive_baseline_normalized_mean": 22.355133515083438,
+      "descriptive_baseline_raw_mean": 1027.8796374998055,
+      "n_checkpoint_seeds": 2,
+      "training_seed_interval": null,
+      "training_seeds": [
+        1,
+        10
+      ]
+    }
+  ],
+  "development_selection": {
+    "candidates": [
+      {
+        "environment_steps": 2154,
+        "normalized_score_mean_recomputed": 12.20466596395589,
+        "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p01_seed0_dev10.json",
+        "q1_backward_calls": 4308,
+        "q1_backward_rows": 34464,
+        "q1_forward_rows": 34464,
+        "raw_score_mean_recomputed": 561.9050680778203,
+        "sha256": "d5449dca0f42404cd85bcb1acfb1562337df119e783fd1d883004d7844271677",
+        "step_size": 0.01
+      },
+      {
+        "environment_steps": 2275,
+        "normalized_score_mean_recomputed": 13.107979926028241,
+        "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p03_seed0_dev10.json",
+        "q1_backward_calls": 4550,
+        "q1_backward_rows": 36400,
+        "q1_forward_rows": 36400,
+        "raw_score_mean_recomputed": 603.3732401013616,
+        "sha256": "28596d93027974c059d30cad5a4b0b1e526318cf9878caa71b03bb146f6c3056",
+        "step_size": 0.03
+      },
+      {
+        "environment_steps": 3261,
+        "normalized_score_mean_recomputed": 20.421452408816656,
+        "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p1_seed0_dev10.json",
+        "q1_backward_calls": 6522,
+        "q1_backward_rows": 52176,
+        "q1_forward_rows": 52176,
+        "raw_score_mean_recomputed": 939.1106998766314,
+        "sha256": "0dd844bc5eed43fd5c9b6656e9f5b7b1200f2fff8d3bb9a5013b8fefa93afe59",
+        "step_size": 0.1
+      },
+      {
+        "environment_steps": 2940,
+        "normalized_score_mean_recomputed": 17.28836592314558,
+        "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p3_seed0_dev10.json",
+        "q1_backward_calls": 5880,
+        "q1_backward_rows": 47040,
+        "q1_forward_rows": 47040,
+        "raw_score_mean_recomputed": 795.2810074246572,
+        "sha256": "576f63c174a7e309f40f2691f15429b716194c836a8d1644527523eeb09afe9e",
+        "step_size": 0.3
+      },
+      {
+        "environment_steps": 1794,
+        "normalized_score_mean_recomputed": 8.451734838169937,
+        "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_1_seed0_dev10.json",
+        "q1_backward_calls": 3588,
+        "q1_backward_rows": 28704,
+        "q1_forward_rows": 28704,
+        "raw_score_mean_recomputed": 389.62034753662556,
+        "sha256": "dac33f19dc2b1f43f5f51d2effcc1423f62b9638e601ede10ea1cf4b5aa16637",
+        "step_size": 1.0
+      }
+    ],
+    "endpoint_extension_step_size": null,
+    "endpoint_limited_after_single_extension": false,
+    "initial_selected_step_size": 0.1,
+    "selected_step_size": 0.1,
+    "selection_metric": "raw-derived adapted normalized score over all ten development episodes",
+    "tie_rule": "smaller_step_size"
+  },
+  "evidence_label": "post_confirmation_fresh_rollout_mechanism_audit",
+  "identity_baseline_checks": [
+    {
+      "controllers": [
+        "nominal_tuned",
+        "nominal_matched_eta_0.3",
+        "calibrated_identity_eta_0.3"
+      ],
+      "episode_count": 50,
+      "fields": [
+        "environment_seeds",
+        "action_noise_seeds",
+        "gradient_noise_seeds",
+        "returns",
+        "lengths"
+      ],
+      "status": "verified_elementwise_identical",
+      "training_seed": 1
+    },
+    {
+      "controllers": [
+        "nominal_tuned",
+        "nominal_matched_eta_0.3",
+        "calibrated_identity_eta_0.3"
+      ],
+      "episode_count": 50,
+      "fields": [
+        "environment_seeds",
+        "action_noise_seeds",
+        "gradient_noise_seeds",
+        "returns",
+        "lengths"
+      ],
+      "status": "verified_elementwise_identical",
+      "training_seed": 10
+    }
+  ],
+  "input_file_count": 29,
+  "input_files": [
+    {
+      "path": "/root/hubl_research_20260914/code/equal_compute_nominal_control_protocol.json",
+      "roles": [
+        "launch_frozen_protocol"
+      ],
+      "sha256": "fc8fb274f283cd32ef6d45d8a944bff9cdb6757f3927816af9b8a9f17d7cf034",
+      "size_bytes": 8609
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/evaluate_channel_opex.py",
+      "roles": [
+        "raw_evaluator_dependency:evaluate_channel_opex.py"
+      ],
+      "sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+      "size_bytes": 37240
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/evaluation_controls.py",
+      "roles": [
+        "raw_evaluator_dependency:evaluation_controls.py"
+      ],
+      "sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+      "size_bytes": 8507
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/inverse_residual_core.py",
+      "roles": [
+        "raw_evaluator_dependency:inverse_residual_core.py"
+      ],
+      "sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+      "size_bytes": 23777
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/inverse_residual_frozen_confirmation_manifest.json",
+      "roles": [
+        "canonical_formal_manifest_for_seed_freshness"
+      ],
+      "sha256": "57ac5bf657ffbb7185e703949d3b5cbfad4f8061fe3d218ae755ba41aa704807",
+      "size_bytes": 167153
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/run_equal_compute_nominal_control.py",
+      "roles": [
+        "launch_frozen_runner_source_not_imported"
+      ],
+      "sha256": "c5cd5a3631ffc38e8806c16471f77ab48c00894aff266a44e9e9ee6490a564c1",
+      "size_bytes": 23860
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/td3bc_core.py",
+      "roles": [
+        "raw_evaluator_dependency:td3bc_core.py"
+      ],
+      "sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+      "size_bytes": 31956
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/train_inverse_residual_adapter.py",
+      "roles": [
+        "raw_evaluator_dependency:train_inverse_residual_adapter.py"
+      ],
+      "sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+      "size_bytes": 57182
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/train_td3bc.py",
+      "roles": [
+        "raw_evaluator_dependency:train_td3bc.py"
+      ],
+      "sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737",
+      "size_bytes": 27912
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/verify_equal_compute_nominal_control.py",
+      "roles": [
+        "independent_verifier_source"
+      ],
+      "sha256": "053d3d823bf23475385b956426f67d78c213bd0cc74b482cf995d7c9ddf2da90",
+      "size_bytes": 71334
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001_calibration.json",
+      "roles": [
+        "channel_calibration"
+      ],
+      "sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+      "size_bytes": 28649
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/channel_dev/hubl_constant_executed_beta05_25k_seed0/latest.pt",
+      "roles": [
+        "base_checkpoint:seed0"
+      ],
+      "sha256": "d29501edf9b6961225bcbc157d7d7034bc5b625856dedcbbf9421eea25898106",
+      "size_bytes": 3491870
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/aggregate/equal_compute_nominal_control.json",
+      "roles": [
+        "runner_v1_aggregate_crosscheck"
+      ],
+      "sha256": "4d0e949706cf97ce900565b815e0bdd4dcb8026cc1262c2c68e3fa6e70082325",
+      "size_bytes": 10321
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p01_seed0_dev10.json",
+      "roles": [
+        "development_raw:nominal_dev:seed0"
+      ],
+      "sha256": "d5449dca0f42404cd85bcb1acfb1562337df119e783fd1d883004d7844271677",
+      "size_bytes": 9065
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p03_seed0_dev10.json",
+      "roles": [
+        "development_raw:nominal_dev:seed0"
+      ],
+      "sha256": "28596d93027974c059d30cad5a4b0b1e526318cf9878caa71b03bb146f6c3056",
+      "size_bytes": 9051
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p1_seed0_dev10.json",
+      "roles": [
+        "development_raw:nominal_dev:seed0"
+      ],
+      "sha256": "0dd844bc5eed43fd5c9b6656e9f5b7b1200f2fff8d3bb9a5013b8fefa93afe59",
+      "size_bytes": 9057
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_0p3_seed0_dev10.json",
+      "roles": [
+        "development_raw:nominal_dev:seed0"
+      ],
+      "sha256": "576f63c174a7e309f40f2691f15429b716194c836a8d1644527523eeb09afe9e",
+      "size_bytes": 9050
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/development/nominal_q_identity_eta_1_seed0_dev10.json",
+      "roles": [
+        "development_raw:nominal_dev:seed0"
+      ],
+      "sha256": "dac33f19dc2b1f43f5f51d2effcc1423f62b9638e601ede10ea1cf4b5aa16637",
+      "size_bytes": 9055
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/calibrated_identity_eta_0.3_seed10_fresh50.json",
+      "roles": [
+        "holdout_raw:calibrated_identity_eta_0.3:seed10"
+      ],
+      "sha256": "2dd7a42d4b54f76f09e7b22856d8c2a663524c653020016977ea569c2f9e05cd",
+      "size_bytes": 19841
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/calibrated_identity_eta_0.3_seed1_fresh50.json",
+      "roles": [
+        "holdout_raw:calibrated_identity_eta_0.3:seed1"
+      ],
+      "sha256": "5a123d8cadffb7b47c77069482262ab82b9e7bbaded1da8b329ba4559247e8fe",
+      "size_bytes": 19846
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/complete_calibrated_inverse_eta_0.1_seed10_fresh50.json",
+      "roles": [
+        "holdout_raw:complete_calibrated_inverse_eta_0.1:seed10"
+      ],
+      "sha256": "553b7ff3bfca058be2f15684222fa4a2a101357c5f8e04e503596089fbae3dd6",
+      "size_bytes": 19903
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/complete_calibrated_inverse_eta_0.1_seed1_fresh50.json",
+      "roles": [
+        "holdout_raw:complete_calibrated_inverse_eta_0.1:seed1"
+      ],
+      "sha256": "a962af60ee972428b67ac4ae91fdb619399ab04394aeebf37804570c12670cdc",
+      "size_bytes": 19912
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/nominal_matched_eta_0.3_seed10_fresh50.json",
+      "roles": [
+        "holdout_raw:nominal_matched_eta_0.3:seed10"
+      ],
+      "sha256": "6f10f56aeda12c847bc6ff0d934cba8e4aaa5b02f0f5bf08d92d004e5860b1ed",
+      "size_bytes": 17896
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/nominal_matched_eta_0.3_seed1_fresh50.json",
+      "roles": [
+        "holdout_raw:nominal_matched_eta_0.3:seed1"
+      ],
+      "sha256": "7e733cb667c6ae80f85a7353fcf5b28ad048a1de0b5107186795a08d1788a4e5",
+      "size_bytes": 17902
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/nominal_tuned_seed10_fresh50.json",
+      "roles": [
+        "holdout_raw:nominal_tuned:seed10"
+      ],
+      "sha256": "4f35cedf07cd7af5ebdbcb4bdd7d8a69a6eab46fb77b0a62ea50987fe914a1b3",
+      "size_bytes": 17917
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/holdout/nominal_tuned_seed1_fresh50.json",
+      "roles": [
+        "holdout_raw:nominal_tuned:seed1"
+      ],
+      "sha256": "8ababfa7389b67ebfd0fb4827e799880b97e71be2e08b7c15b1811018f299f40",
+      "size_bytes": 17929
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/selection.json",
+      "roles": [
+        "runner_v1_selection_crosscheck"
+      ],
+      "sha256": "71af36661fbaa5d2340fbb23897abacc7398576343f742f66bd3ed31c5677ae4",
+      "size_bytes": 2262
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/latest.pt",
+      "roles": [
+        "base_checkpoint:seed1"
+      ],
+      "sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+      "size_bytes": 3492510
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed10/latest.pt",
+      "roles": [
+        "base_checkpoint:seed10"
+      ],
+      "sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+      "size_bytes": 3492510
+    }
+  ],
+  "launch_frozen_contract": {
+    "canonical_formal_manifest_sha256": "57ac5bf657ffbb7185e703949d3b5cbfad4f8061fe3d218ae755ba41aa704807",
+    "protocol_expected_sha256": "fc8fb274f283cd32ef6d45d8a944bff9cdb6757f3927816af9b8a9f17d7cf034",
+    "protocol_observed_sha256": "fc8fb274f283cd32ef6d45d8a944bff9cdb6757f3927816af9b8a9f17d7cf034",
+    "protocol_unchanged_during_v2_verification": true,
+    "runner_expected_sha256": "c5cd5a3631ffc38e8806c16471f77ab48c00894aff266a44e9e9ee6490a564c1",
+    "runner_observed_sha256": "c5cd5a3631ffc38e8806c16471f77ab48c00894aff266a44e9e9ee6490a564c1",
+    "runner_unchanged_during_v2_verification": true
+  },
+  "paired_comparisons": [
+    {
+      "bootstrap95_high": 13.962747865951101,
+      "bootstrap95_low": 2.011863879105819,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20261915,
+      "comparison_id": "complete_minus_nominal_tuned",
+      "left": "complete_calibrated_inverse_eta_0.1",
+      "mean": 8.01959302458608,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 17,
+      "positive_episode_count": 33,
+      "right": "nominal_tuned",
+      "sample_std_ddof1": 21.662408203773413,
+      "standard_error": 3.0635271475438555,
+      "t95_high": 14.175981318563386,
+      "t95_low": 1.8632047306087731,
+      "training_seed": 1,
+      "zero_episode_count": 0
+    },
+    {
+      "bootstrap95_high": 20.196524987574495,
+      "bootstrap95_low": 7.141191432742752,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20270915,
+      "comparison_id": "complete_minus_nominal_tuned",
+      "left": "complete_calibrated_inverse_eta_0.1",
+      "mean": 13.598710396058873,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 16,
+      "positive_episode_count": 34,
+      "right": "nominal_tuned",
+      "sample_std_ddof1": 23.501962852322478,
+      "standard_error": 3.323679460814312,
+      "t95_high": 20.277894336666378,
+      "t95_low": 6.919526455451369,
+      "training_seed": 10,
+      "zero_episode_count": 0
+    },
+    {
+      "bootstrap95_high": 19.016504513018166,
+      "bootstrap95_low": 9.33168571877729,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20261916,
+      "comparison_id": "complete_minus_nominal_matched_eta_0.3",
+      "left": "complete_calibrated_inverse_eta_0.1",
+      "mean": 14.046705955740608,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 9,
+      "positive_episode_count": 41,
+      "right": "nominal_matched_eta_0.3",
+      "sample_std_ddof1": 17.537139825919173,
+      "standard_error": 2.4801260987048233,
+      "t95_high": 19.03070594865577,
+      "t95_low": 9.062705962825447,
+      "training_seed": 1,
+      "zero_episode_count": 0
+    },
+    {
+      "bootstrap95_high": 20.21880938953335,
+      "bootstrap95_low": 8.109989428252133,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20270916,
+      "comparison_id": "complete_minus_nominal_matched_eta_0.3",
+      "left": "complete_calibrated_inverse_eta_0.1",
+      "mean": 14.015805413119608,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 14,
+      "positive_episode_count": 36,
+      "right": "nominal_matched_eta_0.3",
+      "sample_std_ddof1": 22.107473342296952,
+      "standard_error": 3.1264688630478004,
+      "t95_high": 20.298679819956078,
+      "t95_low": 7.73293100628314,
+      "training_seed": 10,
+      "zero_episode_count": 0
+    },
+    {
+      "bootstrap95_high": 12.515176452589902,
+      "bootstrap95_low": 2.877539139926093,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20261917,
+      "comparison_id": "complete_minus_calibrated_identity_eta_0.3",
+      "left": "complete_calibrated_inverse_eta_0.1",
+      "mean": 7.680414201941273,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 17,
+      "positive_episode_count": 33,
+      "right": "calibrated_identity_eta_0.3",
+      "sample_std_ddof1": 17.57902678866963,
+      "standard_error": 2.4860498097856545,
+      "t95_high": 12.676318337956381,
+      "t95_low": 2.6845100659261654,
+      "training_seed": 1,
+      "zero_episode_count": 0
+    },
+    {
+      "bootstrap95_high": 13.926844582439982,
+      "bootstrap95_low": -0.01713988924583857,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20270917,
+      "comparison_id": "complete_minus_calibrated_identity_eta_0.3",
+      "left": "complete_calibrated_inverse_eta_0.1",
+      "mean": 6.969665182335686,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 20,
+      "positive_episode_count": 30,
+      "right": "calibrated_identity_eta_0.3",
+      "sample_std_ddof1": 25.69598877111374,
+      "standard_error": 3.6339615818695807,
+      "t95_high": 14.272384389939795,
+      "t95_low": -0.33305402526842354,
+      "training_seed": 10,
+      "zero_episode_count": 0
+    },
+    {
+      "bootstrap95_high": 5.400341389273463,
+      "bootstrap95_low": -4.757674267192003,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20261918,
+      "comparison_id": "calibrated_identity_minus_nominal_tuned",
+      "left": "calibrated_identity_eta_0.3",
+      "mean": 0.3391788226448043,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 19,
+      "positive_episode_count": 31,
+      "right": "nominal_tuned",
+      "sample_std_ddof1": 18.476880912961434,
+      "standard_error": 2.6130255577462633,
+      "t95_high": 5.590250277477515,
+      "t95_low": -4.911892632187906,
+      "training_seed": 1,
+      "zero_episode_count": 0
+    },
+    {
+      "bootstrap95_high": 11.835639669380237,
+      "bootstrap95_low": 1.465839030011866,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20270918,
+      "comparison_id": "calibrated_identity_minus_nominal_tuned",
+      "left": "calibrated_identity_eta_0.3",
+      "mean": 6.629045213723186,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 15,
+      "positive_episode_count": 35,
+      "right": "nominal_tuned",
+      "sample_std_ddof1": 18.961401123218195,
+      "standard_error": 2.6815470630051608,
+      "t95_high": 12.017815788735,
+      "t95_low": 1.240274638711374,
+      "training_seed": 10,
+      "zero_episode_count": 0
+    },
+    {
+      "bootstrap95_high": 10.611990908403955,
+      "bootstrap95_low": 2.1497443983893567,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20261919,
+      "comparison_id": "calibrated_identity_minus_nominal_matched_eta_0.3",
+      "left": "calibrated_identity_eta_0.3",
+      "mean": 6.36629175379933,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 11,
+      "positive_episode_count": 39,
+      "right": "nominal_matched_eta_0.3",
+      "sample_std_ddof1": 15.431220328052637,
+      "standard_error": 2.182304107189944,
+      "t95_high": 10.751796047493675,
+      "t95_low": 1.9807874601049846,
+      "training_seed": 1,
+      "zero_episode_count": 0
+    },
+    {
+      "bootstrap95_high": 12.426237286532846,
+      "bootstrap95_low": 1.7682659063901471,
+      "bootstrap_replicates": 20000,
+      "bootstrap_seed": 20270919,
+      "comparison_id": "calibrated_identity_minus_nominal_matched_eta_0.3",
+      "left": "calibrated_identity_eta_0.3",
+      "mean": 7.046140230783923,
+      "n_episode_pairs": 50,
+      "negative_episode_count": 16,
+      "positive_episode_count": 34,
+      "right": "nominal_matched_eta_0.3",
+      "sample_std_ddof1": 19.376428283301326,
+      "standard_error": 2.7402407668594364,
+      "t95_high": 12.552860219636685,
+      "t95_low": 1.5394202419311611,
+      "training_seed": 10,
+      "zero_episode_count": 0
+    }
+  ],
+  "runner_v1_crosscheck": {
+    "aggregate": {
+      "exact_match": true,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/aggregate/equal_compute_nominal_control.json",
+      "sha256": "4d0e949706cf97ce900565b815e0bdd4dcb8026cc1262c2c68e3fa6e70082325"
+    },
+    "required": true,
+    "selection": {
+      "exact_match": true,
+      "path": "/root/hubl_research_20260914/results/equal_compute_nominal_control/selection.json",
+      "sha256": "71af36661fbaa5d2340fbb23897abacc7398576343f742f66bd3ed31c5677ae4"
+    }
+  },
+  "schema_version": "equal-compute-nominal-control-independent-verification-v2",
+  "skipped_comparisons": [],
+  "statistical_guardrails": {
+    "checkpoint_seed_count": 2,
+    "chronology_is_runner_order_plus_create_only_evidence_not_external_timestamp": true,
+    "episode_intervals_condition_on_each_fixed_base_checkpoint": true,
+    "multiple_comparison_correction": null,
+    "post_confirmation_not_blind": true,
+    "rollout_episodes_pooled_across_checkpoints": false,
+    "runtime_versions_not_embedded_in_v1_raw_records": true,
+    "training_seed_interval_or_p_value": null
+  },
+  "status": "verified_complete",
+  "verification_independence": {
+    "imports_active_runner": false,
+    "recomputes_scores_costs_and_statistics_from_raw": true,
+    "recomputes_selection_from_raw_returns": true,
+    "writes_or_modifies_raw_inputs": false
+  },
+  "verification_runtime": {
+    "evaluation_runtime_note": "These are v2 verification-library versions. The v1 raw evaluator records do not embed the original Python/Torch/Gymnasium/MuJoCo/CUDA versions.",
+    "numpy": "1.26.0",
+    "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+    "python": "3.10.13",
+    "python_implementation": "CPython",
+    "scipy": "1.15.3"
+  },
+  "verifier_source_sha256": "053d3d823bf23475385b956426f67d78c213bd0cc74b482cf995d7c9ddf2da90"
+}

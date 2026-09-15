@@ -1,0 +1,446 @@
+{
+  "aggregator": {
+    "path": "/root/hubl_research_20260914/code/aggregate_ca_opex_hopper_multiseed.py",
+    "sha256": "ab4650d62a3deaa26d664d1c25fc1d1be803563dfe3d74106f7efcee3b7606d2"
+  },
+  "blocking_note": "Cross-seed statistics use one mean per independent base-policy training seed (n=3); the 150 rollout episodes are never pooled.",
+  "environment": "Hopper-v4",
+  "input_files": [
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed2/aggregate.json",
+      "role": "hopper_seed2:aggregate",
+      "sha256": "20ab6dd6afee3b8e13343fddada386ba088368d00b61a40f31fa03b8166f7774",
+      "size_bytes": 17901
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed2/controls/complete.json",
+      "role": "hopper_seed2:complete",
+      "sha256": "578a5b1a8571d487887c81ef1e2544d567ee5436b14f5ff871aa2b7e4bb0fb36",
+      "size_bytes": 19848
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed2/controls/calibrated_identity.json",
+      "role": "hopper_seed2:calibrated_identity",
+      "sha256": "76a2771ec80b09642d922c935355a14a775c14f814e76f4026628479bbfd0cf7",
+      "size_bytes": 19751
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed2/controls/nominal_k8t2.json",
+      "role": "hopper_seed2:nominal_k8t2",
+      "sha256": "ac0f6d1fe557d3ca1c78566b97e065845f35061e81c7bf39be2b1f9a6d5430a9",
+      "size_bytes": 17848
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed2/controls/original_opex.json",
+      "role": "hopper_seed2:original_opex",
+      "sha256": "5f48c9be8376f36b6ddfe58897809b33b16249eddab3f081797ef2ab3426e7f7",
+      "size_bytes": 17785
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed2/controls/inverse_only.json",
+      "role": "hopper_seed2:inverse_only",
+      "sha256": "7761f0c136ef737ef35950c078acf0aa01424060e8c0c7b001369e0b1d5caf9e",
+      "size_bytes": 8590
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed3/aggregate.json",
+      "role": "hopper_seed3:aggregate",
+      "sha256": "7312106bfc33c45020dba97911839612ff4521297d21ef67a873b97112f958ed",
+      "size_bytes": 17905
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed3/controls/complete.json",
+      "role": "hopper_seed3:complete",
+      "sha256": "f24eaf5b182009721b96936efa7824c34d80c516ba4b4b64caa914e170d6060d",
+      "size_bytes": 19836
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed3/controls/calibrated_identity.json",
+      "role": "hopper_seed3:calibrated_identity",
+      "sha256": "7f1fc3ef3ada4050be010446c67e5424394b2842078758a6399490e71ae4361e",
+      "size_bytes": 19745
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed3/controls/nominal_k8t2.json",
+      "role": "hopper_seed3:nominal_k8t2",
+      "sha256": "2db1acea9bae1973e0d0bc76b79a8036f0a831b00898a9ce18462482cc679719",
+      "size_bytes": 17846
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed3/controls/original_opex.json",
+      "role": "hopper_seed3:original_opex",
+      "sha256": "4ef78d757d950e6d05c5312ad182e22cf14822c8d420b864927a42b4b8e6ac57",
+      "size_bytes": 17783
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed3/controls/inverse_only.json",
+      "role": "hopper_seed3:inverse_only",
+      "sha256": "8076c78ec81f6d7494467a1b2cf35140dc326be0d88183daac006602b02578ce",
+      "size_bytes": 8596
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed4/aggregate.json",
+      "role": "hopper_seed4:aggregate",
+      "sha256": "5ff2ea06a8318977afd11eacf7bffc903e1db0de4f6aa7ea427f287fa4bf7644",
+      "size_bytes": 17936
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed4/controls/complete.json",
+      "role": "hopper_seed4:complete",
+      "sha256": "8121f85652f13002d0eed26f30df71afd5309faa5da18f7859c7ecb79144a524",
+      "size_bytes": 19850
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed4/controls/calibrated_identity.json",
+      "role": "hopper_seed4:calibrated_identity",
+      "sha256": "2bfecc8dd7e8617699ca70aa39873e2ef58732949005b6af615d604f8f8b3cfb",
+      "size_bytes": 19805
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed4/controls/nominal_k8t2.json",
+      "role": "hopper_seed4:nominal_k8t2",
+      "sha256": "acb84f71cbdbafa9f8beaa38e29ae58bb299be17c0b3b077ab99a709ffbb97b7",
+      "size_bytes": 17881
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed4/controls/original_opex.json",
+      "role": "hopper_seed4:original_opex",
+      "sha256": "50a636c2ddbd5c62d47ad6f17c182106f017e23307592d957288a5d6b32b7226",
+      "size_bytes": 17835
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/crosstask_hopper/hopper_seed4/controls/inverse_only.json",
+      "role": "hopper_seed4:inverse_only",
+      "sha256": "3df485e700082c851cdb33e2bb81c32827a00e256f939c4464b712e74999ee12",
+      "size_bytes": 8596
+    }
+  ],
+  "normalization": {
+    "reference_max_score": 3234.3,
+    "reference_min_score": -20.272305,
+    "scores_recomputed_from_episode_returns": true,
+    "source": "d4rl/infos.py hopper random/expert pair (GitHub master)"
+  },
+  "paired_comparisons": [
+    {
+      "comparison_id": "complete_minus_calibrated_identity",
+      "cross_seed_normalized": {
+        "interval_crosses_zero": true,
+        "mean": 9.607962847468093,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 3,
+        "sample_std_ddof1": 7.426912926098232,
+        "t95_high": 28.05743732884607,
+        "t95_low": -8.841511633909883
+      },
+      "cross_seed_raw": {
+        "interval_crosses_zero": true,
+        "mean": 312.69809790838593,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 3,
+        "sample_std_ddof1": 241.71425120925818,
+        "t95_high": 913.149584797356,
+        "t95_low": -287.75338898058413
+      },
+      "cross_seed_unit": "independent_base_policy_training_seed",
+      "left": "complete",
+      "paired_unit": "episode_case_within_one_fixed_checkpoint",
+      "per_training_seed": [
+        {
+          "normalized_delta_mean_recomputed": 9.863097070882745,
+          "positive_episode_count": 40,
+          "raw_delta_mean_recomputed": 321.00162568421604,
+          "training_seed": 2
+        },
+        {
+          "normalized_delta_mean_recomputed": 16.90402123196388,
+          "positive_episode_count": 47,
+          "raw_delta_mean_recomputed": 550.1535934468163,
+          "training_seed": 3
+        },
+        {
+          "normalized_delta_mean_recomputed": 2.0567702395576504,
+          "positive_episode_count": 26,
+          "raw_delta_mean_recomputed": 66.93907459412544,
+          "training_seed": 4
+        }
+      ],
+      "right": "calibrated_identity"
+    },
+    {
+      "comparison_id": "complete_minus_nominal_k8t2",
+      "cross_seed_normalized": {
+        "interval_crosses_zero": true,
+        "mean": 4.468236377791873,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 2,
+        "sample_std_ddof1": 4.034543811050987,
+        "t95_high": 14.490598808408325,
+        "t95_low": -5.554126052824579
+      },
+      "cross_seed_raw": {
+        "interval_crosses_zero": true,
+        "mean": 145.4219836735495,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 2,
+        "sample_std_ddof1": 131.30714550755698,
+        "t95_high": 471.6070156471175,
+        "t95_low": -180.7630483000185
+      },
+      "cross_seed_unit": "independent_base_policy_training_seed",
+      "left": "complete",
+      "paired_unit": "episode_case_within_one_fixed_checkpoint",
+      "per_training_seed": [
+        {
+          "normalized_delta_mean_recomputed": 5.818536339474987,
+          "positive_episode_count": 35,
+          "raw_delta_mean_recomputed": 189.36847226091373,
+          "training_seed": 2
+        },
+        {
+          "normalized_delta_mean_recomputed": 7.654441246403906,
+          "positive_episode_count": 34,
+          "raw_delta_mean_recomputed": 249.1193249079584,
+          "training_seed": 3
+        },
+        {
+          "normalized_delta_mean_recomputed": -0.06826845250327414,
+          "positive_episode_count": 29,
+          "raw_delta_mean_recomputed": -2.221846148223639,
+          "training_seed": 4
+        }
+      ],
+      "right": "nominal_k8t2"
+    },
+    {
+      "comparison_id": "complete_minus_original_opex",
+      "cross_seed_normalized": {
+        "interval_crosses_zero": false,
+        "mean": 2.2476237364873026,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 3,
+        "sample_std_ddof1": 0.6255690577758417,
+        "t95_high": 3.801623424193134,
+        "t95_low": 0.6936240487814709
+      },
+      "cross_seed_raw": {
+        "interval_crosses_zero": false,
+        "mean": 73.15053964832195,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 3,
+        "sample_std_ddof1": 20.359597303022,
+        "t95_high": 123.72658310418245,
+        "t95_low": 22.574496192461446
+      },
+      "cross_seed_unit": "independent_base_policy_training_seed",
+      "left": "complete",
+      "paired_unit": "episode_case_within_one_fixed_checkpoint",
+      "per_training_seed": [
+        {
+          "normalized_delta_mean_recomputed": 2.526082960687014,
+          "positive_episode_count": 33,
+          "raw_delta_mean_recomputed": 82.21319643984361,
+          "training_seed": 2
+        },
+        {
+          "normalized_delta_mean_recomputed": 2.685613312729385,
+          "positive_episode_count": 31,
+          "raw_delta_mean_recomputed": 87.40522709548362,
+          "training_seed": 3
+        },
+        {
+          "normalized_delta_mean_recomputed": 1.5311749360455094,
+          "positive_episode_count": 32,
+          "raw_delta_mean_recomputed": 49.83319540963861,
+          "training_seed": 4
+        }
+      ],
+      "right": "original_opex"
+    },
+    {
+      "comparison_id": "complete_minus_inverse_only",
+      "cross_seed_normalized": {
+        "interval_crosses_zero": true,
+        "mean": -0.5718713480310488,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 1,
+        "sample_std_ddof1": 0.7395097542567216,
+        "t95_high": 1.2651727207025272,
+        "t95_low": -2.408915416764625
+      },
+      "cross_seed_raw": {
+        "interval_crosses_zero": true,
+        "mean": -18.611966513248674,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 1,
+        "sample_std_ddof1": 24.06787965481282,
+        "t95_high": 41.17596097839946,
+        "t95_low": -78.39989400489681
+      },
+      "cross_seed_unit": "independent_base_policy_training_seed",
+      "left": "complete",
+      "paired_unit": "episode_case_within_one_fixed_checkpoint",
+      "per_training_seed": [
+        {
+          "normalized_delta_mean_recomputed": -0.7101847083786988,
+          "positive_episode_count": 22,
+          "raw_delta_mean_recomputed": -23.113474833238143,
+          "training_seed": 2
+        },
+        {
+          "normalized_delta_mean_recomputed": 0.22702962804569218,
+          "positive_episode_count": 34,
+          "raw_delta_mean_recomputed": 7.388843398519612,
+          "training_seed": 3
+        },
+        {
+          "normalized_delta_mean_recomputed": -1.2324589637601397,
+          "positive_episode_count": 18,
+          "raw_delta_mean_recomputed": -40.11126810502749,
+          "training_seed": 4
+        }
+      ],
+      "right": "inverse_only"
+    }
+  ],
+  "per_seed_controller_means": [
+    {
+      "control_id": "complete",
+      "cross_seed_descriptive": {
+        "interval_crosses_zero": false,
+        "mean": 20.419190344318405,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 3,
+        "sample_std_ddof1": 0.4114864241162555,
+        "t95_high": 21.441379288326218,
+        "t95_low": 19.397001400310593
+      },
+      "per_seed": {
+        "2": {
+          "normalized_score_mean_recomputed": 20.523200618019338,
+          "raw_score_mean_recomputed": 647.6700984136464
+        },
+        "3": {
+          "normalized_score_mean_recomputed": 20.76869171358643,
+          "raw_score_mean_recomputed": 655.659783621214
+        },
+        "4": {
+          "normalized_score_mean_recomputed": 19.965678701349454,
+          "raw_score_mean_recomputed": 629.525144519403
+        }
+      }
+    },
+    {
+      "control_id": "calibrated_identity",
+      "cross_seed_descriptive": {
+        "interval_crosses_zero": true,
+        "mean": 10.811227496850316,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 3,
+        "sample_std_ddof1": 7.023338518613491,
+        "t95_high": 28.258167573110576,
+        "t95_low": -6.635712579409946
+      },
+      "per_seed": {
+        "2": {
+          "normalized_score_mean_recomputed": 10.660103547136595,
+          "raw_score_mean_recomputed": 326.6684727294303
+        },
+        "3": {
+          "normalized_score_mean_recomputed": 3.86467048162255,
+          "raw_score_mean_recomputed": 105.50619017439766
+        },
+        "4": {
+          "normalized_score_mean_recomputed": 17.908908461791803,
+          "raw_score_mean_recomputed": 562.5860699252776
+        }
+      }
+    },
+    {
+      "control_id": "nominal_k8t2",
+      "cross_seed_descriptive": {
+        "interval_crosses_zero": false,
+        "mean": 15.950953966526535,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 3,
+        "sample_std_ddof1": 3.624290144105005,
+        "t95_high": 24.954189791711244,
+        "t95_low": 6.947718141341825
+      },
+      "per_seed": {
+        "2": {
+          "normalized_score_mean_recomputed": 14.704664278544353,
+          "raw_score_mean_recomputed": 458.3016261527327
+        },
+        "3": {
+          "normalized_score_mean_recomputed": 13.114250467182526,
+          "raw_score_mean_recomputed": 406.54045871325565
+        },
+        "4": {
+          "normalized_score_mean_recomputed": 20.033947153852726,
+          "raw_score_mean_recomputed": 631.7469906676266
+        }
+      }
+    },
+    {
+      "control_id": "original_opex",
+      "cross_seed_descriptive": {
+        "interval_crosses_zero": false,
+        "mean": 18.171566607831107,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 3,
+        "sample_std_ddof1": 0.23173103793353414,
+        "t95_high": 18.747218418137713,
+        "t95_low": 17.5959147975245
+      },
+      "per_seed": {
+        "2": {
+          "normalized_score_mean_recomputed": 17.997117657332325,
+          "raw_score_mean_recomputed": 565.4569019738027
+        },
+        "3": {
+          "normalized_score_mean_recomputed": 18.083078400857048,
+          "raw_score_mean_recomputed": 568.2545565257303
+        },
+        "4": {
+          "normalized_score_mean_recomputed": 18.434503765303944,
+          "raw_score_mean_recomputed": 579.6919491097644
+        }
+      }
+    },
+    {
+      "control_id": "inverse_only",
+      "cross_seed_descriptive": {
+        "interval_crosses_zero": false,
+        "mean": 20.991061692349458,
+        "n_training_seeds": 3,
+        "positive_training_seed_count": 3,
+        "sample_std_ddof1": 0.3895903032115248,
+        "t95_high": 21.95885765667746,
+        "t95_low": 20.023265728021457
+      },
+      "per_seed": {
+        "2": {
+          "normalized_score_mean_recomputed": 21.23338532639804,
+          "raw_score_mean_recomputed": 670.7835732468844
+        },
+        "3": {
+          "normalized_score_mean_recomputed": 20.54166208554074,
+          "raw_score_mean_recomputed": 648.2709402226943
+        },
+        "4": {
+          "normalized_score_mean_recomputed": 21.198137665109588,
+          "raw_score_mean_recomputed": 669.6364126244304
+        }
+      }
+    }
+  ],
+  "results_root": "/root/hubl_research_20260914/results/crosstask_hopper",
+  "schema_version": "ca-opex-hopper-multiseed-aggregate-v1",
+  "status": "complete",
+  "training_seeds": [
+    2,
+    3,
+    4
+  ]
+}

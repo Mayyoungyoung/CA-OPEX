@@ -1,0 +1,72 @@
+2026-09-15T06:11:15Z betagrid_chain stage=unit_beta0.5_seed1 status=started
+2026-09-15T06:11:17Z mode=execution seed=1 beta=0.5 stage=calibration_pairs status=started
+2026-09-15T06:11:19Z mode=execution seed=1 beta=0.5 stage=calibration_pairs status=completed
+2026-09-15T06:11:19Z mode=execution seed=1 beta=0.5 stage=calibration_fit status=started
+2026-09-15T06:11:19Z mode=execution seed=1 beta=0.5 stage=calibration_fit status=completed
+2026-09-15T06:11:19Z mode=execution seed=1 beta=0.5 stage=complete status=started
+2026-09-15T06:20:35Z mode=execution seed=1 beta=0.5 stage=complete status=completed
+2026-09-15T06:20:35Z mode=execution seed=1 beta=0.5 stage=nominal_k8t2 status=started
+2026-09-15T06:26:00Z mode=execution seed=1 beta=0.5 stage=nominal_k8t2 status=completed
+2026-09-15T06:26:00Z mode=execution seed=1 beta=0.5 stage=inverse_only status=started
+2026-09-15T06:30:07Z mode=execution seed=1 beta=0.5 stage=inverse_only status=completed
+2026-09-15T06:30:07Z mode=execution seed=1 beta=0.5 stage=identity_command status=started
+2026-09-15T06:31:18Z mode=execution seed=1 beta=0.5 stage=identity_command status=completed
+Beta-grid unit beta=0.5 seed=1 completed in /root/hubl_research_20260914/results/betagrid/beta0.5_seed1.
+2026-09-15T06:31:18Z betagrid_chain stage=unit_beta0.5_seed1 status=completed
+2026-09-15T06:31:18Z betagrid_chain stage=unit_beta0.5_seed2 status=started
+2026-09-15T06:31:20Z mode=execution seed=2 beta=0.5 stage=calibration_pairs status=started
+2026-09-15T06:31:20Z mode=execution seed=2 beta=0.5 stage=calibration_pairs status=existing_verified
+2026-09-15T06:31:20Z mode=execution seed=2 beta=0.5 stage=calibration_pairs status=completed
+2026-09-15T06:31:20Z mode=execution seed=2 beta=0.5 stage=calibration_fit status=started
+2026-09-15T06:31:20Z mode=execution seed=2 beta=0.5 stage=calibration_fit status=existing_verified
+2026-09-15T06:31:20Z mode=execution seed=2 beta=0.5 stage=calibration_fit status=completed
+2026-09-15T06:31:20Z mode=execution seed=2 beta=0.5 stage=complete status=started
+2026-09-15T06:40:40Z mode=execution seed=2 beta=0.5 stage=complete status=completed
+2026-09-15T06:40:40Z mode=execution seed=2 beta=0.5 stage=nominal_k8t2 status=started
+2026-09-15T06:46:15Z mode=execution seed=2 beta=0.5 stage=nominal_k8t2 status=completed
+2026-09-15T06:46:15Z mode=execution seed=2 beta=0.5 stage=inverse_only status=started
+2026-09-15T06:50:27Z mode=execution seed=2 beta=0.5 stage=inverse_only status=completed
+2026-09-15T06:50:27Z mode=execution seed=2 beta=0.5 stage=identity_command status=started
+2026-09-15T06:51:44Z mode=execution seed=2 beta=0.5 stage=identity_command status=completed
+Beta-grid unit beta=0.5 seed=2 completed in /root/hubl_research_20260914/results/betagrid/beta0.5_seed2.
+2026-09-15T06:51:44Z betagrid_chain stage=unit_beta0.5_seed2 status=completed
+2026-09-15T06:51:44Z betagrid_chain stage=unit_beta0.5_seed10 status=started
+2026-09-15T06:51:46Z mode=execution seed=10 beta=0.5 stage=calibration_pairs status=started
+2026-09-15T06:51:46Z mode=execution seed=10 beta=0.5 stage=calibration_pairs status=existing_verified
+2026-09-15T06:51:46Z mode=execution seed=10 beta=0.5 stage=calibration_pairs status=completed
+2026-09-15T06:51:46Z mode=execution seed=10 beta=0.5 stage=calibration_fit status=started
+2026-09-15T06:51:46Z mode=execution seed=10 beta=0.5 stage=calibration_fit status=existing_verified
+2026-09-15T06:51:46Z mode=execution seed=10 beta=0.5 stage=calibration_fit status=completed
+2026-09-15T06:51:46Z mode=execution seed=10 beta=0.5 stage=complete status=started
+2026-09-15T07:02:36Z mode=execution seed=10 beta=0.5 stage=complete status=completed
+2026-09-15T07:02:36Z mode=execution seed=10 beta=0.5 stage=nominal_k8t2 status=started
+2026-09-15T07:08:17Z mode=execution seed=10 beta=0.5 stage=nominal_k8t2 status=completed
+2026-09-15T07:08:17Z mode=execution seed=10 beta=0.5 stage=inverse_only status=started
+2026-09-15T07:12:57Z mode=execution seed=10 beta=0.5 stage=inverse_only status=completed
+2026-09-15T07:12:57Z mode=execution seed=10 beta=0.5 stage=identity_command status=started
+2026-09-15T07:14:12Z mode=execution seed=10 beta=0.5 stage=identity_command status=completed
+Beta-grid unit beta=0.5 seed=10 completed in /root/hubl_research_20260914/results/betagrid/beta0.5_seed10.
+2026-09-15T07:14:12Z betagrid_chain stage=unit_beta0.5_seed10 status=completed
+2026-09-15T07:14:12Z betagrid_chain stage=unit_beta0.9_seed1 status=started
+2026-09-15T07:14:14Z mode=execution seed=1 beta=0.9 stage=calibration_pairs status=started
+2026-09-15T07:14:15Z mode=execution seed=1 beta=0.9 stage=calibration_pairs status=completed
+2026-09-15T07:14:15Z mode=execution seed=1 beta=0.9 stage=calibration_fit status=started
+2026-09-15T07:14:16Z mode=execution seed=1 beta=0.9 stage=calibration_fit status=completed
+2026-09-15T07:14:16Z mode=execution seed=1 beta=0.9 stage=complete status=started
+2026-09-15T07:21:44Z mode=execution seed=1 beta=0.9 stage=complete status=completed
+2026-09-15T07:21:44Z mode=execution seed=1 beta=0.9 stage=nominal_k8t2 status=started
+2026-09-15T07:26:02Z mode=execution seed=1 beta=0.9 stage=nominal_k8t2 status=completed
+2026-09-15T07:26:02Z mode=execution seed=1 beta=0.9 stage=inverse_only status=started
+2026-09-15T07:29:40Z mode=execution seed=1 beta=0.9 stage=inverse_only status=completed
+2026-09-15T07:29:40Z mode=execution seed=1 beta=0.9 stage=identity_command status=started
+2026-09-15T07:30:44Z mode=execution seed=1 beta=0.9 stage=identity_command status=completed
+Beta-grid unit beta=0.9 seed=1 completed in /root/hubl_research_20260914/results/betagrid/beta0.9_seed1.
+2026-09-15T07:30:44Z betagrid_chain stage=unit_beta0.9_seed1 status=completed
+2026-09-15T07:30:44Z betagrid_chain stage=unit_beta0.9_seed2 status=started
+2026-09-15T07:30:46Z mode=execution seed=2 beta=0.9 stage=calibration_pairs status=started
+2026-09-15T07:30:46Z mode=execution seed=2 beta=0.9 stage=calibration_pairs status=existing_verified
+2026-09-15T07:30:46Z mode=execution seed=2 beta=0.9 stage=calibration_pairs status=completed
+2026-09-15T07:30:46Z mode=execution seed=2 beta=0.9 stage=calibration_fit status=started
+2026-09-15T07:30:46Z mode=execution seed=2 beta=0.9 stage=calibration_fit status=existing_verified
+2026-09-15T07:30:46Z mode=execution seed=2 beta=0.9 stage=calibration_fit status=completed
+2026-09-15T07:30:46Z mode=execution seed=2 beta=0.9 stage=complete status=started

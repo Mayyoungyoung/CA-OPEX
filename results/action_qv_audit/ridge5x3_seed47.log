@@ -1,0 +1,8 @@
+{
+  "archive": "/root/hubl_research_20260914/results/action_qv_audit/ridge5x3_seed47.npz",
+  "archive_sha256": "cef1c0ea4cc857a30338e68b22acd00d9110bb0aced69f9a6abe5da6da62c622",
+  "episodes": 3255,
+  "fold_integrity": true,
+  "kept_transitions": 999928,
+  "wall_time_seconds": 34.72125479701208
+}

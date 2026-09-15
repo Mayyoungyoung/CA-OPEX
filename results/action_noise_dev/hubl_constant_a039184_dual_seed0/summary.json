@@ -1,0 +1,363 @@
+{
+  "action_channels": {
+    "action_pairing": "executed_commanded",
+    "behavior_cloning_action_source": "clean_policy_actions",
+    "commanded_action_source": "hdf5:clean_policy_actions",
+    "critic_action_source": "actions",
+    "executed_action_source": "hdf5:actions",
+    "executed_commanded_identical_fraction": 0.0,
+    "executed_commanded_max_absolute_delta": 0.9999995827674866,
+    "executed_commanded_mean_absolute_delta": 0.3592673032072151,
+    "executed_commanded_mse": 0.21477909593986552,
+    "transition_count": 999928
+  },
+  "action_pairing": "executed_commanded",
+  "algorithm": "TD3+BC",
+  "evaluations": [
+    {
+      "clean": {
+        "episode_seeds": [
+          9200,
+          9201,
+          9202,
+          9203,
+          9204,
+          9205,
+          9206,
+          9207,
+          9208,
+          9209
+        ],
+        "lengths": [
+          929,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "normalized_score_mean": 76.99164284451429,
+        "normalized_score_std": 1.807486587944326,
+        "return_mean": 3536.062022327361,
+        "return_std": 82.97576247705086,
+        "returns": [
+          3411.0028988585323,
+          3434.8892686342906,
+          3481.33227917274,
+          3590.598517439811,
+          3532.005651077123,
+          3528.726362442687,
+          3585.8426559694663,
+          3515.7901424469337,
+          3561.6383479021247,
+          3718.7940993299017
+        ]
+      },
+      "elapsed_seconds": 263.81156453100266,
+      "event": "evaluation",
+      "persistent_action_noise": {
+        "action_clip_fraction": 0.3280862847981344,
+        "action_noise_beta": 1.0,
+        "action_noise_distribution": "iid_uniform_minus_beta_plus_beta_per_step",
+        "action_noise_seeds": [
+          19200,
+          19201,
+          19202,
+          19203,
+          19204,
+          19205,
+          19206,
+          19207,
+          19208,
+          19209
+        ],
+        "environment_seeds": [
+          9200,
+          9201,
+          9202,
+          9203,
+          9204,
+          9205,
+          9206,
+          9207,
+          9208,
+          9209
+        ],
+        "executed_commanded_action_mse": 0.21851494343403646,
+        "lengths": [
+          430,
+          492,
+          612,
+          520,
+          492,
+          537,
+          213,
+          386,
+          475,
+          417
+        ],
+        "normalized_score_mean": 32.05081933466049,
+        "normalized_score_std": 7.729737973740082,
+        "return_mean": 1472.9766738945866,
+        "return_std": 354.84683891809453,
+        "returns": [
+          1459.1528163661792,
+          1563.1218879533067,
+          1962.1113450448813,
+          1772.7752731177432,
+          1490.1134805963432,
+          1728.2822903636782,
+          585.7027575087003,
+          1221.3785701055824,
+          1526.8636846394902,
+          1420.2646332499614
+        ]
+      },
+      "step": 25000
+    },
+    {
+      "clean": {
+        "episode_seeds": [
+          9200,
+          9201,
+          9202,
+          9203,
+          9204,
+          9205,
+          9206,
+          9207,
+          9208,
+          9209
+        ],
+        "lengths": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "normalized_score_mean": 80.55976751808757,
+        "normalized_score_std": 1.8999695182254592,
+        "return_mean": 3699.8628866754852,
+        "return_std": 87.22134953001833,
+        "returns": [
+          3661.4213173204143,
+          3898.150533978915,
+          3686.4940750644373,
+          3713.287236647033,
+          3806.033959613207,
+          3573.1144495297167,
+          3642.952916842043,
+          3708.1642628715217,
+          3663.481933533433,
+          3645.528181354131
+        ]
+      },
+      "elapsed_seconds": 538.9708860440005,
+      "event": "evaluation",
+      "persistent_action_noise": {
+        "action_clip_fraction": 0.33790949371685913,
+        "action_noise_beta": 1.0,
+        "action_noise_distribution": "iid_uniform_minus_beta_plus_beta_per_step",
+        "action_noise_seeds": [
+          19200,
+          19201,
+          19202,
+          19203,
+          19204,
+          19205,
+          19206,
+          19207,
+          19208,
+          19209
+        ],
+        "environment_seeds": [
+          9200,
+          9201,
+          9202,
+          9203,
+          9204,
+          9205,
+          9206,
+          9207,
+          9208,
+          9209
+        ],
+        "executed_commanded_action_mse": 0.21640896094581474,
+        "lengths": [
+          568,
+          512,
+          327,
+          655,
+          1000,
+          267,
+          311,
+          311,
+          223,
+          415
+        ],
+        "normalized_score_mean": 33.311973693120265,
+        "normalized_score_std": 17.89012536095943,
+        "return_mean": 1530.8721211927434,
+        "return_std": 821.2767953779999,
+        "returns": [
+          1966.6420022433904,
+          1744.523989984019,
+          1073.027041563568,
+          2368.5740086040482,
+          3429.6840695699434,
+          832.3052063692845,
+          992.1599583962999,
+          927.133600206018,
+          627.4819694236896,
+          1347.189365567172
+        ]
+      },
+      "step": 50000
+    }
+  ],
+  "final_evaluation": {
+    "clean": {
+      "episode_seeds": [
+        9200,
+        9201,
+        9202,
+        9203,
+        9204,
+        9205,
+        9206,
+        9207,
+        9208,
+        9209
+      ],
+      "lengths": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "normalized_score_mean": 80.55976751808757,
+      "normalized_score_std": 1.8999695182254592,
+      "return_mean": 3699.8628866754852,
+      "return_std": 87.22134953001833,
+      "returns": [
+        3661.4213173204143,
+        3898.150533978915,
+        3686.4940750644373,
+        3713.287236647033,
+        3806.033959613207,
+        3573.1144495297167,
+        3642.952916842043,
+        3708.1642628715217,
+        3663.481933533433,
+        3645.528181354131
+      ]
+    },
+    "elapsed_seconds": 538.9708860440005,
+    "event": "evaluation",
+    "persistent_action_noise": {
+      "action_clip_fraction": 0.33790949371685913,
+      "action_noise_beta": 1.0,
+      "action_noise_distribution": "iid_uniform_minus_beta_plus_beta_per_step",
+      "action_noise_seeds": [
+        19200,
+        19201,
+        19202,
+        19203,
+        19204,
+        19205,
+        19206,
+        19207,
+        19208,
+        19209
+      ],
+      "environment_seeds": [
+        9200,
+        9201,
+        9202,
+        9203,
+        9204,
+        9205,
+        9206,
+        9207,
+        9208,
+        9209
+      ],
+      "executed_commanded_action_mse": 0.21640896094581474,
+      "lengths": [
+        568,
+        512,
+        327,
+        655,
+        1000,
+        267,
+        311,
+        311,
+        223,
+        415
+      ],
+      "normalized_score_mean": 33.311973693120265,
+      "normalized_score_std": 17.89012536095943,
+      "return_mean": 1530.8721211927434,
+      "return_std": 821.2767953779999,
+      "returns": [
+        1966.6420022433904,
+        1744.523989984019,
+        1073.027041563568,
+        2368.5740086040482,
+        3429.6840695699434,
+        832.3052063692845,
+        992.1599583962999,
+        927.133600206018,
+        627.4819694236896,
+        1347.189365567172
+      ]
+    },
+    "step": 50000
+  },
+  "final_train_metrics": {
+    "actor_loss": -2.4296505451202393,
+    "actor_q_mean": 65.02395629882812,
+    "actor_q_scale": 0.03844736889004707,
+    "actor_updated": 1.0,
+    "bc_uses_commanded_action": 1.0,
+    "behavior_cloning_loss": 0.07034946978092194,
+    "critic_loss": 36.36967468261719,
+    "critic_uses_commanded_action": 0.0,
+    "executed_commanded_action_mse": 0.2136087417602539,
+    "heuristic_mean": 64.83830261230469,
+    "hubl_lambda_mean": 0.391843318939209,
+    "q1_mean": 64.30104064941406,
+    "q2_mean": 64.41145324707031,
+    "q_target_mean": 64.77985382080078
+  },
+  "mechanism_metrics_before_training": {
+    "episode_score_spearman_vs_clean": 1.0,
+    "heuristic_mse_vs_clean": 0.0,
+    "lambda_max": 0.391843318939209,
+    "lambda_mean": 0.3918432891368866,
+    "lambda_min": 0.391843318939209
+  },
+  "optimizer_seconds": 510.3640439104638,
+  "status": "complete",
+  "train_seed": 0,
+  "updates": 50000,
+  "updates_per_optimizer_second": 97.96928407592091,
+  "variant": "hubl_constant",
+  "wall_time_seconds": 538.9910688470118
+}

@@ -1,0 +1,231 @@
+{
+  "schema_version": "inverse-residual-manifest-v1",
+  "evidence_scope": "Pre-split development evidence only; dev_eval50_seen is not confirmation evidence.",
+  "results_root": "../results",
+  "bootstrap": {
+    "seed": 20260914,
+    "samples": 20000
+  },
+  "normalization": {
+    "Walker2d-v4": {
+      "reference_min_score": 1.629008,
+      "reference_max_score": 4592.3,
+      "source": "Reference values passed to the completed evaluator"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "inverse_p001_k8_u5k_seed0",
+      "method_id": "inverse_residual_penalty_0.01_k8_u5000",
+      "training_dir": "inverse_residual_dev/inverse_p001_k8_u5k_seed0",
+      "evidence_label": "development",
+      "expected_status": "complete",
+      "selection_note": "Penalty 0.01 development candidate selected before dev50_seen inspection.",
+      "evaluations": [
+        {
+          "evaluation_id": "dev10",
+          "path": "inverse_residual_dev/inverse_p001_k8_u5k_seed0/dev_eval10.json",
+          "evidence_label": "development",
+          "selection_note": "Development screening episodes."
+        },
+        {
+          "evaluation_id": "dev50_seen",
+          "path": "inverse_residual_dev/inverse_p001_k8_u5k_seed0/dev_eval50_seen.json",
+          "evidence_label": "development",
+          "selection_note": "Post-selection development evaluation; explicitly not confirmation."
+        }
+      ],
+      "audits": [
+        {
+          "audit_id": "fresh_noise_k64",
+          "path": "inverse_residual_dev/inverse_p001_k8_u5k_seed0/fresh_noise_audit_k64.json",
+          "evidence_label": "development",
+          "selection_note": "Frozen-Q diagnostic on fixed replay rows with independent audit noise."
+        }
+      ]
+    },
+    {
+      "run_id": "identity_p001_k8_u5k_seed0",
+      "method_id": "direct_residual_penalty_0.01_k8_u5000",
+      "training_dir": "inverse_residual_dev/identity_p001_k8_u5k_seed0",
+      "evidence_label": "development",
+      "expected_status": "complete",
+      "selection_note": "Equal-capacity direct-residual control for the penalty 0.01 candidate.",
+      "evaluations": [
+        {
+          "evaluation_id": "dev10",
+          "path": "inverse_residual_dev/identity_p001_k8_u5k_seed0/dev_eval10.json",
+          "evidence_label": "development",
+          "selection_note": "Development screening episodes."
+        },
+        {
+          "evaluation_id": "dev50_seen",
+          "path": "inverse_residual_dev/identity_p001_k8_u5k_seed0/dev_eval50_seen.json",
+          "evidence_label": "development",
+          "selection_note": "Post-selection development evaluation; explicitly not confirmation."
+        }
+      ],
+      "audits": [
+        {
+          "audit_id": "fresh_noise_k64",
+          "path": "inverse_residual_dev/identity_p001_k8_u5k_seed0/fresh_noise_audit_k64.json",
+          "evidence_label": "development",
+          "selection_note": "Frozen-Q diagnostic on fixed replay rows with independent audit noise."
+        }
+      ]
+    },
+    {
+      "run_id": "inverse_p01_k8_u5k_seed0",
+      "method_id": "inverse_residual_penalty_0.1_k8_u5000",
+      "training_dir": "inverse_residual_dev/inverse_p01_k8_u5k_seed0",
+      "evidence_label": "development",
+      "expected_status": "complete",
+      "selection_note": "Penalty 0.1 development screen; no dev50 artifact exists.",
+      "evaluations": [
+        {
+          "evaluation_id": "dev10",
+          "path": "inverse_residual_dev/inverse_p01_k8_u5k_seed0/dev_eval10.json",
+          "evidence_label": "development",
+          "selection_note": "Development screening episodes."
+        }
+      ],
+      "audits": [
+        {
+          "audit_id": "fresh_noise_k64",
+          "path": "inverse_residual_dev/inverse_p01_k8_u5k_seed0/fresh_noise_audit_k64.json",
+          "evidence_label": "development",
+          "selection_note": "Frozen-Q diagnostic on fixed replay rows with independent audit noise."
+        }
+      ]
+    },
+    {
+      "run_id": "identity_p01_k8_u5k_seed0",
+      "method_id": "direct_residual_penalty_0.1_k8_u5000",
+      "training_dir": "inverse_residual_dev/identity_p01_k8_u5k_seed0",
+      "evidence_label": "development",
+      "expected_status": "complete",
+      "selection_note": "Equal-capacity direct-residual penalty 0.1 development screen; no dev50 artifact exists.",
+      "evaluations": [
+        {
+          "evaluation_id": "dev10",
+          "path": "inverse_residual_dev/identity_p01_k8_u5k_seed0/dev_eval10.json",
+          "evidence_label": "development",
+          "selection_note": "Development screening episodes."
+        }
+      ],
+      "audits": [
+        {
+          "audit_id": "fresh_noise_k64",
+          "path": "inverse_residual_dev/identity_p01_k8_u5k_seed0/fresh_noise_audit_k64.json",
+          "evidence_label": "development",
+          "selection_note": "Frozen-Q diagnostic on fixed replay rows with independent audit noise."
+        }
+      ]
+    },
+    {
+      "run_id": "inverse_p001_failed_preupdate",
+      "method_id": "inverse_residual_penalty_0.01_k8_u5000",
+      "training_dir": "inverse_residual_dev/inverse_p001_k8_u5k_seed0_failed_cuda_device_preupdate",
+      "evidence_label": "development",
+      "expected_status": "failed_preupdate",
+      "selection_note": "Retained CUDA device-canonicalization failure before any optimizer update."
+    },
+    {
+      "run_id": "identity_p001_failed_preupdate",
+      "method_id": "direct_residual_penalty_0.01_k8_u5000",
+      "training_dir": "inverse_residual_dev/identity_p001_k8_u5k_seed0_failed_cuda_device_preupdate",
+      "evidence_label": "development",
+      "expected_status": "failed_preupdate",
+      "selection_note": "Retained CUDA device-canonicalization failure before any optimizer update."
+    },
+    {
+      "run_id": "inverse_p01_failed_preupdate",
+      "method_id": "inverse_residual_penalty_0.1_k8_u5000",
+      "training_dir": "inverse_residual_dev/inverse_p01_k8_u5k_seed0_failed_cuda_device_preupdate",
+      "evidence_label": "development",
+      "expected_status": "failed_preupdate",
+      "selection_note": "Retained CUDA device-canonicalization failure before any optimizer update."
+    },
+    {
+      "run_id": "identity_p01_failed_preupdate",
+      "method_id": "direct_residual_penalty_0.1_k8_u5000",
+      "training_dir": "inverse_residual_dev/identity_p01_k8_u5k_seed0_failed_cuda_device_preupdate",
+      "evidence_label": "development",
+      "expected_status": "failed_preupdate",
+      "selection_note": "Retained CUDA device-canonicalization failure before any optimizer update."
+    },
+    {
+      "run_id": "cuda_fix_two_update_smoke",
+      "method_id": "inverse_residual_cuda_fix_smoke",
+      "training_dir": "inverse_residual_dev/smoke_cuda_fix",
+      "evidence_label": "implementation_smoke",
+      "expected_status": "complete",
+      "selection_note": "Two-update implementation smoke; never treated as performance evidence."
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison_id": "inverse_p001_dev10_adapted_minus_inverse_baseline",
+      "evidence_label": "development",
+      "selection_note": "Within-checkpoint paired ablation.",
+      "target": {"run_id": "inverse_p001_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "adapted"},
+      "reference": {"run_id": "inverse_p001_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "baseline_only"}
+    },
+    {
+      "comparison_id": "inverse_p001_dev50_seen_adapted_minus_inverse_baseline",
+      "evidence_label": "development",
+      "selection_note": "Within-checkpoint paired ablation on seen development episodes.",
+      "target": {"run_id": "inverse_p001_k8_u5k_seed0", "evaluation_id": "dev50_seen", "arm": "adapted"},
+      "reference": {"run_id": "inverse_p001_k8_u5k_seed0", "evaluation_id": "dev50_seen", "arm": "baseline_only"}
+    },
+    {
+      "comparison_id": "identity_p001_dev10_adapted_minus_identity_baseline",
+      "evidence_label": "development",
+      "selection_note": "Within-checkpoint paired direct-residual comparison.",
+      "target": {"run_id": "identity_p001_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "adapted"},
+      "reference": {"run_id": "identity_p001_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "baseline_only"}
+    },
+    {
+      "comparison_id": "identity_p001_dev50_seen_adapted_minus_identity_baseline",
+      "evidence_label": "development",
+      "selection_note": "Within-checkpoint paired direct-residual comparison on seen development episodes.",
+      "target": {"run_id": "identity_p001_k8_u5k_seed0", "evaluation_id": "dev50_seen", "arm": "adapted"},
+      "reference": {"run_id": "identity_p001_k8_u5k_seed0", "evaluation_id": "dev50_seen", "arm": "baseline_only"}
+    },
+    {
+      "comparison_id": "inverse_p001_minus_direct_p001_dev10",
+      "evidence_label": "development",
+      "selection_note": "Equal-capacity paired mechanism control.",
+      "target": {"run_id": "inverse_p001_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "adapted"},
+      "reference": {"run_id": "identity_p001_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "adapted"}
+    },
+    {
+      "comparison_id": "inverse_p001_minus_direct_p001_dev50_seen",
+      "evidence_label": "development",
+      "selection_note": "Equal-capacity paired mechanism control on seen development episodes.",
+      "target": {"run_id": "inverse_p001_k8_u5k_seed0", "evaluation_id": "dev50_seen", "arm": "adapted"},
+      "reference": {"run_id": "identity_p001_k8_u5k_seed0", "evaluation_id": "dev50_seen", "arm": "adapted"}
+    },
+    {
+      "comparison_id": "inverse_p01_dev10_adapted_minus_inverse_baseline",
+      "evidence_label": "development",
+      "selection_note": "Within-checkpoint penalty 0.1 development comparison.",
+      "target": {"run_id": "inverse_p01_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "adapted"},
+      "reference": {"run_id": "inverse_p01_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "baseline_only"}
+    },
+    {
+      "comparison_id": "identity_p01_dev10_adapted_minus_identity_baseline",
+      "evidence_label": "development",
+      "selection_note": "Within-checkpoint direct-residual penalty 0.1 development comparison.",
+      "target": {"run_id": "identity_p01_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "adapted"},
+      "reference": {"run_id": "identity_p01_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "baseline_only"}
+    },
+    {
+      "comparison_id": "inverse_p01_minus_direct_p01_dev10",
+      "evidence_label": "development",
+      "selection_note": "Equal-capacity penalty 0.1 paired mechanism control.",
+      "target": {"run_id": "inverse_p01_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "adapted"},
+      "reference": {"run_id": "identity_p01_k8_u5k_seed0", "evaluation_id": "dev10", "arm": "adapted"}
+    }
+  ]
+}

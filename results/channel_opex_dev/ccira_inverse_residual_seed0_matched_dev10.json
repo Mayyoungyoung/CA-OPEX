@@ -1,0 +1,183 @@
+{
+  "adapted": {
+    "action_noise_beta": 1.25,
+    "action_noise_seeds": [
+      38300,
+      38301,
+      38302,
+      38303,
+      38304,
+      38305,
+      38306,
+      38307,
+      38308,
+      38309
+    ],
+    "actuator_clip_fraction": 0.37627929220468675,
+    "applied_residual_abs_mean": 0.09112169080449956,
+    "command_at_bound_fraction": 0.24634146341463414,
+    "environment_seeds": [
+      28300,
+      28301,
+      28302,
+      28303,
+      28304,
+      28305,
+      28306,
+      28307,
+      28308,
+      28309
+    ],
+    "executed_commanded_action_mse": 0.3226429515456149,
+    "inverse_saturation_fraction": 0.35026303204208514,
+    "lengths": [
+      246,
+      1000,
+      357,
+      279,
+      260,
+      190,
+      391,
+      190,
+      144,
+      428
+    ],
+    "normalized_score_mean": 22.006856504067606,
+    "normalized_score_std": 16.807003547365447,
+    "proposed_residual_abs_max": 0.2499997466802597,
+    "proposed_residual_abs_mean": 0.11398199236981164,
+    "return_mean": 1011.891385783297,
+    "return_std": 771.5542364733166,
+    "returns": [
+      662.3112855399673,
+      3178.1760214170995,
+      1050.719719449305,
+      771.6508658794772,
+      770.6360580235244,
+      472.1066977915043,
+      1085.7141230588006,
+      530.2108515924032,
+      351.03512023417875,
+      1246.353114846709
+    ],
+    "use_residual": true
+  },
+  "adapter_checkpoint": "/root/hubl_research_20260914/results/inverse_residual_dev/inverse_p001_k8_u5k_seed0/latest.pt",
+  "adapter_checkpoint_sha256": "53576c6b36e77c7d78237b85b1a318098cc44336b4210dc3bab82fccac5aa43c",
+  "adapter_step": 5000,
+  "base_checkpoint": "/root/hubl_research_20260914/results/channel_dev/hubl_constant_executed_beta05_25k_seed0/latest.pt",
+  "base_checkpoint_sha256": "d29501edf9b6961225bcbc157d7d7034bc5b625856dedcbbf9421eea25898106",
+  "base_checkpoint_step": 25000,
+  "base_parameter_sha256": "6d107a968e546516a79202cad621cb4348fc0615b2b5ca94d391a072dae08f0b",
+  "baseline_only": {
+    "action_noise_beta": 1.25,
+    "action_noise_seeds": [
+      38300,
+      38301,
+      38302,
+      38303,
+      38304,
+      38305,
+      38306,
+      38307,
+      38308,
+      38309
+    ],
+    "actuator_clip_fraction": 0.3894156958367199,
+    "applied_residual_abs_mean": 0.0,
+    "command_at_bound_fraction": 0.3999819380475029,
+    "environment_seeds": [
+      28300,
+      28301,
+      28302,
+      28303,
+      28304,
+      28305,
+      28306,
+      28307,
+      28308,
+      28309
+    ],
+    "executed_commanded_action_mse": 0.3187528049897567,
+    "inverse_saturation_fraction": 0.3999819380475029,
+    "lengths": [
+      600,
+      381,
+      448,
+      247,
+      521,
+      219,
+      250,
+      259,
+      419,
+      347
+    ],
+    "normalized_score_mean": 24.87332556997909,
+    "normalized_score_std": 9.344286240268932,
+    "proposed_residual_abs_max": 0.0,
+    "proposed_residual_abs_mean": 0.0,
+    "return_mean": 1143.4815496867488,
+    "return_std": 428.9654378414734,
+    "returns": [
+      1837.2434983420355,
+      1122.1194646074252,
+      1494.714069477929,
+      704.9793965263299,
+      1760.9215426367516,
+      591.9760396488329,
+      669.5790787657052,
+      805.1592411550967,
+      1275.4462832870786,
+      1172.676882420304
+    ],
+    "use_residual": false
+  },
+  "baseline_transform": "inverse",
+  "channel": {
+    "beta_mismatch": true,
+    "distribution": "iid_uniform_minus_beta_plus_beta_per_step",
+    "environment_rollout_beta": 1.25,
+    "model_or_calibration_beta": 1.2498948872089386
+  },
+  "environment": "Walker2d-v4",
+  "evaluation_protocol": {
+    "episode_count_per_method": 10,
+    "paired_environment_and_action_noise_seeds": true,
+    "selection_rule": "all requested episodes retained"
+  },
+  "implementation": {
+    "core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+    "evaluate_sha256": "38747e3a732362734757e6bde3715eb2ac5eb9ecd0870ccead2193670da89eed",
+    "train_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4"
+  },
+  "normalization": {
+    "reference_max_score": 4592.3,
+    "reference_min_score": 1.629008
+  },
+  "paired": {
+    "adapted_minus_baseline_returns": [
+      -1174.932212802068,
+      2056.0565568096745,
+      -443.9943500286238,
+      66.67146935314736,
+      -990.2854846132273,
+      -119.86934185732855,
+      416.13504429309546,
+      -274.9483895626935,
+      -924.4111630528998,
+      73.67623242640502
+    ],
+    "episode_count": 10,
+    "positive_episode_count": 4,
+    "return_difference_mean": -131.59016390345187,
+    "return_difference_std": 879.7734823559958
+  },
+  "status": "complete",
+  "training_dataset": {
+    "observation_count": 1000000,
+    "path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+    "sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+  },
+  "training_observation_split": null,
+  "wall_time_seconds": 23.37010996497702
+}

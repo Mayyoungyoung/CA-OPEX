@@ -1,0 +1,8 @@
+{
+  "archive": "/root/hubl_research_20260914/results/action_qv_audit/mlp5x1_h128_s1500_seed47.npz",
+  "archive_sha256": "e6ec5fdd8dea119c70268cfffa1a0b110edfaf9a1482f630958c45f12485e4dc",
+  "episodes": 3255,
+  "fold_integrity": true,
+  "kept_transitions": 999928,
+  "wall_time_seconds": 71.7859405860072
+}

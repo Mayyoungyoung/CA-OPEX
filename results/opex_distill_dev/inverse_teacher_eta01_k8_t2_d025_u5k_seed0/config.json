@@ -1,0 +1,386 @@
+{
+  "adapter": {
+    "action_dim": 6,
+    "alpha": 0.0,
+    "baseline_transform": "inverse",
+    "delta_max": 0.25,
+    "depth": 2,
+    "execution_noise_beta": 1.2498948872089386,
+    "execution_noise_samples": 8,
+    "execution_noise_seed": 271828,
+    "hidden_dim": 128,
+    "max_action": 1.0,
+    "observation_dim": 17,
+    "q_scale_epsilon": 1e-06,
+    "residual_penalty": 0.0,
+    "value_estimator": "sampled_expected_q1"
+  },
+  "arguments": {
+    "audit_fraction": 0.1,
+    "base_checkpoint": "/root/hubl_research_20260914/results/channel_dev/hubl_constant_executed_beta05_25k_seed0/latest.pt",
+    "batch_size": 256,
+    "channel_calibration": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001_calibration.json",
+    "checkpoint_period": 1000,
+    "dataset": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+    "delta_max": 0.25,
+    "depth": 2,
+    "device": "cuda",
+    "execution_noise_beta": null,
+    "hidden_dim": 128,
+    "learning_rate": 0.0003,
+    "log_period": 100,
+    "max_observations": null,
+    "output_dir": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0",
+    "precompute_batch_size": 8192,
+    "resume": false,
+    "split_seed": 424242,
+    "teacher_gradient_steps": 2,
+    "teacher_k": 8,
+    "teacher_noise_seed": 271828,
+    "teacher_step_size": 0.1,
+    "torch_threads": 2,
+    "train_seed": 0,
+    "updates": 5000
+  },
+  "base_action_pairing": "executed_executed",
+  "base_checkpoint": "/root/hubl_research_20260914/results/channel_dev/hubl_constant_executed_beta05_25k_seed0/latest.pt",
+  "base_checkpoint_sha256": "d29501edf9b6961225bcbc157d7d7034bc5b625856dedcbbf9421eea25898106",
+  "base_checkpoint_step": 25000,
+  "base_parameter_sha256_before": "6d107a968e546516a79202cad621cb4348fc0615b2b5ca94d391a072dae08f0b",
+  "baseline_precomputation": {
+    "action_value_count": 5399640,
+    "initial_adapter_max_abs_command_difference": 0.0,
+    "inverse_command_at_bound_count": 1848918,
+    "inverse_command_at_bound_fraction": 0.34241504989221505,
+    "inverse_saturation_count": 1848918,
+    "inverse_saturation_fraction": 0.34241504989221505,
+    "observation_count": 899940,
+    "seconds": 10.175654029997531
+  },
+  "baseline_transform": "inverse",
+  "channel_calibration": {
+    "action_dim": 6,
+    "action_high": 1.0,
+    "action_low": -1.0,
+    "beta": 1.2498948872089386,
+    "calibration_path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001_calibration.json",
+    "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+    "commands_sha256": "61080b7a6e7e21a06c948d1bc56835146f4972f17047c379e569e8dcbe6cbd9f",
+    "estimator": "censored_uniform_plus_clip_mle",
+    "executed_sha256": "9674d0953af3cbfc54cef126b9dcebac96bab524b868bd591d10021c0a308710",
+    "input_provenance": {
+      "action_dim": 6,
+      "action_high": 1.0,
+      "action_low": -1.0,
+      "beta": 1.25,
+      "bit_generator": "PCG64",
+      "channel": "iid_uniform_additive_then_clip",
+      "commands_sha256": "61080b7a6e7e21a06c948d1bc56835146f4972f17047c379e569e8dcbe6cbd9f",
+      "contains_state_or_transition_fields": false,
+      "executed_sha256": "9674d0953af3cbfc54cef126b9dcebac96bab524b868bd591d10021c0a308710",
+      "generator_script_sha256": "d12213d8b61d49bc550adb6079d5274058ab64fa194950ec1f911ee74a57e12f",
+      "noise_spawn_key": [
+        1
+      ],
+      "pair_count": 512,
+      "root_seed": 27001,
+      "schema": "paired_uniform_clip_channel_v1",
+      "selection": "uniform_without_replacement",
+      "selection_spawn_key": [
+        0
+      ],
+      "source_command_count": 1000000,
+      "source_dataset_path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+      "source_dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "source_hdf5_schema": "flat"
+    },
+    "pair_archive_path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001.npz",
+    "pair_archive_sha256": "76bc6bbcc47d2c6e2c76dc918c57700d9786edba19e18f8715a78c92e6c5132b",
+    "pair_count": 512,
+    "source": "censored_uniform_plus_clip_pair_calibration",
+    "uncertainty_beta_interval": [
+      1.2463959604501724,
+      1.2498698003590107
+    ]
+  },
+  "checkpoint_policy": "atomic latest.pt before each logged progress event, requested checkpoint period, and final update",
+  "dataset": {
+    "considered_observation_count": 1000000,
+    "held_out_audit_observation_count": 100060,
+    "path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+    "sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+    "training_observation_count": 899940
+  },
+  "development_only": true,
+  "exact_training_resume_implemented": true,
+  "implementation": {
+    "evaluate_channel_opex_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+    "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+    "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+    "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+    "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+    "train_iql_sha256": "b3a159fc8c0612c5c23578a1496a6beb858063462c086a824fe7874d09b089ee",
+    "train_opex_distilled_adapter_sha256": "f1be7520cc84bc7851c9812ff029e67289f912d163c2d2ee64843e17b61ac5ea"
+  },
+  "method": "calibrated_channel_opex_teacher_distillation",
+  "objective": {
+    "formula": "mean(((student_command-stopgrad(teacher_command))/delta_max)^2)",
+    "student_deployment_q1_rows_per_action": 0,
+    "supervision": "online_teacher_command_for_each_sampled_source_train_state"
+  },
+  "observation_split": {
+    "audit_episode_unit_count": 303,
+    "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+    "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+    "audit_observation_count": 100060,
+    "base_critic_training_partition_controlled": false,
+    "boundary_source": "terminals+timeouts",
+    "considered_observation_count": 1000000,
+    "episode_unit_count": 3255,
+    "holdout_scope": "adapter_sgd_and_value_scale_calibration",
+    "max_observations": null,
+    "method": "whole_episode_permutation_to_state_count",
+    "realized_audit_fraction": 0.10006,
+    "requested_audit_fraction": 0.1,
+    "schema": "adapter_observation_split_v1",
+    "seed": 424242,
+    "source_observation_count": 1000000,
+    "storage_layout": "flat",
+    "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d",
+    "train_observation_count": 899940
+  },
+  "q1_rows_per_state_per_update": 16,
+  "resume_signature": {
+    "adapter": {
+      "action_dim": 6,
+      "alpha": 0.0,
+      "baseline_transform": "inverse",
+      "delta_max": 0.25,
+      "depth": 2,
+      "execution_noise_beta": 1.2498948872089386,
+      "execution_noise_samples": 8,
+      "execution_noise_seed": 271828,
+      "hidden_dim": 128,
+      "max_action": 1.0,
+      "observation_dim": 17,
+      "q_scale_epsilon": 1e-06,
+      "residual_penalty": 0.0,
+      "value_estimator": "sampled_expected_q1"
+    },
+    "base": {
+      "action_pairing": "executed_executed",
+      "checkpoint_sha256": "d29501edf9b6961225bcbc157d7d7034bc5b625856dedcbbf9421eea25898106",
+      "checkpoint_step": 25000,
+      "parameter_sha256": "6d107a968e546516a79202cad621cb4348fc0615b2b5ca94d391a072dae08f0b",
+      "path": "/root/hubl_research_20260914/results/channel_dev/hubl_constant_executed_beta05_25k_seed0/latest.pt"
+    },
+    "baseline_precomputation": {
+      "action_value_count": 5399640,
+      "inverse_command_at_bound_count": 1848918,
+      "inverse_command_at_bound_fraction": 0.34241504989221505,
+      "inverse_saturation_count": 1848918,
+      "inverse_saturation_fraction": 0.34241504989221505,
+      "observation_count": 899940
+    },
+    "channel_calibration": {
+      "action_dim": 6,
+      "action_high": 1.0,
+      "action_low": -1.0,
+      "beta": 1.2498948872089386,
+      "calibration_path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001_calibration.json",
+      "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+      "commands_sha256": "61080b7a6e7e21a06c948d1bc56835146f4972f17047c379e569e8dcbe6cbd9f",
+      "estimator": "censored_uniform_plus_clip_mle",
+      "executed_sha256": "9674d0953af3cbfc54cef126b9dcebac96bab524b868bd591d10021c0a308710",
+      "input_provenance": {
+        "action_dim": 6,
+        "action_high": 1.0,
+        "action_low": -1.0,
+        "beta": 1.25,
+        "bit_generator": "PCG64",
+        "channel": "iid_uniform_additive_then_clip",
+        "commands_sha256": "61080b7a6e7e21a06c948d1bc56835146f4972f17047c379e569e8dcbe6cbd9f",
+        "contains_state_or_transition_fields": false,
+        "executed_sha256": "9674d0953af3cbfc54cef126b9dcebac96bab524b868bd591d10021c0a308710",
+        "generator_script_sha256": "d12213d8b61d49bc550adb6079d5274058ab64fa194950ec1f911ee74a57e12f",
+        "noise_spawn_key": [
+          1
+        ],
+        "pair_count": 512,
+        "root_seed": 27001,
+        "schema": "paired_uniform_clip_channel_v1",
+        "selection": "uniform_without_replacement",
+        "selection_spawn_key": [
+          0
+        ],
+        "source_command_count": 1000000,
+        "source_dataset_path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+        "source_dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+        "source_hdf5_schema": "flat"
+      },
+      "pair_archive_path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001.npz",
+      "pair_archive_sha256": "76bc6bbcc47d2c6e2c76dc918c57700d9786edba19e18f8715a78c92e6c5132b",
+      "pair_count": 512,
+      "source": "censored_uniform_plus_clip_pair_calibration",
+      "uncertainty_beta_interval": [
+        1.2463959604501724,
+        1.2498698003590107
+      ]
+    },
+    "dataset": {
+      "considered_observation_count": 1000000,
+      "held_out_audit_observation_count": 100060,
+      "path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+      "sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "training_observation_count": 899940
+    },
+    "implementation": {
+      "evaluate_channel_opex_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+      "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+      "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+      "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+      "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+      "train_iql_sha256": "b3a159fc8c0612c5c23578a1496a6beb858063462c086a824fe7874d09b089ee",
+      "train_opex_distilled_adapter_sha256": "f1be7520cc84bc7851c9812ff029e67289f912d163c2d2ee64843e17b61ac5ea"
+    },
+    "initial_adapter_parameter_sha256": "64bae2cb7d9a9fc3b24fa21ea2fc474a4806174d8dbc58d22122516f10cc0836",
+    "method": "calibrated_channel_opex_teacher_distillation",
+    "observation_split": {
+      "audit_episode_unit_count": 303,
+      "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+      "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+      "audit_observation_count": 100060,
+      "base_critic_training_partition_controlled": false,
+      "boundary_source": "terminals+timeouts",
+      "considered_observation_count": 1000000,
+      "episode_unit_count": 3255,
+      "holdout_scope": "adapter_sgd_and_value_scale_calibration",
+      "max_observations": null,
+      "method": "whole_episode_permutation_to_state_count",
+      "realized_audit_fraction": 0.10006,
+      "requested_audit_fraction": 0.1,
+      "schema": "adapter_observation_split_v1",
+      "seed": 424242,
+      "source_observation_count": 1000000,
+      "storage_layout": "flat",
+      "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d",
+      "train_observation_count": 899940
+    },
+    "optimization": {
+      "batch_size": 256,
+      "checkpoint_period": 1000,
+      "learning_rate": 0.0003,
+      "log_period": 100,
+      "loss": "mean(((student_command-teacher_command)/delta_max)^2)",
+      "optimizer": "torch.optim.Adam",
+      "precompute_batch_size": 8192,
+      "torch_threads": 2,
+      "train_seed": 0
+    },
+    "runtime": {
+      "cublas_workspace_config": null,
+      "cuda_device": {
+        "capability": [
+          7,
+          5
+        ],
+        "device_count": 1,
+        "name": "NVIDIA GeForce RTX 2080 Ti",
+        "total_memory_bytes": 23069917184
+      },
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": false,
+      "deterministic_algorithms": false,
+      "device": "cuda:0",
+      "float32_matmul_precision": "highest",
+      "h5py_version": "3.16.0",
+      "numpy_version": "1.26.0",
+      "python_version": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+      "torch_cuda_version": "12.1",
+      "torch_cudnn_version": 8902,
+      "torch_num_interop_threads": 28,
+      "torch_num_threads": 2,
+      "torch_version": "2.1.0"
+    },
+    "schema": "opex_distilled_adapter_resume_signature_v1",
+    "teacher": {
+      "action_gradient_vectors_per_state_per_update": 2,
+      "algorithm": "fixed_anchor_projected_channel_aware_opex",
+      "anchor": "calibrated_exact_clipped_uniform_mean_inverse",
+      "channel_estimator": "fresh_antithetic_monte_carlo_expected_q1",
+      "config": {
+        "action_dim": 6,
+        "baseline_transform": "inverse",
+        "channel_beta": 1.2498948872089386,
+        "delta_max": 0.25,
+        "gradient_noise_samples": 8,
+        "gradient_steps": 2,
+        "step_size": 0.1
+      },
+      "critic": "frozen_q1_on_executed_physical_actions",
+      "q1_gradient_calls_per_minibatch_update": 2,
+      "q1_rows_per_state_per_update": 16,
+      "teacher_rng": {
+        "device": "cuda:0",
+        "fresh_noise_each_gradient_step_and_update": true,
+        "isolated_from_minibatch_and_global_rngs": true,
+        "seed": 271828
+      }
+    }
+  },
+  "resume_signature_sha256": "c9d32bcfe94f059cebe3e5f1475d9d623abffd82e347969c817992e3f2de8146",
+  "runtime": {
+    "cublas_workspace_config": null,
+    "cuda_device": {
+      "capability": [
+        7,
+        5
+      ],
+      "device_count": 1,
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "total_memory_bytes": 23069917184
+    },
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false,
+    "device": "cuda:0",
+    "float32_matmul_precision": "highest",
+    "h5py_version": "3.16.0",
+    "numpy_version": "1.26.0",
+    "python_version": "3.10.13 (main, Sep 11 2023, 13:44:35) [GCC 11.2.0]",
+    "torch_cuda_version": "12.1",
+    "torch_cudnn_version": 8902,
+    "torch_num_interop_threads": 28,
+    "torch_num_threads": 2,
+    "torch_version": "2.1.0"
+  },
+  "selection_rule": "all requested updates retained; no run exclusion",
+  "teacher": {
+    "action_gradient_vectors_per_state_per_update": 2,
+    "algorithm": "fixed_anchor_projected_channel_aware_opex",
+    "anchor": "calibrated_exact_clipped_uniform_mean_inverse",
+    "channel_estimator": "fresh_antithetic_monte_carlo_expected_q1",
+    "config": {
+      "action_dim": 6,
+      "baseline_transform": "inverse",
+      "channel_beta": 1.2498948872089386,
+      "delta_max": 0.25,
+      "gradient_noise_samples": 8,
+      "gradient_steps": 2,
+      "step_size": 0.1
+    },
+    "critic": "frozen_q1_on_executed_physical_actions",
+    "q1_gradient_calls_per_minibatch_update": 2,
+    "q1_rows_per_state_per_update": 16,
+    "teacher_rng": {
+      "device": "cuda:0",
+      "fresh_noise_each_gradient_step_and_update": true,
+      "isolated_from_minibatch_and_global_rngs": true,
+      "seed": 271828
+    }
+  }
+}

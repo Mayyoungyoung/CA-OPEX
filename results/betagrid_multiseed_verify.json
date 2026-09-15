@@ -1,0 +1,20 @@
+{
+  "aggregate_path": "/root/hubl_research_20260914/results/betagrid_multiseed_aggregate.json",
+  "aggregate_sha256": "c1aad1bb5b9f28d47db6cdffde7153213b5c8d4b399dc85ec6ea1624cd0ef6c0",
+  "betas": [
+    0.5,
+    0.9,
+    1.1,
+    1.4
+  ],
+  "checks_performed": 420,
+  "failure_count": 0,
+  "failures": [],
+  "schema_version": "ca-opex-walker-betagrid-verify-v1",
+  "status": "verified_complete",
+  "training_seeds": [
+    1,
+    2,
+    10
+  ]
+}

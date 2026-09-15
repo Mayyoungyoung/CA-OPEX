@@ -1,0 +1,26 @@
+UTC_START=2026-09-15T07:17:10Z
+PWD=/root/hubl_research_20260914
+Python 3.10.13
+
+==================================== ERRORS ====================================
+____ ERROR collecting code/tests/test_aggregate_ca_opex_walker_betagrid.py _____
+import file mismatch:
+imported module 'test_aggregate_ca_opex_walker_betagrid' has this __file__ attribute:
+  /root/hubl_research_20260914/code/test_aggregate_ca_opex_walker_betagrid.py
+which is not the same as the test file we want to collect:
+  /root/hubl_research_20260914/code/tests/test_aggregate_ca_opex_walker_betagrid.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____________________ ERROR collecting tests/test_td3bc.py _____________________
+import file mismatch:
+imported module 'test_td3bc' has this __file__ attribute:
+  /root/hubl_research_20260914/code/tests/test_td3bc.py
+which is not the same as the test file we want to collect:
+  /root/hubl_research_20260914/tests/test_td3bc.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+=========================== short test summary info ============================
+ERROR code/tests/test_aggregate_ca_opex_walker_betagrid.py
+ERROR tests/test_td3bc.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+2 errors in 2.79s
+UTC_END=2026-09-15T07:17:14Z
+PYTEST_STATUS=0

@@ -1,0 +1,16 @@
+nohup: ignoring input
+2026-09-14T17:52:28Z run_id=driver stage=frozen_channel_opex_block status=started
+2026-09-14T17:52:28Z run_id=external_opex_original_seed1 stage=paired_evaluation status=started
+2026-09-14T17:53:31Z run_id=external_opex_original_seed1 stage=paired_evaluation status=completed
+2026-09-14T17:53:31Z run_id=external_ca_opex_inverse_seed1 stage=paired_evaluation status=started
+2026-09-14T17:57:34Z run_id=external_ca_opex_inverse_seed1 stage=paired_evaluation status=completed
+2026-09-14T17:57:34Z run_id=external_ca_opex_identity_seed1 stage=paired_evaluation status=started
+2026-09-14T17:59:48Z run_id=external_ca_opex_identity_seed1 stage=paired_evaluation status=completed
+2026-09-14T17:59:48Z run_id=external_opex_original_seed10 stage=paired_evaluation status=started
+2026-09-14T18:00:46Z run_id=external_opex_original_seed10 stage=paired_evaluation status=completed
+2026-09-14T18:00:46Z run_id=external_ca_opex_inverse_seed10 stage=paired_evaluation status=started
+2026-09-14T18:04:20Z run_id=external_ca_opex_inverse_seed10 stage=paired_evaluation status=completed
+2026-09-14T18:04:20Z run_id=external_ca_opex_identity_seed10 stage=paired_evaluation status=started
+2026-09-14T18:06:29Z run_id=external_ca_opex_identity_seed10 stage=paired_evaluation status=completed
+2026-09-14T18:06:29Z run_id=driver stage=frozen_channel_opex_block status=completed
+Frozen channel-OPEX confirmation block completed in /root/hubl_research_20260914/results/inverse_residual_confirm/external_controls.

@@ -1,0 +1,251 @@
+{
+  "aggregation_status": "complete",
+  "bootstrap": {
+    "confidence": 0.95,
+    "samples": 10,
+    "seed": 20260914,
+    "unit": "paired_evaluation_episode"
+  },
+  "evaluation_episode_note": "Evaluation episodes estimate a fixed trained policy and are not independent training repeats.",
+  "evaluations": [
+    {
+      "action_noise_beta": 0.0,
+      "action_noise_seeds_json_pointer": null,
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_horizon_c002_seed0/latest.pt",
+      "checkpoint_sha256": "8835485b6ac37f2646222d7cac33e70e01867b64fdb762ec8300d8798d4b99d4",
+      "checkpoint_step": 50000,
+      "command_saturation_fraction": null,
+      "command_scale": 1.0,
+      "command_transform": "identity",
+      "command_transform_beta": null,
+      "command_transform_saturation_fraction": null,
+      "condition": "clean",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/clean/episode_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 86.23812038701726,
+      "evaluation_control_provenance": "legacy_implicit_scale_1_identity",
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 79.36195682130085,
+      "normalized_score_std": 0.7089283058762565,
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "raw_returns_json_pointer": "/clean/returns",
+      "return_mean": 3644.875338479024,
+      "return_std": 32.54456609193832,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0",
+      "run_id": "hubl_horizon_c002_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\independent_eval_50.json",
+      "source_sha256": "0ae6e12ad73a3a8859d2f795bebc2f686cc19caa291662fc5783d6e17d2a6099",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 540.4508485469851,
+      "training_status": "complete",
+      "transformed_command_at_bound_fraction": null,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_noise_seeds_json_pointer": "/persistent_action_noise/action_noise_seeds",
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_horizon_c002_seed0/latest.pt",
+      "checkpoint_sha256": "8835485b6ac37f2646222d7cac33e70e01867b64fdb762ec8300d8798d4b99d4",
+      "checkpoint_step": 50000,
+      "command_saturation_fraction": null,
+      "command_scale": 1.0,
+      "command_transform": "identity",
+      "command_transform_beta": null,
+      "command_transform_saturation_fraction": null,
+      "condition": "persistent_action_noise",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/persistent_action_noise/environment_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 86.23812038701726,
+      "evaluation_control_provenance": "legacy_implicit_scale_1_identity",
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 36.231018547749606,
+      "normalized_score_std": 21.027607246452042,
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "raw_returns_json_pointer": "/persistent_action_noise/returns",
+      "return_mean": 1664.8758665776809,
+      "return_std": 965.308266174564,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0",
+      "run_id": "hubl_horizon_c002_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\independent_eval_50.json",
+      "source_sha256": "0ae6e12ad73a3a8859d2f795bebc2f686cc19caa291662fc5783d6e17d2a6099",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 540.4508485469851,
+      "training_status": "complete",
+      "transformed_command_at_bound_fraction": null,
+      "variant": "hubl_horizon"
+    }
+  ],
+  "input_files": [
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\config.json",
+      "role": "run:config.json",
+      "sha256": "28d1383aecb8cdcbd96d75339bfd774ca7197583bb47a132c050ce5ed9c05de1",
+      "size_bytes": 4761,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\summary.json",
+      "role": "run:summary.json",
+      "sha256": "c8a2f3a4538549a7a97052eafd2fcdb3aaa7ea14569876281c46a04f035011f8",
+      "size_bytes": 8928,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\independent_eval_50.json",
+      "role": "run:independent_eval_50.json",
+      "sha256": "0ae6e12ad73a3a8859d2f795bebc2f686cc19caa291662fc5783d6e17d2a6099",
+      "size_bytes": 6759,
+      "status": "read"
+    }
+  ],
+  "paired_comparisons": [],
+  "reference_run": null,
+  "runs": [
+    {
+      "action_pairing": "executed_executed",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "issues": [],
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0",
+      "run_id": "hubl_horizon_c002_seed0",
+      "run_status": "complete",
+      "sources": [
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\config.json",
+          "role": "config.json",
+          "sha256": "28d1383aecb8cdcbd96d75339bfd774ca7197583bb47a132c050ce5ed9c05de1",
+          "size_bytes": 4761,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\summary.json",
+          "role": "summary.json",
+          "sha256": "c8a2f3a4538549a7a97052eafd2fcdb3aaa7ea14569876281c46a04f035011f8",
+          "size_bytes": 8928,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\independent_eval_50.json",
+          "role": "independent_eval_50.json",
+          "sha256": "0ae6e12ad73a3a8859d2f795bebc2f686cc19caa291662fc5783d6e17d2a6099",
+          "size_bytes": 6759,
+          "status": "read"
+        }
+      ],
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 540.4508485469851,
+      "training_status": "complete",
+      "updates": 50000,
+      "variant": "hubl_horizon"
+    }
+  ],
+  "schema_version": "td3bc-aggregate-v1",
+  "statistical_unit": "independent_training_seed",
+  "training_seed_aggregates": [
+    {
+      "action_noise_beta": 0.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "command_scale": 1.0,
+      "command_transform": "identity",
+      "command_transform_beta": null,
+      "condition": "clean",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 79.36195682130085,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            79.36195682130085
+          ],
+          "return_means": [
+            3644.875338479024
+          ],
+          "run_ids": [
+            "hubl_horizon_c002_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "return_mean_across_train_seeds": 3644.875338479024,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "command_scale": 1.0,
+      "command_transform": "identity",
+      "command_transform_beta": null,
+      "condition": "persistent_action_noise",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 36.231018547749606,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            36.231018547749606
+          ],
+          "return_means": [
+            1664.8758665776809
+          ],
+          "run_ids": [
+            "hubl_horizon_c002_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "return_mean_across_train_seeds": 1664.8758665776809,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_horizon"
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+EEEEEss................................................................. [ 29%]
+........................................................................ [ 58%]
+........................................................................ [ 87%]
+...............................                                          [100%]
+==================================== ERRORS ====================================
+______________ ERROR at setup of test_hopper_aggregate_completes _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-97/test_hopper_aggregate_complete0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fbfe69b2d40>
+
+    @pytest.fixture()
+    def run_root(tmp_path, monkeypatch):
+        calibration = tmp_path / "synthetic_calibration.json"
+        calibration.write_text("{}", encoding="utf-8")
+        calibration_sha = sha256_file(calibration)
+        monkeypatch.setattr(aggregate, "EXPECTED_CALIBRATION_SHA256", calibration_sha)
+        aggregate.CALIBRATION_SHA_FIXTURE = calibration_sha
+        aggregate.CALIBRATION_PATH_FIXTURE = str(calibration)
+    
+        root = tmp_path / "hopper_seed2"
+        checkpoint = root / "base/latest.pt"
+        checkpoint.parent.mkdir(parents=True)
+        checkpoint.write_bytes(b"synthetic-checkpoint")
+        checkpoint_sha = sha256_file(checkpoint)
+        write_json(root / "base/config.json", base_config(2))
+    
+        rng = np.random.default_rng(11)
+        complete = 900.0 + rng.normal(0, 1, EPISODES)
+        controls = {
+>           "complete": channel_raw(
+                control_id="complete",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=complete.tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "calibrated_identity": channel_raw(
+                control_id="calibrated_identity",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 120.0).tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "nominal_k8t2": channel_raw(
+                control_id="nominal_k8t2",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 260.0).tolist(),
+            ),
+            "original_opex": channel_raw(
+                control_id="original_opex",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 300.0).tolist(),
+            ),
+        }
+
+test_aggregate_ca_opex_hopper_crosstask.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_aggregate_ca_opex_hopper_crosstask.py:147: in channel_raw
+    "implementation": live_implementation_map(),
+test_aggregate_ca_opex_hopper_crosstask.py:43: in live_implementation_map
+    return {
+test_aggregate_ca_opex_hopper_crosstask.py:44: in <dictcomp>
+    raw_key: sha256_file(CODE_DIR / filename)
+test_aggregate_ca_opex_hopper_crosstask.py:34: in sha256_file
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+/opt/conda/lib/python3.10/pathlib.py:1126: in read_bytes
+    with self.open(mode='rb') as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/hubl_research_20260914/evaluate_channel_opex.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/hubl_research_20260914/evaluate_channel_opex.py'
+
+/opt/conda/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_______________ ERROR at setup of test_hopper_missing_arm_fails ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-97/test_hopper_missing_arm_fails0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fbfe4c23850>
+
+    @pytest.fixture()
+    def run_root(tmp_path, monkeypatch):
+        calibration = tmp_path / "synthetic_calibration.json"
+        calibration.write_text("{}", encoding="utf-8")
+        calibration_sha = sha256_file(calibration)
+        monkeypatch.setattr(aggregate, "EXPECTED_CALIBRATION_SHA256", calibration_sha)
+        aggregate.CALIBRATION_SHA_FIXTURE = calibration_sha
+        aggregate.CALIBRATION_PATH_FIXTURE = str(calibration)
+    
+        root = tmp_path / "hopper_seed2"
+        checkpoint = root / "base/latest.pt"
+        checkpoint.parent.mkdir(parents=True)
+        checkpoint.write_bytes(b"synthetic-checkpoint")
+        checkpoint_sha = sha256_file(checkpoint)
+        write_json(root / "base/config.json", base_config(2))
+    
+        rng = np.random.default_rng(11)
+        complete = 900.0 + rng.normal(0, 1, EPISODES)
+        controls = {
+>           "complete": channel_raw(
+                control_id="complete",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=complete.tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "calibrated_identity": channel_raw(
+                control_id="calibrated_identity",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 120.0).tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "nominal_k8t2": channel_raw(
+                control_id="nominal_k8t2",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 260.0).tolist(),
+            ),
+            "original_opex": channel_raw(
+                control_id="original_opex",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 300.0).tolist(),
+            ),
+        }
+
+test_aggregate_ca_opex_hopper_crosstask.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_aggregate_ca_opex_hopper_crosstask.py:147: in channel_raw
+    "implementation": live_implementation_map(),
+test_aggregate_ca_opex_hopper_crosstask.py:43: in live_implementation_map
+    return {
+test_aggregate_ca_opex_hopper_crosstask.py:44: in <dictcomp>
+    raw_key: sha256_file(CODE_DIR / filename)
+test_aggregate_ca_opex_hopper_crosstask.py:34: in sha256_file
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+/opt/conda/lib/python3.10/pathlib.py:1126: in read_bytes
+    with self.open(mode='rb') as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/hubl_research_20260914/evaluate_channel_opex.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/hubl_research_20260914/evaluate_channel_opex.py'
+
+/opt/conda/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_________ ERROR at setup of test_hopper_reserved_walker_block_rejected _________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-97/test_hopper_reserved_walker_bl0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fbfe4b5f9a0>
+
+    @pytest.fixture()
+    def run_root(tmp_path, monkeypatch):
+        calibration = tmp_path / "synthetic_calibration.json"
+        calibration.write_text("{}", encoding="utf-8")
+        calibration_sha = sha256_file(calibration)
+        monkeypatch.setattr(aggregate, "EXPECTED_CALIBRATION_SHA256", calibration_sha)
+        aggregate.CALIBRATION_SHA_FIXTURE = calibration_sha
+        aggregate.CALIBRATION_PATH_FIXTURE = str(calibration)
+    
+        root = tmp_path / "hopper_seed2"
+        checkpoint = root / "base/latest.pt"
+        checkpoint.parent.mkdir(parents=True)
+        checkpoint.write_bytes(b"synthetic-checkpoint")
+        checkpoint_sha = sha256_file(checkpoint)
+        write_json(root / "base/config.json", base_config(2))
+    
+        rng = np.random.default_rng(11)
+        complete = 900.0 + rng.normal(0, 1, EPISODES)
+        controls = {
+>           "complete": channel_raw(
+                control_id="complete",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=complete.tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "calibrated_identity": channel_raw(
+                control_id="calibrated_identity",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 120.0).tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "nominal_k8t2": channel_raw(
+                control_id="nominal_k8t2",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 260.0).tolist(),
+            ),
+            "original_opex": channel_raw(
+                control_id="original_opex",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 300.0).tolist(),
+            ),
+        }
+
+test_aggregate_ca_opex_hopper_crosstask.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_aggregate_ca_opex_hopper_crosstask.py:147: in channel_raw
+    "implementation": live_implementation_map(),
+test_aggregate_ca_opex_hopper_crosstask.py:43: in live_implementation_map
+    return {
+test_aggregate_ca_opex_hopper_crosstask.py:44: in <dictcomp>
+    raw_key: sha256_file(CODE_DIR / filename)
+test_aggregate_ca_opex_hopper_crosstask.py:34: in sha256_file
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+/opt/conda/lib/python3.10/pathlib.py:1126: in read_bytes
+    with self.open(mode='rb') as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/hubl_research_20260914/evaluate_channel_opex.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/hubl_research_20260914/evaluate_channel_opex.py'
+
+/opt/conda/lib/python3.10/pathlib.py:1119: FileNotFoundError
+___________ ERROR at setup of test_hopper_dev_training_seed_rejected ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-97/test_hopper_dev_training_seed_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fbfe4c97fd0>
+
+    @pytest.fixture()
+    def run_root(tmp_path, monkeypatch):
+        calibration = tmp_path / "synthetic_calibration.json"
+        calibration.write_text("{}", encoding="utf-8")
+        calibration_sha = sha256_file(calibration)
+        monkeypatch.setattr(aggregate, "EXPECTED_CALIBRATION_SHA256", calibration_sha)
+        aggregate.CALIBRATION_SHA_FIXTURE = calibration_sha
+        aggregate.CALIBRATION_PATH_FIXTURE = str(calibration)
+    
+        root = tmp_path / "hopper_seed2"
+        checkpoint = root / "base/latest.pt"
+        checkpoint.parent.mkdir(parents=True)
+        checkpoint.write_bytes(b"synthetic-checkpoint")
+        checkpoint_sha = sha256_file(checkpoint)
+        write_json(root / "base/config.json", base_config(2))
+    
+        rng = np.random.default_rng(11)
+        complete = 900.0 + rng.normal(0, 1, EPISODES)
+        controls = {
+>           "complete": channel_raw(
+                control_id="complete",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=complete.tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "calibrated_identity": channel_raw(
+                control_id="calibrated_identity",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 120.0).tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "nominal_k8t2": channel_raw(
+                control_id="nominal_k8t2",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 260.0).tolist(),
+            ),
+            "original_opex": channel_raw(
+                control_id="original_opex",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 300.0).tolist(),
+            ),
+        }
+
+test_aggregate_ca_opex_hopper_crosstask.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_aggregate_ca_opex_hopper_crosstask.py:147: in channel_raw
+    "implementation": live_implementation_map(),
+test_aggregate_ca_opex_hopper_crosstask.py:43: in live_implementation_map
+    return {
+test_aggregate_ca_opex_hopper_crosstask.py:44: in <dictcomp>
+    raw_key: sha256_file(CODE_DIR / filename)
+test_aggregate_ca_opex_hopper_crosstask.py:34: in sha256_file
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+/opt/conda/lib/python3.10/pathlib.py:1126: in read_bytes
+    with self.open(mode='rb') as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/hubl_research_20260914/evaluate_channel_opex.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/hubl_research_20260914/evaluate_channel_opex.py'
+
+/opt/conda/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_______________ ERROR at setup of test_hopper_refuses_overwrite ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-97/test_hopper_refuses_overwrite0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fbfe4c76380>
+
+    @pytest.fixture()
+    def run_root(tmp_path, monkeypatch):
+        calibration = tmp_path / "synthetic_calibration.json"
+        calibration.write_text("{}", encoding="utf-8")
+        calibration_sha = sha256_file(calibration)
+        monkeypatch.setattr(aggregate, "EXPECTED_CALIBRATION_SHA256", calibration_sha)
+        aggregate.CALIBRATION_SHA_FIXTURE = calibration_sha
+        aggregate.CALIBRATION_PATH_FIXTURE = str(calibration)
+    
+        root = tmp_path / "hopper_seed2"
+        checkpoint = root / "base/latest.pt"
+        checkpoint.parent.mkdir(parents=True)
+        checkpoint.write_bytes(b"synthetic-checkpoint")
+        checkpoint_sha = sha256_file(checkpoint)
+        write_json(root / "base/config.json", base_config(2))
+    
+        rng = np.random.default_rng(11)
+        complete = 900.0 + rng.normal(0, 1, EPISODES)
+        controls = {
+>           "complete": channel_raw(
+                control_id="complete",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=complete.tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "calibrated_identity": channel_raw(
+                control_id="calibrated_identity",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 120.0).tolist(),
+                calibration_sha=calibration_sha,
+            ),
+            "nominal_k8t2": channel_raw(
+                control_id="nominal_k8t2",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 260.0).tolist(),
+            ),
+            "original_opex": channel_raw(
+                control_id="original_opex",
+                checkpoint_sha=checkpoint_sha,
+                training_seed=2,
+                returns=(complete - 300.0).tolist(),
+            ),
+        }
+
+test_aggregate_ca_opex_hopper_crosstask.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_aggregate_ca_opex_hopper_crosstask.py:147: in channel_raw
+    "implementation": live_implementation_map(),
+test_aggregate_ca_opex_hopper_crosstask.py:43: in live_implementation_map
+    return {
+test_aggregate_ca_opex_hopper_crosstask.py:44: in <dictcomp>
+    raw_key: sha256_file(CODE_DIR / filename)
+test_aggregate_ca_opex_hopper_crosstask.py:34: in sha256_file
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+/opt/conda/lib/python3.10/pathlib.py:1126: in read_bytes
+    with self.open(mode='rb') as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/hubl_research_20260914/evaluate_channel_opex.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/hubl_research_20260914/evaluate_channel_opex.py'
+
+/opt/conda/lib/python3.10/pathlib.py:1119: FileNotFoundError
+=========================== short test summary info ============================
+ERROR test_aggregate_ca_opex_hopper_crosstask.py::test_hopper_aggregate_completes
+ERROR test_aggregate_ca_opex_hopper_crosstask.py::test_hopper_missing_arm_fails
+ERROR test_aggregate_ca_opex_hopper_crosstask.py::test_hopper_reserved_walker_block_rejected
+ERROR test_aggregate_ca_opex_hopper_crosstask.py::test_hopper_dev_training_seed_rejected
+ERROR test_aggregate_ca_opex_hopper_crosstask.py::test_hopper_refuses_overwrite
+240 passed, 2 skipped, 5 errors in 8.03s

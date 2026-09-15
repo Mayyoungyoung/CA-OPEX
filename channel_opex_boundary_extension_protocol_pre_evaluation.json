@@ -1,0 +1,68 @@
+{
+  "schema_version": "channel-opex-boundary-extension-protocol-v1",
+  "evidence_label": "development",
+  "frozen_before_extension_evaluations": true,
+  "trigger": "The original predeclared grid selected its largest tested step size 0.1 for both anchors, with the inverse score still increasing materially from 0.03 to 0.1.",
+  "purpose": "Resolve the upper-bound tuning ambiguity before reading any confirmation output; select one step size per anchor over the retained union of the original and extension grids.",
+  "method": {
+    "controller_kind": "channel_aware_opex_extension",
+    "baseline_transforms": ["inverse", "identity"],
+    "q_reducer": "mean_q1",
+    "gradient_steps": 2,
+    "gradient_noise_samples": 8,
+    "gradient_noise_distribution": "resampled_antithetic_uniform_per_gradient_step",
+    "delta_max_linf_by_anchor": {"inverse": 0.25, "identity": 2.0},
+    "regularization": "fixed-anchor L-infinity projection only",
+    "original_step_size_grid": [0.01, 0.03, 0.1],
+    "extension_step_size_grid": [0.3, 1.0],
+    "combined_step_size_grid": [0.01, 0.03, 0.1, 0.3, 1.0]
+  },
+  "selection": {
+    "primary_metric": "adapted normalized-score mean over all 10 listed episodes, evaluated separately for each anchor",
+    "rule": "for each anchor select the largest primary metric over the combined grid; exact ties select the smaller step size",
+    "all_original_and_extension_runs_retained": true,
+    "no_confirmation_seed_may_be_read_before_selection": true
+  },
+  "implementation": {
+    "evaluate_channel_opex_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+    "select_boundary_extension_sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5"
+  },
+  "prior_grid": {
+    "protocol_path": "channel_opex_dev_protocol.json",
+    "protocol_sha256": "91928bd70cf91162c9b796167baa66aadb2818240df3fb7d98f1e17afe7b8bc5",
+    "selection_path": "../results/channel_opex_dev/selection.json",
+    "selection_sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+    "selection_script_sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+    "selected_inverse_step_size": 0.1,
+    "selected_identity_step_size": 0.1
+  },
+  "base_checkpoint": {
+    "path": "/root/hubl_research_20260914/results/channel_dev/hubl_constant_executed_beta05_25k_seed0/latest.pt",
+    "sha256": "d29501edf9b6961225bcbc157d7d7034bc5b625856dedcbbf9421eea25898106",
+    "training_seed": 0
+  },
+  "channel_calibration": {
+    "path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001_calibration.json",
+    "sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+    "pair_count": 512,
+    "estimated_beta": 1.2498948872089386
+  },
+  "rollout_protocol": {
+    "environment": "Walker2d-v4",
+    "environment_rollout_beta": 1.25,
+    "episode_count_per_arm": 10,
+    "environment_seed_start": 28300,
+    "action_noise_seed_start": 38300,
+    "gradient_noise_seed_start": 58300,
+    "reference_min_score": 1.629008,
+    "reference_max_score": 4592.3,
+    "normalization_label": "D4RL-style reference normalization on Gymnasium Walker2d-v4"
+  },
+  "extension_output_paths": {
+    "inverse_step_size_0.3": "../results/channel_opex_dev_extension/inverse_t2_k8_d025_eta03_seed0_dev10.json",
+    "inverse_step_size_1.0": "../results/channel_opex_dev_extension/inverse_t2_k8_d025_eta1_seed0_dev10.json",
+    "identity_step_size_0.3": "../results/channel_opex_dev_extension/identity_t2_k8_d2_eta03_seed0_dev10.json",
+    "identity_step_size_1.0": "../results/channel_opex_dev_extension/identity_t2_k8_d2_eta1_seed0_dev10.json"
+  },
+  "interpretation": "This boundary-triggered extension changes only the deployment step size. It is a stronger channel-aware OPEX control, not an unchanged reproduction of original OPEX. Development episodes are not confirmation evidence."
+}

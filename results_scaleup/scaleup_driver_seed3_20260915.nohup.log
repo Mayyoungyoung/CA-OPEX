@@ -1,0 +1,15 @@
+2026-09-15T01:55:00Z mode=execution seed=3 stage=base_training status=started
+2026-09-15T01:59:37Z mode=execution seed=3 stage=base_training status=completed
+2026-09-15T01:59:37Z mode=execution seed=3 stage=complete status=started
+2026-09-15T02:03:48Z mode=execution seed=3 stage=complete status=completed
+2026-09-15T02:03:48Z mode=execution seed=3 stage=calibrated_identity status=started
+2026-09-15T02:06:44Z mode=execution seed=3 stage=calibrated_identity status=completed
+2026-09-15T02:06:44Z mode=execution seed=3 stage=nominal_k8t2 status=started
+2026-09-15T02:08:33Z mode=execution seed=3 stage=nominal_k8t2 status=completed
+2026-09-15T02:08:33Z mode=execution seed=3 stage=original_opex status=started
+2026-09-15T02:09:48Z mode=execution seed=3 stage=original_opex status=completed
+2026-09-15T02:09:48Z mode=execution seed=3 stage=inverse_only status=started
+2026-09-15T02:12:48Z mode=execution seed=3 stage=inverse_only status=completed
+2026-09-15T02:12:48Z mode=execution seed=3 stage=aggregate status=started
+2026-09-15T02:12:49Z mode=execution seed=3 stage=aggregate status=completed
+Walker CA-OPEX seed expansion completed in /root/hubl_research_20260914/results/scaleup/walker_seed3.

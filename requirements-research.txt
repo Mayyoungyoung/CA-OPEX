@@ -1,0 +1,8 @@
+# Versions used for the 2026-09-14 Walker2d experiments.
+numpy==1.26.0
+scipy==1.15.3
+h5py==3.16.0
+torch==2.1.0
+gymnasium==0.29.1
+mujoco==3.13.0
+pytest==8.4.2

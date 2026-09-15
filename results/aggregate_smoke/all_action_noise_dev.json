@@ -1,0 +1,1570 @@
+{
+  "aggregation_status": "incomplete_or_invalid",
+  "bootstrap": {
+    "confidence": 0.95,
+    "samples": 100,
+    "seed": 20260914,
+    "unit": "paired_evaluation_episode"
+  },
+  "evaluation_episode_note": "Evaluation episodes estimate a fixed trained policy and are not independent training repeats.",
+  "evaluations": [
+    {
+      "action_noise_beta": 0.0,
+      "action_noise_seeds_json_pointer": null,
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_constant_a039184_seed0/latest.pt",
+      "checkpoint_sha256": "f5d8ae8683cade1dc9188b53a43445b04ef3ade5e12a3e948f46653b7f7f03b1",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/clean/episode_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 41.44905919401208,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": 0.391843318939209,
+      "normalized_score_mean": 79.41252517661277,
+      "normalized_score_std": 0.8658355996918915,
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "raw_returns_json_pointer": "/clean/returns",
+      "return_mean": 3647.1967652974604,
+      "return_std": 39.747663713464874,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0",
+      "run_id": "hubl_constant_a039184_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0\\independent_eval_50.json",
+      "source_sha256": "4185657f24ab07917944b4507bbe91f6300f2fa8e0528c0287d7db0d5158cca6",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 630.3288963859959,
+      "training_status": "complete",
+      "variant": "hubl_constant"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_noise_seeds_json_pointer": "/persistent_action_noise/action_noise_seeds",
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_constant_a039184_seed0/latest.pt",
+      "checkpoint_sha256": "f5d8ae8683cade1dc9188b53a43445b04ef3ade5e12a3e948f46653b7f7f03b1",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/persistent_action_noise/environment_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 41.44905919401208,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": 0.391843318939209,
+      "normalized_score_mean": 41.228048903087966,
+      "normalized_score_std": 23.5424171877602,
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "raw_returns_json_pointer": "/persistent_action_noise/returns",
+      "return_mean": 1894.2730895616335,
+      "return_std": 1080.7549166541296,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0",
+      "run_id": "hubl_constant_a039184_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0\\independent_eval_50.json",
+      "source_sha256": "4185657f24ab07917944b4507bbe91f6300f2fa8e0528c0287d7db0d5158cca6",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 630.3288963859959,
+      "training_status": "complete",
+      "variant": "hubl_constant"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_noise_seeds_json_pointer": null,
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_constant_a055495_seed0/latest.pt",
+      "checkpoint_sha256": "70e4ab294219060409ca1d07d2a4c78d5a61e0e956dd59956d7be90af4a2cb18",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/clean/episode_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 113.58647367800586,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": 0.554953932762146,
+      "normalized_score_mean": 78.56240213340881,
+      "normalized_score_std": 1.0719715085213894,
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "raw_returns_json_pointer": "/clean/returns",
+      "return_mean": 3608.170413356788,
+      "return_std": 49.210685084196236,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0",
+      "run_id": "hubl_constant_a055495_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0\\independent_eval_50.json",
+      "source_sha256": "9934598255cbf38ca6b4d4484b4d4ee252dd43f3f47805a964bb68272a94066d",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 511.36434844500036,
+      "training_status": "complete",
+      "variant": "hubl_constant"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_noise_seeds_json_pointer": "/persistent_action_noise/action_noise_seeds",
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_constant_a055495_seed0/latest.pt",
+      "checkpoint_sha256": "70e4ab294219060409ca1d07d2a4c78d5a61e0e956dd59956d7be90af4a2cb18",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/persistent_action_noise/environment_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 113.58647367800586,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": 0.554953932762146,
+      "normalized_score_mean": 33.036168925545944,
+      "normalized_score_std": 21.360689453851723,
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "raw_returns_json_pointer": "/persistent_action_noise/returns",
+      "return_mean": 1518.2108317331556,
+      "return_std": 980.5989744491743,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0",
+      "run_id": "hubl_constant_a055495_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0\\independent_eval_50.json",
+      "source_sha256": "9934598255cbf38ca6b4d4484b4d4ee252dd43f3f47805a964bb68272a94066d",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 511.36434844500036,
+      "training_status": "complete",
+      "variant": "hubl_constant"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_noise_seeds_json_pointer": null,
+      "action_pairing": null,
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_constant_seed0/latest.pt",
+      "checkpoint_sha256": "6130804ec77fdbd4abfd5bf12d7232c781d737cd60f726ae6d0e0d8f35ba208c",
+      "checkpoint_step": 100000,
+      "condition": "clean",
+      "dataset_sha256": null,
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/clean/episode_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 79.14792242200929,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": null,
+      "normalized_score_mean": 76.22817025587787,
+      "normalized_score_std": 0.05184470486868484,
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "raw_returns_json_pointer": "/clean/returns",
+      "return_mean": 3501.013507668958,
+      "return_std": 2.3800198272947766,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0",
+      "run_id": "hubl_constant_seed0",
+      "run_status": "incomplete_provenance",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0\\independent_eval_50.json",
+      "source_sha256": "3989ee454c656aae28b8d1a9f10ed652333ff1f557ef606b60660b113baec729",
+      "td3bc_alpha": null,
+      "train_seed": null,
+      "train_wall_time_seconds": null,
+      "training_status": "missing_or_unfinished",
+      "variant": null
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_noise_seeds_json_pointer": "/persistent_action_noise/action_noise_seeds",
+      "action_pairing": null,
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_constant_seed0/latest.pt",
+      "checkpoint_sha256": "6130804ec77fdbd4abfd5bf12d7232c781d737cd60f726ae6d0e0d8f35ba208c",
+      "checkpoint_step": 100000,
+      "condition": "persistent_action_noise",
+      "dataset_sha256": null,
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/persistent_action_noise/environment_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 79.14792242200929,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": null,
+      "normalized_score_mean": 35.88827698410695,
+      "normalized_score_std": 20.907092666014456,
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "raw_returns_json_pointer": "/persistent_action_noise/returns",
+      "return_mean": 1649.1417290380102,
+      "return_std": 959.775838289285,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0",
+      "run_id": "hubl_constant_seed0",
+      "run_status": "incomplete_provenance",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0\\independent_eval_50.json",
+      "source_sha256": "3989ee454c656aae28b8d1a9f10ed652333ff1f557ef606b60660b113baec729",
+      "td3bc_alpha": null,
+      "train_seed": null,
+      "train_wall_time_seconds": null,
+      "training_status": "missing_or_unfinished",
+      "variant": null
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_noise_seeds_json_pointer": null,
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_horizon_c002_seed0/latest.pt",
+      "checkpoint_sha256": "8835485b6ac37f2646222d7cac33e70e01867b64fdb762ec8300d8798d4b99d4",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/clean/episode_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 86.23812038701726,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 79.36195682130085,
+      "normalized_score_std": 0.7089283058762565,
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "raw_returns_json_pointer": "/clean/returns",
+      "return_mean": 3644.875338479024,
+      "return_std": 32.54456609193832,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0",
+      "run_id": "hubl_horizon_c002_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\independent_eval_50.json",
+      "source_sha256": "0ae6e12ad73a3a8859d2f795bebc2f686cc19caa291662fc5783d6e17d2a6099",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 540.4508485469851,
+      "training_status": "complete",
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_noise_seeds_json_pointer": "/persistent_action_noise/action_noise_seeds",
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_horizon_c002_seed0/latest.pt",
+      "checkpoint_sha256": "8835485b6ac37f2646222d7cac33e70e01867b64fdb762ec8300d8798d4b99d4",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/persistent_action_noise/environment_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 86.23812038701726,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 36.231018547749606,
+      "normalized_score_std": 21.027607246452042,
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "raw_returns_json_pointer": "/persistent_action_noise/returns",
+      "return_mean": 1664.8758665776809,
+      "return_std": 965.308266174564,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0",
+      "run_id": "hubl_horizon_c002_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\independent_eval_50.json",
+      "source_sha256": "0ae6e12ad73a3a8859d2f795bebc2f686cc19caa291662fc5783d6e17d2a6099",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 540.4508485469851,
+      "training_status": "complete",
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_noise_seeds_json_pointer": null,
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_horizon_c004_seed0/latest.pt",
+      "checkpoint_sha256": "9706edd847be4ff2b7ad36d5498fa9e6cae0715b4dd64337613727a84af6bffb",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/clean/episode_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 114.90014901399263,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": 0.04,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 78.03951017745696,
+      "normalized_score_std": 1.230324598783142,
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "raw_returns_json_pointer": "/clean/returns",
+      "return_mean": 3584.1661640154052,
+      "return_std": 56.48015446377809,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0",
+      "run_id": "hubl_horizon_c004_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0\\independent_eval_50.json",
+      "source_sha256": "77c7941d7faa4deabd96de32114a2d2ab7d0ed33709a80c22e40b35f060353a7",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 522.3775578200002,
+      "training_status": "complete",
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_noise_seeds_json_pointer": "/persistent_action_noise/action_noise_seeds",
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_horizon_c004_seed0/latest.pt",
+      "checkpoint_sha256": "9706edd847be4ff2b7ad36d5498fa9e6cae0715b4dd64337613727a84af6bffb",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/persistent_action_noise/environment_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 114.90014901399263,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": 0.04,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 33.87025661781956,
+      "normalized_score_std": 21.046512487772215,
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "raw_returns_json_pointer": "/persistent_action_noise/returns",
+      "return_mean": 1556.5010534702033,
+      "return_std": 966.1761436038169,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0",
+      "run_id": "hubl_horizon_c004_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0\\independent_eval_50.json",
+      "source_sha256": "77c7941d7faa4deabd96de32114a2d2ab7d0ed33709a80c22e40b35f060353a7",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 522.3775578200002,
+      "training_status": "complete",
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_noise_seeds_json_pointer": null,
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_horizon_c008_seed0/latest.pt",
+      "checkpoint_sha256": "c6acb6f7f91983d6b28951783cee614c9c1249f07d56aa1595c3bf564cdf4095",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/clean/episode_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 39.004549820005195,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": 0.08,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 79.87752179167454,
+      "normalized_score_std": 1.7109387276073973,
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "raw_returns_json_pointer": "/clean/returns",
+      "return_mean": 3668.5432300188822,
+      "return_std": 78.54356785916664,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0",
+      "run_id": "hubl_horizon_c008_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0\\independent_eval_50.json",
+      "source_sha256": "3fb467f1156c778e74e0f8282ed7042d89984b96af67da983452f3d8842c7c68",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 621.6751820710197,
+      "training_status": "complete",
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_noise_seeds_json_pointer": "/persistent_action_noise/action_noise_seeds",
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_horizon_c008_seed0/latest.pt",
+      "checkpoint_sha256": "c6acb6f7f91983d6b28951783cee614c9c1249f07d56aa1595c3bf564cdf4095",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/persistent_action_noise/environment_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 39.004549820005195,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": 0.08,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 33.575766415494016,
+      "normalized_score_std": 20.089512930026608,
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "raw_returns_json_pointer": "/persistent_action_noise/returns",
+      "return_mean": 1542.9819771777622,
+      "return_std": 922.2434425128209,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0",
+      "run_id": "hubl_horizon_c008_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0\\independent_eval_50.json",
+      "source_sha256": "3fb467f1156c778e74e0f8282ed7042d89984b96af67da983452f3d8842c7c68",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 621.6751820710197,
+      "training_status": "complete",
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_noise_seeds_json_pointer": null,
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_rank_seed0/latest.pt",
+      "checkpoint_sha256": "d89893b0d1157d715fdab258613ae7afa22674da07c85a6f81f875e1b1ee8b67",
+      "checkpoint_step": 100000,
+      "condition": "clean",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/clean/episode_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 70.75020012800815,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 77.67450845977596,
+      "normalized_score_std": 3.4157895955200708,
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "raw_returns_json_pointer": "/clean/returns",
+      "return_mean": 3567.410136041521,
+      "return_std": 156.80766210929403,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0",
+      "run_id": "hubl_rank_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0\\independent_eval_50.json",
+      "source_sha256": "f81878150fe02e30f274aee9918a3a9fc76d551f837e3d2372c2076fd42f448f",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 1078.6831919910037,
+      "training_status": "complete",
+      "variant": "hubl_rank"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_noise_seeds_json_pointer": "/persistent_action_noise/action_noise_seeds",
+      "action_pairing": "executed_executed",
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/hubl_rank_seed0/latest.pt",
+      "checkpoint_sha256": "d89893b0d1157d715fdab258613ae7afa22674da07c85a6f81f875e1b1ee8b67",
+      "checkpoint_step": 100000,
+      "condition": "persistent_action_noise",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/persistent_action_noise/environment_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 70.75020012800815,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": 1.0,
+      "normalized_score_mean": 29.42363090098783,
+      "normalized_score_std": 18.545890290336576,
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "raw_returns_json_pointer": "/persistent_action_noise/returns",
+      "return_mean": 1352.3710965647967,
+      "return_std": 851.3808057666257,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0",
+      "run_id": "hubl_rank_seed0",
+      "run_status": "complete",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0\\independent_eval_50.json",
+      "source_sha256": "f81878150fe02e30f274aee9918a3a9fc76d551f837e3d2372c2076fd42f448f",
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 1078.6831919910037,
+      "training_status": "complete",
+      "variant": "hubl_rank"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_noise_seeds_json_pointer": null,
+      "action_pairing": null,
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/td3bc_seed0/latest.pt",
+      "checkpoint_sha256": "091fac749b1cf7741acd893163fce8df781d7960d3a3572ed7832c2179820a07",
+      "checkpoint_step": 100000,
+      "condition": "clean",
+      "dataset_sha256": null,
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/clean/episode_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 62.34855406900169,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": null,
+      "normalized_score_mean": 86.69496050378811,
+      "normalized_score_std": 0.30844291613524694,
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "raw_returns_json_pointer": "/clean/returns",
+      "return_mean": 3981.509411373259,
+      "return_std": 14.159599477899674,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0",
+      "run_id": "td3bc_seed0",
+      "run_status": "incomplete_provenance",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0\\independent_eval_50.json",
+      "source_sha256": "87b5207be0f3bd3ec5a44e254c873bda2a44a2692147bbbc2d992c236f5dc4b4",
+      "td3bc_alpha": null,
+      "train_seed": null,
+      "train_wall_time_seconds": null,
+      "training_status": "missing_or_unfinished",
+      "variant": null
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_noise_seeds_json_pointer": "/persistent_action_noise/action_noise_seeds",
+      "action_pairing": null,
+      "checkpoint": "/root/hubl_research_20260914/results/action_dev/td3bc_seed0/latest.pt",
+      "checkpoint_sha256": "091fac749b1cf7741acd893163fce8df781d7960d3a3572ed7832c2179820a07",
+      "checkpoint_step": 100000,
+      "condition": "persistent_action_noise",
+      "dataset_sha256": null,
+      "environment": "Walker2d-v4",
+      "environment_seeds_json_pointer": "/persistent_action_noise/environment_seeds",
+      "eval_episodes": 50,
+      "eval_wall_time_seconds": 62.34855406900169,
+      "evaluation_record_valid": true,
+      "evaluation_status": "complete",
+      "horizon_c": null,
+      "hubl_alpha": null,
+      "normalized_score_mean": 15.16075967015601,
+      "normalized_score_std": 5.144246283474115,
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "raw_returns_json_pointer": "/persistent_action_noise/returns",
+      "return_mean": 697.609604344687,
+      "return_std": 236.15542189248433,
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0",
+      "run_id": "td3bc_seed0",
+      "run_status": "incomplete_provenance",
+      "source_file": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0\\independent_eval_50.json",
+      "source_sha256": "87b5207be0f3bd3ec5a44e254c873bda2a44a2692147bbbc2d992c236f5dc4b4",
+      "td3bc_alpha": null,
+      "train_seed": null,
+      "train_wall_time_seconds": null,
+      "training_status": "missing_or_unfinished",
+      "variant": null
+    }
+  ],
+  "input_files": [
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0\\config.json",
+      "role": "run:config.json",
+      "sha256": "89c446db79dca06a8a67f4a9310bff2c89632baa7981e1e8300d9fa64a4fa07a",
+      "size_bytes": 4587,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0\\summary.json",
+      "role": "run:summary.json",
+      "sha256": "75853724eb1b2adadfdd54035edce88ac3ff47dad4e4093a65b13f3f0e564724",
+      "size_bytes": 8732,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0\\independent_eval_50.json",
+      "role": "run:independent_eval_50.json",
+      "sha256": "4185657f24ab07917944b4507bbe91f6300f2fa8e0528c0287d7db0d5158cca6",
+      "size_bytes": 6764,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0\\config.json",
+      "role": "run:config.json",
+      "sha256": "d7a13459c87355d8001465892194e311ab071e4089a14bb0bc9bf40ba35102bc",
+      "size_bytes": 4587,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0\\summary.json",
+      "role": "run:summary.json",
+      "sha256": "a9fb824b5248dd32f1ea010c3535d4b0705d5775c2ef0cd550c9cc023b61708c",
+      "size_bytes": 8729,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0\\independent_eval_50.json",
+      "role": "run:independent_eval_50.json",
+      "sha256": "9934598255cbf38ca6b4d4484b4d4ee252dd43f3f47805a964bb68272a94066d",
+      "size_bytes": 6765,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0\\config.json",
+      "role": "run:config.json",
+      "status": "missing"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0\\summary.json",
+      "role": "run:summary.json",
+      "status": "missing"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0\\independent_eval_50.json",
+      "role": "run:independent_eval_50.json",
+      "sha256": "3989ee454c656aae28b8d1a9f10ed652333ff1f557ef606b60660b113baec729",
+      "size_bytes": 6769,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\config.json",
+      "role": "run:config.json",
+      "sha256": "28d1383aecb8cdcbd96d75339bfd774ca7197583bb47a132c050ce5ed9c05de1",
+      "size_bytes": 4761,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\summary.json",
+      "role": "run:summary.json",
+      "sha256": "c8a2f3a4538549a7a97052eafd2fcdb3aaa7ea14569876281c46a04f035011f8",
+      "size_bytes": 8928,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\independent_eval_50.json",
+      "role": "run:independent_eval_50.json",
+      "sha256": "0ae6e12ad73a3a8859d2f795bebc2f686cc19caa291662fc5783d6e17d2a6099",
+      "size_bytes": 6759,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0\\config.json",
+      "role": "run:config.json",
+      "sha256": "1dbe93ae9596ddced6c67618777860b0e3c3eb675bebff8017e570db88ddcf01",
+      "size_bytes": 4761,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0\\summary.json",
+      "role": "run:summary.json",
+      "sha256": "95d7c4c7489898c4865e151678901441b4c672c03021e2959a5516b271bfdef6",
+      "size_bytes": 8928,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0\\independent_eval_50.json",
+      "role": "run:independent_eval_50.json",
+      "sha256": "77c7941d7faa4deabd96de32114a2d2ab7d0ed33709a80c22e40b35f060353a7",
+      "size_bytes": 6760,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0\\config.json",
+      "role": "run:config.json",
+      "sha256": "586dec041b60b2760f24a92297ac509a8a53a28e8ffd014d90d903b85acff9f1",
+      "size_bytes": 4763,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0\\summary.json",
+      "role": "run:summary.json",
+      "sha256": "a519c41a5b460d863b279ecd3bdd3bedb7ceccf36c7fa4dbbd8fcb51826ebdf8",
+      "size_bytes": 8929,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0\\independent_eval_50.json",
+      "role": "run:independent_eval_50.json",
+      "sha256": "3fb467f1156c778e74e0f8282ed7042d89984b96af67da983452f3d8842c7c68",
+      "size_bytes": 6760,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0\\config.json",
+      "role": "run:config.json",
+      "sha256": "01fda6a1ae242183c4fb82d7c00a97e7fa04e4a51f6be10213db7f9cd161c8f4",
+      "size_bytes": 4511,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0\\summary.json",
+      "role": "run:summary.json",
+      "sha256": "0b36415eb564e84defe1f23b0dbb2d2276b6d2384dc1c74cf110dff7faeba462",
+      "size_bytes": 13506,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0\\independent_eval_50.json",
+      "role": "run:independent_eval_50.json",
+      "sha256": "f81878150fe02e30f274aee9918a3a9fc76d551f837e3d2372c2076fd42f448f",
+      "size_bytes": 6752,
+      "status": "read"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0\\config.json",
+      "role": "run:config.json",
+      "status": "missing"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0\\summary.json",
+      "role": "run:summary.json",
+      "status": "missing"
+    },
+    {
+      "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0\\independent_eval_50.json",
+      "role": "run:independent_eval_50.json",
+      "sha256": "87b5207be0f3bd3ec5a44e254c873bda2a44a2692147bbbc2d992c236f5dc4b4",
+      "size_bytes": 6720,
+      "status": "read"
+    }
+  ],
+  "paired_comparisons": [],
+  "reference_run": null,
+  "runs": [
+    {
+      "action_pairing": "executed_executed",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": 0.391843318939209,
+      "issues": [],
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0",
+      "run_id": "hubl_constant_a039184_seed0",
+      "run_status": "complete",
+      "sources": [
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0\\config.json",
+          "role": "config.json",
+          "sha256": "89c446db79dca06a8a67f4a9310bff2c89632baa7981e1e8300d9fa64a4fa07a",
+          "size_bytes": 4587,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0\\summary.json",
+          "role": "summary.json",
+          "sha256": "75853724eb1b2adadfdd54035edce88ac3ff47dad4e4093a65b13f3f0e564724",
+          "size_bytes": 8732,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a039184_seed0\\independent_eval_50.json",
+          "role": "independent_eval_50.json",
+          "sha256": "4185657f24ab07917944b4507bbe91f6300f2fa8e0528c0287d7db0d5158cca6",
+          "size_bytes": 6764,
+          "status": "read"
+        }
+      ],
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 630.3288963859959,
+      "training_status": "complete",
+      "updates": 50000,
+      "variant": "hubl_constant"
+    },
+    {
+      "action_pairing": "executed_executed",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": 0.554953932762146,
+      "issues": [],
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0",
+      "run_id": "hubl_constant_a055495_seed0",
+      "run_status": "complete",
+      "sources": [
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0\\config.json",
+          "role": "config.json",
+          "sha256": "d7a13459c87355d8001465892194e311ab071e4089a14bb0bc9bf40ba35102bc",
+          "size_bytes": 4587,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0\\summary.json",
+          "role": "summary.json",
+          "sha256": "a9fb824b5248dd32f1ea010c3535d4b0705d5775c2ef0cd550c9cc023b61708c",
+          "size_bytes": 8729,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_a055495_seed0\\independent_eval_50.json",
+          "role": "independent_eval_50.json",
+          "sha256": "9934598255cbf38ca6b4d4484b4d4ee252dd43f3f47805a964bb68272a94066d",
+          "size_bytes": 6765,
+          "status": "read"
+        }
+      ],
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 511.36434844500036,
+      "training_status": "complete",
+      "updates": 50000,
+      "variant": "hubl_constant"
+    },
+    {
+      "action_pairing": null,
+      "dataset_sha256": null,
+      "environment": null,
+      "horizon_c": null,
+      "hubl_alpha": null,
+      "issues": [
+        "missing config.json",
+        "missing summary.json"
+      ],
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0",
+      "run_id": "hubl_constant_seed0",
+      "run_status": "incomplete_provenance",
+      "sources": [
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0\\config.json",
+          "role": "config.json",
+          "status": "missing"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0\\summary.json",
+          "role": "summary.json",
+          "status": "missing"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_constant_seed0\\independent_eval_50.json",
+          "role": "independent_eval_50.json",
+          "sha256": "3989ee454c656aae28b8d1a9f10ed652333ff1f557ef606b60660b113baec729",
+          "size_bytes": 6769,
+          "status": "read"
+        }
+      ],
+      "td3bc_alpha": null,
+      "train_seed": null,
+      "train_wall_time_seconds": null,
+      "training_status": "missing_or_unfinished",
+      "updates": null,
+      "variant": null
+    },
+    {
+      "action_pairing": "executed_executed",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "issues": [],
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0",
+      "run_id": "hubl_horizon_c002_seed0",
+      "run_status": "complete",
+      "sources": [
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\config.json",
+          "role": "config.json",
+          "sha256": "28d1383aecb8cdcbd96d75339bfd774ca7197583bb47a132c050ce5ed9c05de1",
+          "size_bytes": 4761,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\summary.json",
+          "role": "summary.json",
+          "sha256": "c8a2f3a4538549a7a97052eafd2fcdb3aaa7ea14569876281c46a04f035011f8",
+          "size_bytes": 8928,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c002_seed0\\independent_eval_50.json",
+          "role": "independent_eval_50.json",
+          "sha256": "0ae6e12ad73a3a8859d2f795bebc2f686cc19caa291662fc5783d6e17d2a6099",
+          "size_bytes": 6759,
+          "status": "read"
+        }
+      ],
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 540.4508485469851,
+      "training_status": "complete",
+      "updates": 50000,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_pairing": "executed_executed",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.04,
+      "hubl_alpha": 1.0,
+      "issues": [],
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0",
+      "run_id": "hubl_horizon_c004_seed0",
+      "run_status": "complete",
+      "sources": [
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0\\config.json",
+          "role": "config.json",
+          "sha256": "1dbe93ae9596ddced6c67618777860b0e3c3eb675bebff8017e570db88ddcf01",
+          "size_bytes": 4761,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0\\summary.json",
+          "role": "summary.json",
+          "sha256": "95d7c4c7489898c4865e151678901441b4c672c03021e2959a5516b271bfdef6",
+          "size_bytes": 8928,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c004_seed0\\independent_eval_50.json",
+          "role": "independent_eval_50.json",
+          "sha256": "77c7941d7faa4deabd96de32114a2d2ab7d0ed33709a80c22e40b35f060353a7",
+          "size_bytes": 6760,
+          "status": "read"
+        }
+      ],
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 522.3775578200002,
+      "training_status": "complete",
+      "updates": 50000,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_pairing": "executed_executed",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.08,
+      "hubl_alpha": 1.0,
+      "issues": [],
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0",
+      "run_id": "hubl_horizon_c008_seed0",
+      "run_status": "complete",
+      "sources": [
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0\\config.json",
+          "role": "config.json",
+          "sha256": "586dec041b60b2760f24a92297ac509a8a53a28e8ffd014d90d903b85acff9f1",
+          "size_bytes": 4763,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0\\summary.json",
+          "role": "summary.json",
+          "sha256": "a519c41a5b460d863b279ecd3bdd3bedb7ceccf36c7fa4dbbd8fcb51826ebdf8",
+          "size_bytes": 8929,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_horizon_c008_seed0\\independent_eval_50.json",
+          "role": "independent_eval_50.json",
+          "sha256": "3fb467f1156c778e74e0f8282ed7042d89984b96af67da983452f3d8842c7c68",
+          "size_bytes": 6760,
+          "status": "read"
+        }
+      ],
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 621.6751820710197,
+      "training_status": "complete",
+      "updates": 50000,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_pairing": "executed_executed",
+      "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": 1.0,
+      "issues": [],
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0",
+      "run_id": "hubl_rank_seed0",
+      "run_status": "complete",
+      "sources": [
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0\\config.json",
+          "role": "config.json",
+          "sha256": "01fda6a1ae242183c4fb82d7c00a97e7fa04e4a51f6be10213db7f9cd161c8f4",
+          "size_bytes": 4511,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0\\summary.json",
+          "role": "summary.json",
+          "sha256": "0b36415eb564e84defe1f23b0dbb2d2276b6d2384dc1c74cf110dff7faeba462",
+          "size_bytes": 13506,
+          "status": "read"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\hubl_rank_seed0\\independent_eval_50.json",
+          "role": "independent_eval_50.json",
+          "sha256": "f81878150fe02e30f274aee9918a3a9fc76d551f837e3d2372c2076fd42f448f",
+          "size_bytes": 6752,
+          "status": "read"
+        }
+      ],
+      "td3bc_alpha": 2.5,
+      "train_seed": 0,
+      "train_wall_time_seconds": 1078.6831919910037,
+      "training_status": "complete",
+      "updates": 100000,
+      "variant": "hubl_rank"
+    },
+    {
+      "action_pairing": null,
+      "dataset_sha256": null,
+      "environment": null,
+      "horizon_c": null,
+      "hubl_alpha": null,
+      "issues": [
+        "missing config.json",
+        "missing summary.json"
+      ],
+      "run_dir": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0",
+      "run_id": "td3bc_seed0",
+      "run_status": "incomplete_provenance",
+      "sources": [
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0\\config.json",
+          "role": "config.json",
+          "status": "missing"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0\\summary.json",
+          "role": "summary.json",
+          "status": "missing"
+        },
+        {
+          "path": "F:\\Theory\\hubl_backup\\results\\action_noise_dev\\td3bc_seed0\\independent_eval_50.json",
+          "role": "independent_eval_50.json",
+          "sha256": "87b5207be0f3bd3ec5a44e254c873bda2a44a2692147bbbc2d992c236f5dc4b4",
+          "size_bytes": 6720,
+          "status": "read"
+        }
+      ],
+      "td3bc_alpha": null,
+      "train_seed": null,
+      "train_wall_time_seconds": null,
+      "training_status": "missing_or_unfinished",
+      "updates": null,
+      "variant": null
+    }
+  ],
+  "schema_version": "td3bc-aggregate-v1",
+  "statistical_unit": "independent_training_seed",
+  "training_seed_aggregates": [
+    {
+      "action_noise_beta": 0.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": 0.391843318939209,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 79.41252517661277,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            79.41252517661277
+          ],
+          "return_means": [
+            3647.1967652974604
+          ],
+          "run_ids": [
+            "hubl_constant_a039184_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "return_mean_across_train_seeds": 3647.1967652974604,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_constant"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": 0.391843318939209,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 41.228048903087966,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            41.228048903087966
+          ],
+          "return_means": [
+            1894.2730895616335
+          ],
+          "run_ids": [
+            "hubl_constant_a039184_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "return_mean_across_train_seeds": 1894.2730895616335,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_constant"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": 0.554953932762146,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 78.56240213340881,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            78.56240213340881
+          ],
+          "return_means": [
+            3608.170413356788
+          ],
+          "run_ids": [
+            "hubl_constant_a055495_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "return_mean_across_train_seeds": 3608.170413356788,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_constant"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": 0.554953932762146,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 33.036168925545944,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            33.036168925545944
+          ],
+          "return_means": [
+            1518.2108317331556
+          ],
+          "run_ids": [
+            "hubl_constant_a055495_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "return_mean_across_train_seeds": 1518.2108317331556,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_constant"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 79.36195682130085,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            79.36195682130085
+          ],
+          "return_means": [
+            3644.875338479024
+          ],
+          "run_ids": [
+            "hubl_horizon_c002_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "return_mean_across_train_seeds": 3644.875338479024,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.02,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 36.231018547749606,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            36.231018547749606
+          ],
+          "return_means": [
+            1664.8758665776809
+          ],
+          "run_ids": [
+            "hubl_horizon_c002_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "return_mean_across_train_seeds": 1664.8758665776809,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.04,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 78.03951017745696,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            78.03951017745696
+          ],
+          "return_means": [
+            3584.1661640154052
+          ],
+          "run_ids": [
+            "hubl_horizon_c004_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "return_mean_across_train_seeds": 3584.1661640154052,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.04,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 33.87025661781956,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            33.87025661781956
+          ],
+          "return_means": [
+            1556.5010534702033
+          ],
+          "run_ids": [
+            "hubl_horizon_c004_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "return_mean_across_train_seeds": 1556.5010534702033,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "clean",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.08,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 79.87752179167454,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            79.87752179167454
+          ],
+          "return_means": [
+            3668.5432300188822
+          ],
+          "run_ids": [
+            "hubl_horizon_c008_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "return_mean_across_train_seeds": 3668.5432300188822,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 50000,
+      "condition": "persistent_action_noise",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": 0.08,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 33.575766415494016,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            33.575766415494016
+          ],
+          "return_means": [
+            1542.9819771777622
+          ],
+          "run_ids": [
+            "hubl_horizon_c008_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "return_mean_across_train_seeds": 1542.9819771777622,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_horizon"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 100000,
+      "condition": "clean",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 77.67450845977596,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            77.67450845977596
+          ],
+          "return_means": [
+            3567.410136041521
+          ],
+          "run_ids": [
+            "hubl_rank_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "return_mean_across_train_seeds": 3567.410136041521,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_rank"
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_pairing": "executed_executed",
+      "checkpoint_step": 100000,
+      "condition": "persistent_action_noise",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": 1.0,
+      "n_evaluation_episodes_total_descriptive_only": 50,
+      "n_run_records": 1,
+      "n_train_seeds": 1,
+      "normalized_score_mean_across_train_seeds": 29.42363090098783,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [
+        {
+          "evaluation_episodes": [
+            50
+          ],
+          "n_run_records": 1,
+          "normalized_score_means": [
+            29.42363090098783
+          ],
+          "return_means": [
+            1352.3710965647967
+          ],
+          "run_ids": [
+            "hubl_rank_seed0"
+          ],
+          "train_seed": 0
+        }
+      ],
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "return_mean_across_train_seeds": 1352.3710965647967,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "complete",
+      "td3bc_alpha": 2.5,
+      "variant": "hubl_rank"
+    },
+    {
+      "action_noise_beta": 0.0,
+      "action_pairing": null,
+      "checkpoint_step": 100000,
+      "condition": "clean",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": null,
+      "n_evaluation_episodes_total_descriptive_only": 100,
+      "n_run_records": 2,
+      "n_train_seeds": 0,
+      "normalized_score_mean_across_train_seeds": null,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [],
+      "protocol_fingerprint": "0d5ad74d4e2b636dd9ba8a5d67a87c85e30155f026d0c6a9770084d5781595c1",
+      "return_mean_across_train_seeds": null,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "invalid_missing_train_seed",
+      "td3bc_alpha": null,
+      "variant": null
+    },
+    {
+      "action_noise_beta": 1.0,
+      "action_pairing": null,
+      "checkpoint_step": 100000,
+      "condition": "persistent_action_noise",
+      "duplicate_train_seeds": [],
+      "environment": "Walker2d-v4",
+      "horizon_c": null,
+      "hubl_alpha": null,
+      "n_evaluation_episodes_total_descriptive_only": 100,
+      "n_run_records": 2,
+      "n_train_seeds": 0,
+      "normalized_score_mean_across_train_seeds": null,
+      "normalized_score_sample_std_across_train_seeds": null,
+      "per_seed": [],
+      "protocol_fingerprint": "44a390c649c474a6d93f461bf89c849d92bdd479dab5344eb4fa674833b9cbaf",
+      "return_mean_across_train_seeds": null,
+      "return_sample_std_across_train_seeds": null,
+      "statistical_unit": "independent_training_seed",
+      "status": "invalid_missing_train_seed",
+      "td3bc_alpha": null,
+      "variant": null
+    }
+  ]
+}

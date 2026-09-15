@@ -1,0 +1,15 @@
+2026-09-15T05:55:40Z mode=execution seed=4 stage=base_training status=started
+2026-09-15T05:59:42Z mode=execution seed=4 stage=base_training status=completed
+2026-09-15T05:59:42Z mode=execution seed=4 stage=complete status=started
+2026-09-15T06:01:57Z mode=execution seed=4 stage=complete status=completed
+2026-09-15T06:01:57Z mode=execution seed=4 stage=calibrated_identity status=started
+2026-09-15T06:03:26Z mode=execution seed=4 stage=calibrated_identity status=completed
+2026-09-15T06:03:26Z mode=execution seed=4 stage=nominal_k8t2 status=started
+2026-09-15T06:04:46Z mode=execution seed=4 stage=nominal_k8t2 status=completed
+2026-09-15T06:04:46Z mode=execution seed=4 stage=original_opex status=started
+2026-09-15T06:05:33Z mode=execution seed=4 stage=original_opex status=completed
+2026-09-15T06:05:33Z mode=execution seed=4 stage=inverse_only status=started
+2026-09-15T06:07:02Z mode=execution seed=4 stage=inverse_only status=completed
+2026-09-15T06:07:02Z mode=execution seed=4 stage=aggregate status=started
+2026-09-15T06:07:03Z mode=execution seed=4 stage=aggregate status=completed
+Hopper CA-OPEX cross-task replication completed in /root/hubl_research_20260914/results/crosstask_hopper/hopper_seed4.

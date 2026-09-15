@@ -1,0 +1,21 @@
+{
+  "implementation": {
+    "audit_sha256": "52d6259bee05147864b27d03b9bc4034525b7b62f1a88f1b28eda28e87810bc4",
+    "core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+    "evaluate_sha256": "38747e3a732362734757e6bde3715eb2ac5eb9ecd0870ccead2193670da89eed",
+    "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+    "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+    "train_iql_sha256": "b3a159fc8c0612c5c23578a1496a6beb858063462c086a824fe7874d09b089ee",
+    "train_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4"
+  },
+  "manifest": "/root/hubl_research_20260914/code/inverse_residual_frozen_confirmation_manifest.json",
+  "manifest_sha256": "57ac5bf657ffbb7185e703949d3b5cbfad4f8061fe3d218ae755ba41aa704807",
+  "runs": 10,
+  "status": "frozen",
+  "verified_artifact_hashes": [
+    "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+    "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+    "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+    "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d"
+  ]
+}

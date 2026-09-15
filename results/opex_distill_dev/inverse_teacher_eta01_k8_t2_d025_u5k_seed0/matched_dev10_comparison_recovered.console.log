@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/root/hubl_research_20260914/code/recover_opex_distillation_dev.py", line 321, in <module>
+    raise SystemExit(main())
+  File "/root/hubl_research_20260914/code/recover_opex_distillation_dev.py", line 315, in main
+    payload = run(args.protocol, args.output)
+  File "/root/hubl_research_20260914/code/recover_opex_distillation_dev.py", line 164, in run
+    raise ValueError(f"recomputed split {field} mismatch")
+ValueError: recomputed split audit_episode_units_sha256 mismatch

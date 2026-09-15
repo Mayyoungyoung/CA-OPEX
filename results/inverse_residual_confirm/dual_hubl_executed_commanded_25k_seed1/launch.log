@@ -1,0 +1,114 @@
+nohup: ignoring input
+{
+  "clean": {
+    "episode_seeds": [
+      9200,
+      9201,
+      9202,
+      9203,
+      9204,
+      9205,
+      9206,
+      9207,
+      9208,
+      9209
+    ],
+    "lengths": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "normalized_score_mean": 74.78154920108867,
+    "normalized_score_std": 1.1057749218894908,
+    "return_mean": 3434.603894542586,
+    "return_std": 50.7624885759915,
+    "returns": [
+      3456.3281979293147,
+      3516.5689077550005,
+      3433.7646735810613,
+      3347.8991446118343,
+      3402.0067379030006,
+      3478.2062510033643,
+      3409.048278531511,
+      3415.226244409114,
+      3384.719238301691,
+      3502.271271399967
+    ]
+  },
+  "elapsed_seconds": 270.8253774740151,
+  "event": "evaluation",
+  "persistent_action_noise": {
+    "action_clip_fraction": 0.22972488252806772,
+    "action_noise_beta": 0.5,
+    "action_noise_distribution": "iid_uniform_minus_beta_plus_beta_per_step",
+    "action_noise_seeds": [
+      19200,
+      19201,
+      19202,
+      19203,
+      19204,
+      19205,
+      19206,
+      19207,
+      19208,
+      19209
+    ],
+    "command_saturation_definition": "fraction_of_scaled_command_values_strictly_outside_environment_bounds_before_clip",
+    "command_saturation_fraction": 0.0,
+    "command_scale": 1.0,
+    "command_transform": "identity",
+    "command_transform_beta": 0.5,
+    "command_transform_saturation_definition": "fraction_of_desired_mean_action_values_outside_the_uniform_clipped_channel_mean_range_achievable_by_bounded_commands",
+    "command_transform_saturation_fraction": 0.0,
+    "environment_seeds": [
+      9200,
+      9201,
+      9202,
+      9203,
+      9204,
+      9205,
+      9206,
+      9207,
+      9208,
+      9209
+    ],
+    "executed_commanded_action_mse": 0.06337499324477165,
+    "lengths": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      766,
+      962,
+      851,
+      714
+    ],
+    "normalized_score_mean": 74.62679341735867,
+    "normalized_score_std": 9.960983128986515,
+    "return_mean": 3427.49956567045,
+    "return_std": 457.2759630203979,
+    "returns": [
+      3677.8049647934668,
+      3707.3481568925217,
+      3891.0406278429477,
+      3634.6480794319236,
+      3686.8073409858184,
+      3785.1646637100625,
+      2656.8099738603055,
+      3560.8093881205577,
+      3144.405022354411,
+      2530.157438712486
+    ],
+    "transformed_command_at_bound_fraction": 0.00039456221528749236
+  },
+  "step": 25000
+}

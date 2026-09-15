@@ -1,0 +1,321 @@
+{
+  "action_channels": {
+    "action_pairing": "executed_executed",
+    "behavior_cloning_action_source": "actions",
+    "commanded_action_source": "hdf5:clean_policy_actions",
+    "critic_action_source": "actions",
+    "executed_action_source": "hdf5:actions",
+    "executed_commanded_identical_fraction": 0.0,
+    "executed_commanded_max_absolute_delta": 0.9999999403953552,
+    "executed_commanded_mean_absolute_delta": 0.37372083954719826,
+    "executed_commanded_mse": 0.2228988128240042,
+    "requested_action_pairing": "executed_executed",
+    "transition_count": 999999
+  },
+  "action_pairing": "executed_executed",
+  "algorithm": "TD3+BC",
+  "evaluations": [
+    {
+      "clean": {
+        "episode_seeds": [
+          9200,
+          9201,
+          9202,
+          9203,
+          9204,
+          9205,
+          9206,
+          9207,
+          9208,
+          9209
+        ],
+        "lengths": [
+          416,
+          403,
+          461,
+          398,
+          414,
+          401,
+          397,
+          415,
+          399,
+          396
+        ],
+        "normalized_score_mean": 39.54330400938369,
+        "normalized_score_std": 2.423119878860849,
+        "return_mean": 1266.6931157713564,
+        "return_std": 78.86218849435477,
+        "returns": [
+          1304.757983821004,
+          1248.6818659230737,
+          1463.144619103716,
+          1200.90032028308,
+          1309.7317769324745,
+          1228.2200200631792,
+          1193.2060853166572,
+          1304.2694749938346,
+          1217.6895065356503,
+          1196.3295047408933
+        ]
+      },
+      "elapsed_seconds": 249.28271028603194,
+      "event": "evaluation",
+      "persistent_action_noise": {
+        "action_clip_fraction": 0.08298836980090676,
+        "action_noise_beta": 0.5,
+        "action_noise_distribution": "iid_uniform_minus_beta_plus_beta_per_step",
+        "action_noise_seeds": [
+          19200,
+          19201,
+          19202,
+          19203,
+          19204,
+          19205,
+          19206,
+          19207,
+          19208,
+          19209
+        ],
+        "command_saturation_definition": "fraction_of_scaled_command_values_strictly_outside_environment_bounds_before_clip",
+        "command_saturation_fraction": 0.0,
+        "command_scale": 1.0,
+        "command_transform": "identity",
+        "command_transform_beta": 0.5,
+        "command_transform_saturation_definition": "fraction_of_desired_mean_action_values_outside_the_uniform_clipped_channel_mean_range_achievable_by_bounded_commands",
+        "command_transform_saturation_fraction": 0.0,
+        "environment_seeds": [
+          9200,
+          9201,
+          9202,
+          9203,
+          9204,
+          9205,
+          9206,
+          9207,
+          9208,
+          9209
+        ],
+        "executed_commanded_action_mse": 0.07612117540350045,
+        "lengths": [
+          337,
+          354,
+          392,
+          329,
+          411,
+          326,
+          324,
+          259,
+          310,
+          340
+        ],
+        "normalized_score_mean": 32.393164380643086,
+        "normalized_score_std": 4.7708465123530415,
+        "return_mean": 1033.986651645535,
+        "return_std": 155.27064930510053,
+        "returns": [
+          1055.2913646896218,
+          1082.617195367103,
+          1245.8627031493888,
+          938.4099665766074,
+          1328.2538292071895,
+          993.0384252783351,
+          945.5963171534511,
+          746.4051873378787,
+          960.7387929352957,
+          1043.6527347604792
+        ],
+        "transformed_command_at_bound_fraction": 0.0
+      },
+      "step": 25000
+    }
+  ],
+  "execution_noise_marginalization": {
+    "actor_q1_rows_per_transition_per_actor_update": 1,
+    "actor_update_count": 12500,
+    "agent_restore_execution_noise_state_supported": false,
+    "approximation": "finite_antithetic_empirical_quadrature_of_the_known_channel",
+    "beta": 0.0,
+    "checkpoint_contains_generator_state": false,
+    "dedicated_torch_generator": false,
+    "distribution": "iid_uniform_minus_beta_plus_beta_per_action_dimension",
+    "enabled": false,
+    "execution_noise_draw_calls": {
+      "actor": 0,
+      "target": 0
+    },
+    "execution_noise_half_vectors_drawn": {
+      "actor": 0,
+      "target": 0
+    },
+    "fixed_action_perturbations": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "q_row_multiplier_vs_single_sample": 1,
+    "reproducibility_scope": "continuous_run_fixed_points;exact_training_resume_not_implemented",
+    "resampled_per_state_and_q_call": false,
+    "resume_limitation": null,
+    "reuse": "frozen_for_all_states_and_updates",
+    "sample_count": 1,
+    "scheme": "fixed_antithetic",
+    "seed": 314159,
+    "stream_seeds": {
+      "actor": 314160,
+      "target": 314159
+    },
+    "target_twin_q_rows_per_transition": 1,
+    "trainer_resume_restores_generator_state": false,
+    "training_actor_q1_input_rows": 3200000,
+    "training_target_twin_q_input_rows": 6400000,
+    "twin_reduction": "min_of_expectations"
+  },
+  "final_evaluation": {
+    "clean": {
+      "episode_seeds": [
+        9200,
+        9201,
+        9202,
+        9203,
+        9204,
+        9205,
+        9206,
+        9207,
+        9208,
+        9209
+      ],
+      "lengths": [
+        416,
+        403,
+        461,
+        398,
+        414,
+        401,
+        397,
+        415,
+        399,
+        396
+      ],
+      "normalized_score_mean": 39.54330400938369,
+      "normalized_score_std": 2.423119878860849,
+      "return_mean": 1266.6931157713564,
+      "return_std": 78.86218849435477,
+      "returns": [
+        1304.757983821004,
+        1248.6818659230737,
+        1463.144619103716,
+        1200.90032028308,
+        1309.7317769324745,
+        1228.2200200631792,
+        1193.2060853166572,
+        1304.2694749938346,
+        1217.6895065356503,
+        1196.3295047408933
+      ]
+    },
+    "elapsed_seconds": 249.28271028603194,
+    "event": "evaluation",
+    "persistent_action_noise": {
+      "action_clip_fraction": 0.08298836980090676,
+      "action_noise_beta": 0.5,
+      "action_noise_distribution": "iid_uniform_minus_beta_plus_beta_per_step",
+      "action_noise_seeds": [
+        19200,
+        19201,
+        19202,
+        19203,
+        19204,
+        19205,
+        19206,
+        19207,
+        19208,
+        19209
+      ],
+      "command_saturation_definition": "fraction_of_scaled_command_values_strictly_outside_environment_bounds_before_clip",
+      "command_saturation_fraction": 0.0,
+      "command_scale": 1.0,
+      "command_transform": "identity",
+      "command_transform_beta": 0.5,
+      "command_transform_saturation_definition": "fraction_of_desired_mean_action_values_outside_the_uniform_clipped_channel_mean_range_achievable_by_bounded_commands",
+      "command_transform_saturation_fraction": 0.0,
+      "environment_seeds": [
+        9200,
+        9201,
+        9202,
+        9203,
+        9204,
+        9205,
+        9206,
+        9207,
+        9208,
+        9209
+      ],
+      "executed_commanded_action_mse": 0.07612117540350045,
+      "lengths": [
+        337,
+        354,
+        392,
+        329,
+        411,
+        326,
+        324,
+        259,
+        310,
+        340
+      ],
+      "normalized_score_mean": 32.393164380643086,
+      "normalized_score_std": 4.7708465123530415,
+      "return_mean": 1033.986651645535,
+      "return_std": 155.27064930510053,
+      "returns": [
+        1055.2913646896218,
+        1082.617195367103,
+        1245.8627031493888,
+        938.4099665766074,
+        1328.2538292071895,
+        993.0384252783351,
+        945.5963171534511,
+        746.4051873378787,
+        960.7387929352957,
+        1043.6527347604792
+      ],
+      "transformed_command_at_bound_fraction": 0.0
+    },
+    "step": 25000
+  },
+  "final_train_metrics": {
+    "actor_loss": -2.237978458404541,
+    "actor_q_mean": 162.6378936767578,
+    "actor_q_scale": 0.01537157129496336,
+    "actor_updated": 1.0,
+    "bc_uses_commanded_action": 0.0,
+    "behavior_cloning_loss": 0.26202157139778137,
+    "critic_loss": 96.9071273803711,
+    "critic_uses_commanded_action": 0.0,
+    "executed_commanded_action_mse": 0.2341809719800949,
+    "execution_noise_marginalized": 0.0,
+    "execution_noise_sample_count": 1.0,
+    "heuristic_mean": 161.89846801757812,
+    "hubl_lambda_mean": 0.391843318939209,
+    "q1_mean": 162.17733764648438,
+    "q2_mean": 161.8199462890625,
+    "q_target_mean": 162.08670043945312,
+    "target_twin_reduction_swap_gap": 0.0
+  },
+  "mechanism_metrics_before_training": {
+    "episode_score_spearman_vs_clean": 1.0,
+    "heuristic_mse_vs_clean": 0.0,
+    "lambda_max": 0.391843318939209,
+    "lambda_mean": 0.3918432891368866,
+    "lambda_min": 0.391843318939209
+  },
+  "optimizer_seconds": 239.62926827574847,
+  "status": "complete",
+  "train_seed": 2,
+  "updates": 25000,
+  "updates_per_optimizer_second": 104.32782347451715,
+  "variant": "hubl_constant",
+  "wall_time_seconds": 249.30662683298578
+}

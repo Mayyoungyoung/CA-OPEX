@@ -1,0 +1,227 @@
+{
+  "confirmation_evidence_eligible": false,
+  "corrected_split": {
+    "audit_episode_unit_count": 303,
+    "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+    "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+    "audit_observation_count": 100060,
+    "base_critic_training_partition_controlled": false,
+    "boundary_source": "terminals+timeouts",
+    "considered_observation_count": 1000000,
+    "episode_unit_count": 3255,
+    "holdout_scope": "adapter_sgd_and_value_scale_calibration",
+    "max_observations": null,
+    "method": "whole_episode_permutation_to_state_count",
+    "realized_audit_fraction": 0.10006,
+    "requested_audit_fraction": 0.1,
+    "schema": "adapter_observation_split_v1",
+    "seed": 424242,
+    "source_observation_count": 1000000,
+    "storage_layout": "flat",
+    "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d",
+    "train_observation_count": 899940
+  },
+  "cost": {
+    "channel_aware_opex_teacher_deployment_q1_rows_per_step": 16,
+    "student_deployment_q1_rows_per_step": 0,
+    "training_teacher_q1_rows": 20480000
+  },
+  "evaluation_protocol": {
+    "action_noise_seeds": [
+      38300,
+      38301,
+      38302,
+      38303,
+      38304,
+      38305,
+      38306,
+      38307,
+      38308,
+      38309
+    ],
+    "all_episodes_retained": true,
+    "environment": "Walker2d-v4",
+    "environment_seeds": [
+      28300,
+      28301,
+      28302,
+      28303,
+      28304,
+      28305,
+      28306,
+      28307,
+      28308,
+      28309
+    ],
+    "rollout_beta": 1.25
+  },
+  "evidence_label": "development",
+  "failure_corrected": {
+    "actual_recomputed_audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+    "cause": "The expected audit-index SHA in the frozen development protocol was manually transcribed as e122... instead of the deterministic e127... value. Training did not consume this declaration and had already completed all 5000 updates.",
+    "mistyped_expected_audit_indices_sha256": "e122718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+    "stage": "post-training structural assertion in the single-use runner"
+  },
+  "fraction_of_teacher_mean_return_improvement_over_inverse_recovered_by_student": 0.4422117289878924,
+  "interpretation": "PA-RL-like amortization control, not primary novelty; post-training development recovery caused only by a frozen expected-hash typo.",
+  "normalized_score_mean": {
+    "frozen_channel_aware_opex_teacher": 38.76450111232494,
+    "inverse_only_anchor": 24.87332556997909,
+    "opex_distilled_student": 31.016166324234177
+  },
+  "paired_return_differences": {
+    "student_minus_inverse": [
+      134.77905384297924,
+      231.05400836344302,
+      205.52645577103522,
+      4.2572441494834266,
+      -1128.9169964196808,
+      289.24898491472777,
+      696.8135128596025,
+      2609.2550503109915,
+      -758.5982326868187,
+      536.55700479766
+    ],
+    "student_minus_teacher": [
+      1269.5209854503955,
+      -172.2381222529782,
+      619.9550572263381,
+      -671.2319641366787,
+      -340.9163227574451,
+      -2506.391457142958,
+      -1924.0244856808288,
+      2730.6341506558074,
+      -1468.4389614401875,
+      -1093.874454720741
+    ],
+    "teacher_minus_inverse": [
+      -1134.7419316074163,
+      403.2921306164212,
+      -414.4286014553029,
+      675.4892082861621,
+      -788.0006736622358,
+      2795.640442057686,
+      2620.8379985404313,
+      -121.37910034481592,
+      709.8407287533687,
+      1630.431459518401
+    ]
+  },
+  "post_training_provenance_recovery": true,
+  "raw_return_mean": {
+    "frozen_channel_aware_opex_teacher": 1781.1797157570188,
+    "inverse_only_anchor": 1143.4815496867488,
+    "opex_distilled_student": 1425.479158277091
+  },
+  "recovery_protocol": {
+    "path": "/root/hubl_research_20260914/code/opex_distillation_recovery_protocol.json",
+    "sha256": "2e2cf38c3e6b24beb113ef768bdac9ddc167aae6f7bf65c94f581ee3f02fe6e7"
+  },
+  "rerun_training_or_evaluation": false,
+  "schema_version": "opex-distillation-development-recovery-v1",
+  "status": "complete",
+  "verified_sources": [
+    {
+      "path": "/root/hubl_research_20260914/code/recover_opex_distillation_dev.py",
+      "role": "recovery_implementation",
+      "sha256": "5fb34bd164622955530fdb27f1e637dbfa581af0a809e259709db1840c77cb91",
+      "size_bytes": 13350
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/opex_distillation_dev_protocol.json",
+      "role": "original_protocol",
+      "sha256": "42bffb0b358b5afc7491b2894d4541b01379e180ffaa339f62a6c9d545e60902",
+      "size_bytes": 6897
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/run_opex_distillation_dev.sh",
+      "role": "original_runner",
+      "sha256": "6dc219e5da1c386ce4011ed4a2dc02381441e9affd557c25269e28bcd5efb45e",
+      "size_bytes": 15014
+    },
+    {
+      "path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+      "role": "dataset",
+      "sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+      "size_bytes": 378004533
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0/config.json",
+      "role": "training_config",
+      "sha256": "a359ec16b24bbee6d836c628488be27a99871fd32476433da7beff8603982456",
+      "size_bytes": 16459
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0/summary.json",
+      "role": "training_summary",
+      "sha256": "48183ab4897d0f7afeb91605e1adba432b95e6a54547e8188dada62f12fc8157",
+      "size_bytes": 6553
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0/latest.pt",
+      "role": "checkpoint",
+      "sha256": "0d7481df7388b15b087d37599d9ed5ccbe13e0f4334dedb65302b3eb3c7c43b5",
+      "size_bytes": 272449
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0/matched_dev10_recovery_diagnostic.json",
+      "role": "student_evaluation",
+      "sha256": "1be7ae64244bcb0aca8e5b4a2657e89c38b87b00db1251801dda54421237beb9",
+      "size_bytes": 5997
+    },
+    {
+      "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta01_seed0_dev10.json",
+      "role": "teacher_evaluation",
+      "sha256": "700276fb6d171976443d111106e9d54926074f58ee37bd4f2648df0db41e299f",
+      "size_bytes": 11024
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/train_opex_distilled_adapter.py",
+      "role": "locked_implementation:train_opex_distilled_adapter.py",
+      "sha256": "f1be7520cc84bc7851c9812ff029e67289f912d163c2d2ee64843e17b61ac5ea",
+      "size_bytes": 37398
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/evaluate_inverse_residual_adapter.py",
+      "role": "locked_implementation:evaluate_inverse_residual_adapter.py",
+      "sha256": "38747e3a732362734757e6bde3715eb2ac5eb9ecd0870ccead2193670da89eed",
+      "size_bytes": 13616
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/evaluate_channel_opex.py",
+      "role": "locked_implementation:evaluate_channel_opex.py",
+      "sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+      "size_bytes": 37240
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/inverse_residual_core.py",
+      "role": "locked_implementation:inverse_residual_core.py",
+      "sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+      "size_bytes": 23777
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/evaluation_controls.py",
+      "role": "locked_implementation:evaluation_controls.py",
+      "sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+      "size_bytes": 8507
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/td3bc_core.py",
+      "role": "locked_implementation:td3bc_core.py",
+      "sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+      "size_bytes": 31956
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/train_inverse_residual_adapter.py",
+      "role": "locked_implementation:train_inverse_residual_adapter.py",
+      "sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+      "size_bytes": 57182
+    },
+    {
+      "path": "/root/hubl_research_20260914/code/train_iql.py",
+      "role": "locked_implementation:train_iql.py",
+      "sha256": "b3a159fc8c0612c5c23578a1496a6beb858063462c086a824fe7874d09b089ee",
+      "size_bytes": 47135
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "aggregate_path": "/root/hubl_research_20260914/results/scaleup/multiseed_aggregate.json",
+  "aggregate_sha256": "86f66982367216c069872f6e70431605854e284708749fb9aed9d719e53d39ad",
+  "checks_performed": 96,
+  "failure_count": 0,
+  "failures": [],
+  "schema_version": "ca-opex-walker-multiseed-verify-v1",
+  "status": "verified_complete",
+  "training_seeds": [
+    1,
+    2,
+    3,
+    4,
+    10
+  ]
+}

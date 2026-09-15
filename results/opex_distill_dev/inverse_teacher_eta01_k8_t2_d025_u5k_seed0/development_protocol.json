@@ -1,0 +1,127 @@
+{
+  "schema_version": "opex-distillation-development-protocol-v1",
+  "status": "frozen_before_execution",
+  "frozen_at_utc": "2026-09-14T16:26:17Z",
+  "evidence_label": "development",
+  "confirmation_evidence_eligible": false,
+  "scope": "One immutable seed-0 development run testing whether a feed-forward residual policy can amortize an already selected calibrated channel-aware OPEX teacher.",
+  "novelty_position": {
+    "role": "PA-RL-like policy-amortization control and possible engineering extension",
+    "is_primary_novelty": false,
+    "prohibited_claim": "Do not present generic frozen-critic teacher optimization followed by policy distillation as the primary method novelty.",
+    "scientific_use": "Tests whether the gap between direct frozen-Q adapter optimization and per-state CA-OPEX is principally an amortization/optimization problem."
+  },
+  "contamination_and_selection": {
+    "matched_development_block_previously_used": true,
+    "teacher_step_size_was_selected_on_this_development_block": true,
+    "teacher_raw_result_already_read": true,
+    "confirmation_results_must_not_be_used_for_selection": true,
+    "interpretation": "Every output is exploratory development evidence, even though execution is frozen and fail-closed. It cannot be relabeled as held-out confirmation."
+  },
+  "hypothesis": {
+    "limitation": "Direct end-to-end expected-Q optimization of the residual network may fail to amortize the strong per-state CA-OPEX solution through a noisy nonconvex policy objective.",
+    "intervention": "Generate a fresh K=8, T=2 calibrated CA-OPEX target online for every sampled source-train state, then fit the same bounded residual MLP by normalized command MSE.",
+    "predictions_if_supported": [
+      "The normalized teacher-command MSE decreases during training.",
+      "The distilled student improves over the paired inverse-only anchor on the fixed matched-development episodes.",
+      "The student recovers a positive fraction of the already frozen CA-OPEX teacher improvement while using zero critic calls at deployment."
+    ],
+    "counterevidence": "Failure to improve over inverse-only despite low teacher-command MSE would indicate behavioral compounding or critic-teacher mismatch rather than merely difficult policy optimization."
+  },
+  "artifacts": {
+    "dataset": {
+      "path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+      "sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+    },
+    "base_checkpoint": {
+      "path": "/root/hubl_research_20260914/results/channel_dev/hubl_constant_executed_beta05_25k_seed0/latest.pt",
+      "sha256": "d29501edf9b6961225bcbc157d7d7034bc5b625856dedcbbf9421eea25898106",
+      "expected_step": 25000,
+      "action_pairing": "executed_executed"
+    },
+    "channel_calibration": {
+      "path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001_calibration.json",
+      "sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+      "expected_beta_mle": 1.2498948872089386,
+      "pair_count": 512,
+      "contains_state_or_transition_fields": false
+    },
+    "frozen_teacher_result": {
+      "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta01_seed0_dev10.json",
+      "sha256": "700276fb6d171976443d111106e9d54926074f58ee37bd4f2648df0db41e299f",
+      "evidence_label": "development",
+      "selection_status": "eta=0.1 selected from the predeclared eta grid on these same ten development episodes",
+      "expected_adapted_normalized_score_mean": 38.76450111232494,
+      "expected_inverse_only_normalized_score_mean": 24.87332556997909
+    }
+  },
+  "locked_implementation": {
+    "train_opex_distilled_adapter.py": "f1be7520cc84bc7851c9812ff029e67289f912d163c2d2ee64843e17b61ac5ea",
+    "evaluate_inverse_residual_adapter.py": "38747e3a732362734757e6bde3715eb2ac5eb9ecd0870ccead2193670da89eed",
+    "evaluate_channel_opex.py": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+    "inverse_residual_core.py": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+    "evaluation_controls.py": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+    "td3bc_core.py": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+    "train_inverse_residual_adapter.py": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+    "train_iql.py": "b3a159fc8c0612c5c23578a1496a6beb858063462c086a824fe7874d09b089ee"
+  },
+  "training": {
+    "output_dir": "/root/hubl_research_20260914/results/opex_distill_dev/inverse_teacher_eta01_k8_t2_d025_u5k_seed0",
+    "train_seed": 0,
+    "updates": 5000,
+    "batch_size": 256,
+    "hidden_dim": 128,
+    "depth": 2,
+    "learning_rate": 0.0003,
+    "delta_max": 0.25,
+    "teacher": {
+      "baseline_transform": "inverse",
+      "step_size": 0.1,
+      "gradient_noise_samples": 8,
+      "gradient_steps": 2,
+      "gradient_noise_seed": 271828,
+      "critic": "frozen_q1",
+      "fixed_anchor_linf_projection": true,
+      "fresh_antithetic_noise_each_gradient_step_and_update": true
+    },
+    "observation_split": {
+      "audit_fraction": 0.1,
+      "split_seed": 424242,
+      "expected_train_observation_count": 899940,
+      "expected_audit_observation_count": 100060,
+      "expected_train_indices_sha256": "f90181e680de975cf43be71ff477462513b6e9157453abb96302f9bf46adece5d",
+      "expected_audit_indices_sha256": "e122718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3"
+    },
+    "precompute_batch_size": 8192,
+    "log_period": 100,
+    "checkpoint_period": 1000,
+    "torch_threads": 2,
+    "expected_teacher_q1_rows": 20480000,
+    "expected_deployment_q1_rows_per_action": 0,
+    "resume_semantics": "--updates is the total target; exact continuation restores teacher, minibatch, optimizer, and global RNG states"
+  },
+  "evaluation": {
+    "output_name": "matched_dev10.json",
+    "environment": "Walker2d-v4",
+    "rollout_action_noise_beta": 1.25,
+    "episode_count_per_arm": 10,
+    "environment_seed_start": 28300,
+    "action_noise_seed_start": 38300,
+    "paired_environment_and_action_noise_seeds": true,
+    "reference_min_score": 1.629008,
+    "reference_max_score": 4592.3,
+    "selection_rule": "retain and report all ten requested episodes"
+  },
+  "comparison": {
+    "output_name": "matched_dev10_comparison.json",
+    "predeclared_arms": [
+      "inverse_only_anchor",
+      "opex_distilled_student",
+      "frozen_channel_aware_opex_teacher"
+    ],
+    "primary_metric": "normalized_score_mean",
+    "mechanism_metric": "fraction_of_teacher_mean_return_improvement_over_inverse_recovered_by_student",
+    "cost_metric": "deployment_q1_rows_per_environment_step",
+    "selection_rule": "No run or episode may be excluded; report negative and greater-than-one recovery fractions unchanged."
+  }
+}

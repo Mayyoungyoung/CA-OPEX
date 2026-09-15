@@ -1,0 +1,3581 @@
+{
+  "baseline_equivalence_checks": [
+    {
+      "check_id": "seed1_calibrated_inverse_baseline_exact",
+      "endpoints": [
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "inverse_p001_k8_u5k_seed1"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "inverse_qmean_p001_k8_u5k_seed1"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "external_ca_opex_inverse_seed1"
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+      "expected_baseline_semantics": "same frozen base actor followed by the same calibrated clipped-uniform-mean inverse; value estimator and residual adapter are bypassed",
+      "expected_rollout_beta": 1.25
+    },
+    {
+      "check_id": "seed10_calibrated_inverse_baseline_exact",
+      "endpoints": [
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "inverse_p001_k8_u5k_seed10"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "inverse_qmean_p001_k8_u5k_seed10"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "external_ca_opex_inverse_seed10"
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_base_checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+      "expected_baseline_semantics": "same frozen base actor followed by the same calibrated clipped-uniform-mean inverse; value estimator and residual adapter are bypassed",
+      "expected_rollout_beta": 1.25
+    },
+    {
+      "check_id": "seed1_identity_baseline_exact",
+      "endpoints": [
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "identity_p001_k8_u5k_seed1"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "identity_wide_p064_d2_k8_u5k_seed1"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed1"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "external_opex_original_seed1"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "external_ca_opex_identity_seed1"
+        },
+        {
+          "arm": "external",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "external_base_identity_seed1"
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+      "expected_baseline_semantics": "same frozen base actor used directly as command; adapter delta, model beta, and OPEX gradient path are bypassed",
+      "expected_rollout_beta": 1.25
+    },
+    {
+      "check_id": "seed10_identity_baseline_exact",
+      "endpoints": [
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "identity_p001_k8_u5k_seed10"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "identity_wide_p064_d2_k8_u5k_seed10"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed10"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "external_opex_original_seed10"
+        },
+        {
+          "arm": "baseline_only",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "external_ca_opex_identity_seed10"
+        },
+        {
+          "arm": "external",
+          "evaluation_id": "confirm_beta125",
+          "run_id": "external_base_identity_seed10"
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_base_checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+      "expected_baseline_semantics": "same frozen base actor used directly as command; adapter delta, model beta, and OPEX gradient path are bypassed",
+      "expected_rollout_beta": 1.25
+    }
+  ],
+  "bootstrap": {
+    "samples": 20000,
+    "seed": 20260914
+  },
+  "comparisons": [
+    {
+      "comparison_id": "inverse_p001_k8_u5k_seed1_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "inverse_p001_k8_u5k_seed1_clean_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_clean",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint clean-regression effect.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "inverse_p001_k8_u5k_seed10_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "inverse_p001_k8_u5k_seed10_clean_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_clean",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint clean-regression effect.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "identity_p001_k8_u5k_seed1_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "identity_p001_k8_u5k_seed1_clean_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_clean",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint clean-regression effect.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "identity_p001_k8_u5k_seed10_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "identity_p001_k8_u5k_seed10_clean_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_clean",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint clean-regression effect.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "inverse_qmean_p001_k8_u5k_seed1_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_qmean_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_qmean_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "inverse_qmean_p001_k8_u5k_seed10_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_qmean_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_qmean_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "identity_wide_p064_d2_k8_u5k_seed1_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_wide_p064_d2_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_wide_p064_d2_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "identity_wide_p064_d2_k8_u5k_seed10_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_wide_p064_d2_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_wide_p064_d2_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed1_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed10_beta125_adapted_minus_own_baseline",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Within-checkpoint adapter effect under the predeclared persistent-noise protocol.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_inverse_sampled_minus_direct_sampled",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Predeclared equal-capacity inverse-baseline adapter-family mechanism comparison.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed1_clean_inverse_sampled_minus_direct_sampled",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Clean equal-capacity inverse-baseline mechanism comparison.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_inverse_qmean_minus_inverse_sampled",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Value-estimator mechanism comparison at fixed inverse baseline and residual capacity.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_qmean_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_direct_wide_minus_direct_main",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Wide-capacity direct-residual control against the main direct-residual configuration.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_wide_p064_d2_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_direct_nominal_q_minus_direct_channel_q",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Nominal-Q beta-zero training control against the channel-calibrated direct residual.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_inverse_sampled_minus_direct_sampled",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Predeclared equal-capacity inverse-baseline adapter-family mechanism comparison.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed10_clean_inverse_sampled_minus_direct_sampled",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Clean equal-capacity inverse-baseline mechanism comparison.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_inverse_qmean_minus_inverse_sampled",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Value-estimator mechanism comparison at fixed inverse baseline and residual capacity.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_qmean_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_direct_wide_minus_direct_main",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Wide-capacity direct-residual control against the main direct-residual configuration.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_wide_p064_d2_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_direct_nominal_q_minus_direct_channel_q",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Nominal-Q beta-zero training control against the channel-calibrated direct residual.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_inverse_adapter_minus_oracle_inverse",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_oracle_inverse_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Predeclared learned adapter versus analytic oracle-beta inverse control on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_inverse_adapter_minus_scalar12",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_scalar12_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Adapter versus frozen scalar-1.2 command control on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_inverse_adapter_minus_base_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_base_identity_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Adapter versus direct base-policy command on the identical checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_direct_adapter_minus_base_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_base_identity_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Direct residual versus its no-residual base command on the identical checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed1_clean_inverse_adapter_minus_scalar12",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_clean",
+        "run_id": "external_scalar12_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Clean regression comparison against scalar-1.2 on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed1_clean_direct_adapter_minus_base_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_clean",
+        "run_id": "external_base_identity_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Clean direct-residual comparison against identity command on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_class": "different_trained_policy",
+      "comparison_id": "seed1_beta125_inverse_adapter_minus_dual_policy",
+      "evidence_label": "confirmation",
+      "expected_reference_base_checkpoint_sha256": "82be74f0af81fe5ab123255aab4e1444617753f9db1b714850292bfc1d36324f",
+      "expected_target_base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_dual_identity_seed1"
+      },
+      "require_same_base_checkpoint": false,
+      "selection_note": "Different-trained-policy comparison against the executed-commanded dual-action HUBL competitor; both checkpoint hashes are explicitly frozen.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_class": "different_trained_policy",
+      "comparison_id": "seed1_beta125_direct_adapter_minus_dual_policy",
+      "evidence_label": "confirmation",
+      "expected_reference_base_checkpoint_sha256": "82be74f0af81fe5ab123255aab4e1444617753f9db1b714850292bfc1d36324f",
+      "expected_target_base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_dual_identity_seed1"
+      },
+      "require_same_base_checkpoint": false,
+      "selection_note": "Different-trained-policy comparison against the executed-commanded dual-action HUBL competitor; both checkpoint hashes are explicitly frozen.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_inverse_adapter_minus_oracle_inverse",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_oracle_inverse_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Predeclared learned adapter versus analytic oracle-beta inverse control on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_inverse_adapter_minus_scalar12",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_scalar12_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Adapter versus frozen scalar-1.2 command control on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_inverse_adapter_minus_base_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_base_identity_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Adapter versus direct base-policy command on the identical checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_direct_adapter_minus_base_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_base_identity_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Direct residual versus its no-residual base command on the identical checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed10_clean_inverse_adapter_minus_scalar12",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_clean",
+        "run_id": "external_scalar12_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Clean regression comparison against scalar-1.2 on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed10_clean_direct_adapter_minus_base_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_clean",
+        "run_id": "external_base_identity_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Clean direct-residual comparison against identity command on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_clean",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_class": "different_trained_policy",
+      "comparison_id": "seed10_beta125_inverse_adapter_minus_dual_policy",
+      "evidence_label": "confirmation",
+      "expected_reference_base_checkpoint_sha256": "155807b3dccb5a3429e3c94073f534dc36947e82f53baeb147298693b6ca1206",
+      "expected_target_base_checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_dual_identity_seed10"
+      },
+      "require_same_base_checkpoint": false,
+      "selection_note": "Different-trained-policy comparison against the executed-commanded dual-action HUBL competitor; both checkpoint hashes are explicitly frozen.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_class": "different_trained_policy",
+      "comparison_id": "seed10_beta125_direct_adapter_minus_dual_policy",
+      "evidence_label": "confirmation",
+      "expected_reference_base_checkpoint_sha256": "155807b3dccb5a3429e3c94073f534dc36947e82f53baeb147298693b6ca1206",
+      "expected_target_base_checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+      "reference": {
+        "arm": "external",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_dual_identity_seed10"
+      },
+      "require_same_base_checkpoint": false,
+      "selection_note": "Different-trained-policy comparison against the executed-commanded dual-action HUBL competitor; both checkpoint hashes are explicitly frozen.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "identity_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_original_opex_effect",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_opex_original_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Paired original-structure OPEX effect relative to its identity anchor on the same base checkpoint and rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_opex_original_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_original_opex_effect",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_opex_original_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Paired original-structure OPEX effect relative to its identity anchor on the same base checkpoint and rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_opex_original_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_ca_opex_inverse_minus_ca_opex_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_identity_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Primary cross-controller comparison: selected inverse-anchor CA-OPEX minus selected identity-anchor CA-OPEX on the identical base checkpoint and rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_ca_opex_inverse_minus_ca_opex_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_identity_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Primary cross-controller comparison: selected inverse-anchor CA-OPEX minus selected identity-anchor CA-OPEX on the identical base checkpoint and rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_ca_opex_inverse_minus_original_opex",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_opex_original_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Primary cross-controller comparison: selected inverse-anchor CA-OPEX minus original-structure OPEX on the identical base checkpoint and rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_ca_opex_inverse_minus_original_opex",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_opex_original_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Primary cross-controller comparison: selected inverse-anchor CA-OPEX minus original-structure OPEX on the identical base checkpoint and rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_ca_opex_inverse_effect",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Paired channel-aware OPEX effect relative to the calibrated inverse anchor on the same rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_ca_opex_inverse_effect",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Paired channel-aware OPEX effect relative to the calibrated inverse anchor on the same rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_ca_opex_identity_effect",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_identity_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Paired channel-aware OPEX effect relative to the identity anchor on the same rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_identity_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_ca_opex_identity_effect",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "baseline_only",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_identity_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Paired channel-aware OPEX effect relative to the identity anchor on the same rollout seeds.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_identity_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_inverse_adapter_minus_original_opex",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_opex_original_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Learned inverse-residual adapter candidate against the original-structure OPEX competitor on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_inverse_adapter_minus_original_opex",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_opex_original_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Learned inverse-residual adapter candidate against the original-structure OPEX competitor on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_inverse_adapter_minus_ca_opex_inverse",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Learned inverse-residual adapter candidate against the primary confirmation method, dev-selected inverse-anchor CA-OPEX, on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_inverse_adapter_minus_ca_opex_inverse",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_inverse_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Learned inverse-residual adapter candidate against the primary confirmation method, dev-selected inverse-anchor CA-OPEX, on the identical base checkpoint.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    },
+    {
+      "comparison_id": "seed1_beta125_inverse_adapter_minus_ca_opex_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_identity_seed1"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Learned inverse-residual adapter candidate against the dev-selected identity-anchor CA-OPEX equal-base competitor.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed1"
+      }
+    },
+    {
+      "comparison_id": "seed10_beta125_inverse_adapter_minus_ca_opex_identity",
+      "evidence_label": "confirmation",
+      "reference": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "external_ca_opex_identity_seed10"
+      },
+      "require_same_base_checkpoint": true,
+      "selection_note": "Learned inverse-residual adapter candidate against the dev-selected identity-anchor CA-OPEX equal-base competitor.",
+      "target": {
+        "arm": "adapted",
+        "evaluation_id": "confirm_beta125",
+        "run_id": "inverse_p001_k8_u5k_seed10"
+      }
+    }
+  ],
+  "evidence_scope": "Frozen confirmation template. The selected adapter and CA-OPEX versions were not run or tuned on the 50-episode 39300/49300 block; base seeds 1/10 were predeclared rather than performance-screened. External baseline arms on these episode seeds already existed and all such raw records are retained, so the whole evaluation block is not described as blind. The template remains unusable until final implementation SHA256 placeholders are resolved before any predeclared adapter training directory or OPEX confirmation output exists.",
+  "external_evaluations": [
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "raw_arm": "persistent_action_noise",
+          "selection_note": "Raw persistent-noise arm; all 50 paired seed-indexed episodes retained."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": null,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "raw_arm": "clean",
+          "selection_note": "Raw clean arm; all 50 environment-seed episodes retained and no actuator-noise RNG is used."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "checkpoint_config_sha256": "caa9696f708e51da0ba1800cfb2b97fe09b8f2a936f47cc3f47c8b7b8d68b1e4",
+        "checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "raw_file_sha256": "f35d36bfb3d02a8aa010e1bded956a95210ebefc888e85d3f1c8ecc31f9db8b1"
+      },
+      "expected_config": {
+        "checkpoint_action_pairing": "executed_executed",
+        "checkpoint_train_seed": 1,
+        "checkpoint_updates": 25000,
+        "checkpoint_variant": "hubl_constant",
+        "command_scale": 1,
+        "command_transform": "identity",
+        "command_transform_beta": 1.25
+      },
+      "expected_implementation": {
+        "evaluate_td3bc_sha256": "770a690f06ee30ba84213fc35948e9f6f8a242a9976288d32d6a3845d3a4df26",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "td3bc_base_identity",
+      "path": "inverse_residual_confirm/baseline_evals/base_identity_seed1_beta125.json",
+      "raw_schema": "evaluate_td3bc_v1",
+      "run_id": "external_base_identity_seed1",
+      "selection_note": "Frozen executed-action HUBL physical policy with identity command. Existing raw confirmation record retained without hand-entered scores.",
+      "training_seed": 1
+    },
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "raw_arm": "persistent_action_noise",
+          "selection_note": "Raw persistent-noise arm; all 50 paired seed-indexed episodes retained."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": null,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "raw_arm": "clean",
+          "selection_note": "Raw clean arm; all 50 environment-seed episodes retained and no actuator-noise RNG is used."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "checkpoint_config_sha256": "159805c950779b0e3b341b29afd0cebb09626f7c1ea75edc56f8a3542d7967c7",
+        "checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "raw_file_sha256": "d4fc9691e691b57b7dca0c088e6d46c7a8b7e210dfd3ce13f6da0a6e7a89801d"
+      },
+      "expected_config": {
+        "checkpoint_action_pairing": "executed_executed",
+        "checkpoint_train_seed": 10,
+        "checkpoint_updates": 25000,
+        "checkpoint_variant": "hubl_constant",
+        "command_scale": 1,
+        "command_transform": "identity",
+        "command_transform_beta": 1.25
+      },
+      "expected_implementation": {
+        "evaluate_td3bc_sha256": "770a690f06ee30ba84213fc35948e9f6f8a242a9976288d32d6a3845d3a4df26",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "td3bc_base_identity",
+      "path": "inverse_residual_confirm/baseline_evals/base_identity_seed10_beta125.json",
+      "raw_schema": "evaluate_td3bc_v1",
+      "run_id": "external_base_identity_seed10",
+      "selection_note": "Frozen executed-action HUBL physical policy with identity command. Existing raw confirmation record retained without hand-entered scores.",
+      "training_seed": 10
+    },
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "raw_arm": "persistent_action_noise",
+          "selection_note": "Raw persistent-noise arm; all 50 paired seed-indexed episodes retained."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": null,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "raw_arm": "clean",
+          "selection_note": "Raw clean arm; all 50 environment-seed episodes retained and no actuator-noise RNG is used."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "checkpoint_config_sha256": "caa9696f708e51da0ba1800cfb2b97fe09b8f2a936f47cc3f47c8b7b8d68b1e4",
+        "checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "raw_file_sha256": "87f905390f9731a1c2ced2e29a5d560632dab0776909980f80a78fd5a1f650cd"
+      },
+      "expected_config": {
+        "checkpoint_action_pairing": "executed_executed",
+        "checkpoint_train_seed": 1,
+        "checkpoint_updates": 25000,
+        "checkpoint_variant": "hubl_constant",
+        "command_scale": 1.2,
+        "command_transform": "identity",
+        "command_transform_beta": 1.25
+      },
+      "expected_implementation": {
+        "evaluate_td3bc_sha256": "770a690f06ee30ba84213fc35948e9f6f8a242a9976288d32d6a3845d3a4df26",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "td3bc_scalar_1p2",
+      "path": "inverse_residual_confirm/baseline_evals/base_scalar12_seed1_beta125.json",
+      "raw_schema": "evaluate_td3bc_v1",
+      "run_id": "external_scalar12_seed1",
+      "selection_note": "Frozen scalar-1.2 command control on the same executed-action HUBL checkpoint. Existing raw confirmation record retained without hand-entered scores.",
+      "training_seed": 1
+    },
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "raw_arm": "persistent_action_noise",
+          "selection_note": "Raw persistent-noise arm; all 50 paired seed-indexed episodes retained."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": null,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "raw_arm": "clean",
+          "selection_note": "Raw clean arm; all 50 environment-seed episodes retained and no actuator-noise RNG is used."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "checkpoint_config_sha256": "159805c950779b0e3b341b29afd0cebb09626f7c1ea75edc56f8a3542d7967c7",
+        "checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "raw_file_sha256": "f909d79500404c3c7f79cfba8d20550ecdaca184bb985cbbd3d6143e6d845786"
+      },
+      "expected_config": {
+        "checkpoint_action_pairing": "executed_executed",
+        "checkpoint_train_seed": 10,
+        "checkpoint_updates": 25000,
+        "checkpoint_variant": "hubl_constant",
+        "command_scale": 1.2,
+        "command_transform": "identity",
+        "command_transform_beta": 1.25
+      },
+      "expected_implementation": {
+        "evaluate_td3bc_sha256": "770a690f06ee30ba84213fc35948e9f6f8a242a9976288d32d6a3845d3a4df26",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "td3bc_scalar_1p2",
+      "path": "inverse_residual_confirm/baseline_evals/base_scalar12_seed10_beta125.json",
+      "raw_schema": "evaluate_td3bc_v1",
+      "run_id": "external_scalar12_seed10",
+      "selection_note": "Frozen scalar-1.2 command control on the same executed-action HUBL checkpoint. Existing raw confirmation record retained without hand-entered scores.",
+      "training_seed": 10
+    },
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "raw_arm": "persistent_action_noise",
+          "selection_note": "Raw persistent-noise arm; all 50 paired seed-indexed episodes retained."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": null,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "raw_arm": "clean",
+          "selection_note": "Raw clean arm; all 50 environment-seed episodes retained and no actuator-noise RNG is used."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "checkpoint_config_sha256": "caa9696f708e51da0ba1800cfb2b97fe09b8f2a936f47cc3f47c8b7b8d68b1e4",
+        "checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "raw_file_sha256": "a31d21220b0d157be6b3bb2574bb70b6a2a82975095f8305ba1c8307166283c3"
+      },
+      "expected_config": {
+        "checkpoint_action_pairing": "executed_executed",
+        "checkpoint_train_seed": 1,
+        "checkpoint_updates": 25000,
+        "checkpoint_variant": "hubl_constant",
+        "command_scale": 1,
+        "command_transform": "uniform_mean_inverse",
+        "command_transform_beta": 1.25
+      },
+      "expected_implementation": {
+        "evaluate_td3bc_sha256": "770a690f06ee30ba84213fc35948e9f6f8a242a9976288d32d6a3845d3a4df26",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "td3bc_oracle_beta1p25_inverse",
+      "path": "inverse_residual_confirm/baseline_evals/base_oracle_inverse_seed1_beta125.json",
+      "raw_schema": "evaluate_td3bc_v1",
+      "run_id": "external_oracle_inverse_seed1",
+      "selection_note": "Oracle-beta 1.25 analytic uniform clipped-channel mean inverse on the same base checkpoint. Existing raw confirmation record retained without hand-entered scores.",
+      "training_seed": 1
+    },
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "raw_arm": "persistent_action_noise",
+          "selection_note": "Raw persistent-noise arm; all 50 paired seed-indexed episodes retained."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": null,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "raw_arm": "clean",
+          "selection_note": "Raw clean arm; all 50 environment-seed episodes retained and no actuator-noise RNG is used."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "checkpoint_config_sha256": "159805c950779b0e3b341b29afd0cebb09626f7c1ea75edc56f8a3542d7967c7",
+        "checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "raw_file_sha256": "04ca7431125aa7dbdf3d37a957aed695e9dce6b95e46b98d7b1bd3a00e764819"
+      },
+      "expected_config": {
+        "checkpoint_action_pairing": "executed_executed",
+        "checkpoint_train_seed": 10,
+        "checkpoint_updates": 25000,
+        "checkpoint_variant": "hubl_constant",
+        "command_scale": 1,
+        "command_transform": "uniform_mean_inverse",
+        "command_transform_beta": 1.25
+      },
+      "expected_implementation": {
+        "evaluate_td3bc_sha256": "770a690f06ee30ba84213fc35948e9f6f8a242a9976288d32d6a3845d3a4df26",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "td3bc_oracle_beta1p25_inverse",
+      "path": "inverse_residual_confirm/baseline_evals/base_oracle_inverse_seed10_beta125.json",
+      "raw_schema": "evaluate_td3bc_v1",
+      "run_id": "external_oracle_inverse_seed10",
+      "selection_note": "Oracle-beta 1.25 analytic uniform clipped-channel mean inverse on the same base checkpoint. Existing raw confirmation record retained without hand-entered scores.",
+      "training_seed": 10
+    },
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "raw_arm": "persistent_action_noise",
+          "selection_note": "Raw persistent-noise arm; all 50 paired seed-indexed episodes retained."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": null,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "raw_arm": "clean",
+          "selection_note": "Raw clean arm; all 50 environment-seed episodes retained and no actuator-noise RNG is used."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "checkpoint_config_sha256": "4a32b523c0f7cca34a41b5800ab5042a56d0525a564f0562776d3a358027fcb9",
+        "checkpoint_sha256": "82be74f0af81fe5ab123255aab4e1444617753f9db1b714850292bfc1d36324f",
+        "raw_file_sha256": "d6d1a92c5d390daa4d747c43420051d5753099356a75982c034338d6240cfbf7"
+      },
+      "expected_config": {
+        "checkpoint_action_pairing": "executed_commanded",
+        "checkpoint_train_seed": 1,
+        "checkpoint_updates": 25000,
+        "checkpoint_variant": "hubl_constant",
+        "command_scale": 1,
+        "command_transform": "identity",
+        "command_transform_beta": 1.25
+      },
+      "expected_implementation": {
+        "evaluate_td3bc_sha256": "770a690f06ee30ba84213fc35948e9f6f8a242a9976288d32d6a3845d3a4df26",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "td3bc_dual_executed_commanded_identity",
+      "path": "inverse_residual_confirm/baseline_evals/dual_identity_seed1_beta125.json",
+      "raw_schema": "evaluate_td3bc_v1",
+      "run_id": "external_dual_identity_seed1",
+      "selection_note": "Separately trained executed-critic/commanded-BC dual-action HUBL competitor. Existing raw confirmation record retained without hand-entered scores.",
+      "training_seed": 1
+    },
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "raw_arm": "persistent_action_noise",
+          "selection_note": "Raw persistent-noise arm; all 50 paired seed-indexed episodes retained."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": null,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "raw_arm": "clean",
+          "selection_note": "Raw clean arm; all 50 environment-seed episodes retained and no actuator-noise RNG is used."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "checkpoint_config_sha256": "e9920ac4add7124aa5ca11c32178875aa01c0450184fb543d59cbd96d0b197f2",
+        "checkpoint_sha256": "155807b3dccb5a3429e3c94073f534dc36947e82f53baeb147298693b6ca1206",
+        "raw_file_sha256": "f3addfaf97910c8e6b906c31a473d8b10057ca6f6a742e2034e056468271a0c3"
+      },
+      "expected_config": {
+        "checkpoint_action_pairing": "executed_commanded",
+        "checkpoint_train_seed": 10,
+        "checkpoint_updates": 25000,
+        "checkpoint_variant": "hubl_constant",
+        "command_scale": 1,
+        "command_transform": "identity",
+        "command_transform_beta": 1.25
+      },
+      "expected_implementation": {
+        "evaluate_td3bc_sha256": "770a690f06ee30ba84213fc35948e9f6f8a242a9976288d32d6a3845d3a4df26",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "td3bc_dual_executed_commanded_identity",
+      "path": "inverse_residual_confirm/baseline_evals/dual_identity_seed10_beta125.json",
+      "raw_schema": "evaluate_td3bc_v1",
+      "run_id": "external_dual_identity_seed10",
+      "selection_note": "Separately trained executed-critic/commanded-BC dual-action HUBL competitor. Existing raw confirmation record retained without hand-entered scores.",
+      "training_seed": 10
+    },
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "actuator_noise_rng_namespace": "numpy_generator_per_episode",
+            "environment": "Walker2d-v4",
+            "environment_rng_namespace": "gymnasium_env_reset",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "episode_local_gradient_streams_prevent_cross_episode_call_order_coupling": true,
+            "gradient_noise_antithetic": false,
+            "gradient_noise_rng_namespace": "none_beta_zero_deterministic_objective",
+            "gradient_noise_sampling_frequency": "none_beta_zero",
+            "gradient_noise_seed_start": 69300,
+            "paired_environment_and_action_noise_seeds": true,
+            "rollout_beta": 1.25,
+            "selection_rule": "all requested episodes retained"
+          },
+          "raw_arm": "paired_controller",
+          "selection_note": "All 50 predeclared paired rollout episodes are retained; episode intervals condition on this fixed base checkpoint/controller."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "calibration_sha256": null,
+        "checkpoint_config_sha256": "caa9696f708e51da0ba1800cfb2b97fe09b8f2a936f47cc3f47c8b7b8d68b1e4",
+        "checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae"
+      },
+      "expected_config": {
+        "K": 1,
+        "actor_parameter_updates": 0,
+        "baseline_transform": "identity",
+        "calibration_mode": "cli_known_beta_without_pair_calibration",
+        "critic": "frozen_q1",
+        "critic_parameter_updates": 0,
+        "delta_max": 2.0,
+        "execution_noise_samples": 1,
+        "gradient_noise_seed": 69300,
+        "gradient_objective": "q1_of_action_bounded_command_with_deterministic_zero_channel_noise",
+        "gradient_steps": 1,
+        "gradient_steps_per_action": 1,
+        "model_beta": 0,
+        "q_reducer": "mean_q1",
+        "step_size": 0.1
+      },
+      "expected_cost": {
+        "base_actor_rows_per_adapted_environment_step": 1,
+        "cost_scope": "adapted_arm_deployment_controller_only",
+        "q1_backward_calls_per_adapted_step": 1,
+        "q1_rows_per_adapted_step": 1
+      },
+      "expected_implementation": {
+        "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+        "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+        "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "original_structure_opex_t1",
+      "path": "inverse_residual_confirm/external_controls/opex_original_seed1_beta125_50.json",
+      "raw_schema": "channel_opex_v1",
+      "run_id": "external_opex_original_seed1",
+      "selection_note": "Predeclared original-structure OPEX comparator (identity anchor, deterministic Q1 action gradient, T=1, eta=0.1); not selected on confirmation data.",
+      "training_seed": 1
+    },
+    {
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "actuator_noise_rng_namespace": "numpy_generator_per_episode",
+            "environment": "Walker2d-v4",
+            "environment_rng_namespace": "gymnasium_env_reset",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "episode_local_gradient_streams_prevent_cross_episode_call_order_coupling": true,
+            "gradient_noise_antithetic": false,
+            "gradient_noise_rng_namespace": "none_beta_zero_deterministic_objective",
+            "gradient_noise_sampling_frequency": "none_beta_zero",
+            "gradient_noise_seed_start": 69300,
+            "paired_environment_and_action_noise_seeds": true,
+            "rollout_beta": 1.25,
+            "selection_rule": "all requested episodes retained"
+          },
+          "raw_arm": "paired_controller",
+          "selection_note": "All 50 predeclared paired rollout episodes are retained; episode intervals condition on this fixed base checkpoint/controller."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "calibration_sha256": null,
+        "checkpoint_config_sha256": "159805c950779b0e3b341b29afd0cebb09626f7c1ea75edc56f8a3542d7967c7",
+        "checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d"
+      },
+      "expected_config": {
+        "K": 1,
+        "actor_parameter_updates": 0,
+        "baseline_transform": "identity",
+        "calibration_mode": "cli_known_beta_without_pair_calibration",
+        "critic": "frozen_q1",
+        "critic_parameter_updates": 0,
+        "delta_max": 2.0,
+        "execution_noise_samples": 1,
+        "gradient_noise_seed": 69300,
+        "gradient_objective": "q1_of_action_bounded_command_with_deterministic_zero_channel_noise",
+        "gradient_steps": 1,
+        "gradient_steps_per_action": 1,
+        "model_beta": 0,
+        "q_reducer": "mean_q1",
+        "step_size": 0.1
+      },
+      "expected_cost": {
+        "base_actor_rows_per_adapted_environment_step": 1,
+        "cost_scope": "adapted_arm_deployment_controller_only",
+        "q1_backward_calls_per_adapted_step": 1,
+        "q1_rows_per_adapted_step": 1
+      },
+      "expected_implementation": {
+        "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+        "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+        "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "original_structure_opex_t1",
+      "path": "inverse_residual_confirm/external_controls/opex_original_seed10_beta125_50.json",
+      "raw_schema": "channel_opex_v1",
+      "run_id": "external_opex_original_seed10",
+      "selection_note": "Predeclared original-structure OPEX comparator (identity anchor, deterministic Q1 action gradient, T=1, eta=0.1); not selected on confirmation data.",
+      "training_seed": 10
+    },
+    {
+      "development_selection": {
+        "anchor": "inverse",
+        "candidate_count": 10,
+        "evaluator_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "external_baseline_arms_on_confirmation_seeds_preexisting_and_observed": true,
+        "global_confirmation_blindness_claim": false,
+        "pre_evaluation_protocol_sha256": "cba9c40550933fe9e864bafd74013b724b7a3dd95e4117e4274d421fa71796ee",
+        "pre_evaluation_selection_sha256": "603d5a700ede8faaac03297b27d56cfc04e78960f24a1cf530c142314fa51f4a",
+        "pre_evaluation_selector_sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5",
+        "prior_protocol_path": "channel_opex_dev_protocol.json",
+        "prior_protocol_sha256": "91928bd70cf91162c9b796167baa66aadb2818240df3fb7d98f1e17afe7b8bc5",
+        "prior_selection_path": "channel_opex_dev/selection.json",
+        "prior_selection_sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+        "prior_selector_dependency_sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+        "prior_selector_path": "select_channel_opex_dev.py",
+        "protocol_path": "channel_opex_boundary_extension_protocol.json",
+        "protocol_sha256": "4b9f560424b3ae82a03fe5563b31d411cd0c0414e389a5e6daf9b482f02d2dfd",
+        "provenance_revalidation_after_evaluations": true,
+        "selected_adapter_confirmation_outputs_read_before_selection": false,
+        "selected_ca_opex_confirmation_outputs_read_before_selection": false,
+        "selected_candidate_raw_sha256": "700276fb6d171976443d111106e9d54926074f58ee37bd4f2648df0db41e299f",
+        "selected_step_size": 0.1,
+        "selection_path": "channel_opex_dev_extension/selection_provenance_revalidated_v3_final.json",
+        "selection_schema": "channel-opex-boundary-extension-selection-revalidated-v3",
+        "selection_sha256": "b35bb5fc283b9ac793f4db83dda11313015095cf69f4b9eb42dcad25e4f62cba",
+        "selector_path": "select_channel_opex_boundary_extension.py",
+        "selector_sha256": "2ff6e08195806df58f880098705d7bcfa3a0770da366b5172abb6429d7d163c5"
+      },
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "actuator_noise_rng_namespace": "numpy_generator_per_episode",
+            "environment": "Walker2d-v4",
+            "environment_rng_namespace": "gymnasium_env_reset",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "episode_local_gradient_streams_prevent_cross_episode_call_order_coupling": true,
+            "gradient_noise_antithetic": true,
+            "gradient_noise_rng_namespace": "torch_generator_per_episode_fresh_antithetic_per_gradient_step",
+            "gradient_noise_sampling_frequency": "per_gradient_step",
+            "gradient_noise_seed_start": 69300,
+            "paired_environment_and_action_noise_seeds": true,
+            "rollout_beta": 1.25,
+            "selection_rule": "all requested episodes retained"
+          },
+          "raw_arm": "paired_controller",
+          "selection_note": "All 50 predeclared paired rollout episodes are retained; episode intervals condition on this fixed base checkpoint/controller."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_config_sha256": "caa9696f708e51da0ba1800cfb2b97fe09b8f2a936f47cc3f47c8b7b8d68b1e4",
+        "checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae"
+      },
+      "expected_config": {
+        "K": 8,
+        "actor_parameter_updates": 0,
+        "baseline_transform": "inverse",
+        "calibration_mode": "censored_uniform_plus_clip_pair_calibration",
+        "critic": "frozen_q1",
+        "critic_parameter_updates": 0,
+        "delta_max": 0.25,
+        "execution_noise_samples": 8,
+        "gradient_noise_seed": 69300,
+        "gradient_objective": "mean_k_q1_of_clipped_command_plus_fresh_antithetic_uniform_noise_per_gradient_step",
+        "gradient_steps": 2,
+        "gradient_steps_per_action": 2,
+        "model_beta": 1.2498948872089386,
+        "q_reducer": "mean_q1",
+        "step_size": 0.1
+      },
+      "expected_cost": {
+        "base_actor_rows_per_adapted_environment_step": 1,
+        "cost_scope": "adapted_arm_deployment_controller_only",
+        "q1_backward_calls_per_adapted_step": 2,
+        "q1_rows_per_adapted_step": 16
+      },
+      "expected_implementation": {
+        "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+        "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+        "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "channel_aware_opex_inverse_anchor",
+      "path": "inverse_residual_confirm/external_controls/ca_opex_inverse_seed1_beta125_50.json",
+      "raw_schema": "channel_opex_v1",
+      "run_id": "external_ca_opex_inverse_seed1",
+      "selection_note": "Primary confirmation method: eta=0.1 CA-OPEX from the inverse anchor, selected over the retained five-point development union grid. The v3 chronology record links all ten raw candidates: selected CA-OPEX and adapter confirmation outputs were unread, while preexisting external baseline arms on the confirmation seeds had been observed.",
+      "training_seed": 1
+    },
+    {
+      "development_selection": {
+        "anchor": "inverse",
+        "candidate_count": 10,
+        "evaluator_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "external_baseline_arms_on_confirmation_seeds_preexisting_and_observed": true,
+        "global_confirmation_blindness_claim": false,
+        "pre_evaluation_protocol_sha256": "cba9c40550933fe9e864bafd74013b724b7a3dd95e4117e4274d421fa71796ee",
+        "pre_evaluation_selection_sha256": "603d5a700ede8faaac03297b27d56cfc04e78960f24a1cf530c142314fa51f4a",
+        "pre_evaluation_selector_sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5",
+        "prior_protocol_path": "channel_opex_dev_protocol.json",
+        "prior_protocol_sha256": "91928bd70cf91162c9b796167baa66aadb2818240df3fb7d98f1e17afe7b8bc5",
+        "prior_selection_path": "channel_opex_dev/selection.json",
+        "prior_selection_sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+        "prior_selector_dependency_sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+        "prior_selector_path": "select_channel_opex_dev.py",
+        "protocol_path": "channel_opex_boundary_extension_protocol.json",
+        "protocol_sha256": "4b9f560424b3ae82a03fe5563b31d411cd0c0414e389a5e6daf9b482f02d2dfd",
+        "provenance_revalidation_after_evaluations": true,
+        "selected_adapter_confirmation_outputs_read_before_selection": false,
+        "selected_ca_opex_confirmation_outputs_read_before_selection": false,
+        "selected_candidate_raw_sha256": "700276fb6d171976443d111106e9d54926074f58ee37bd4f2648df0db41e299f",
+        "selected_step_size": 0.1,
+        "selection_path": "channel_opex_dev_extension/selection_provenance_revalidated_v3_final.json",
+        "selection_schema": "channel-opex-boundary-extension-selection-revalidated-v3",
+        "selection_sha256": "b35bb5fc283b9ac793f4db83dda11313015095cf69f4b9eb42dcad25e4f62cba",
+        "selector_path": "select_channel_opex_boundary_extension.py",
+        "selector_sha256": "2ff6e08195806df58f880098705d7bcfa3a0770da366b5172abb6429d7d163c5"
+      },
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "actuator_noise_rng_namespace": "numpy_generator_per_episode",
+            "environment": "Walker2d-v4",
+            "environment_rng_namespace": "gymnasium_env_reset",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "episode_local_gradient_streams_prevent_cross_episode_call_order_coupling": true,
+            "gradient_noise_antithetic": true,
+            "gradient_noise_rng_namespace": "torch_generator_per_episode_fresh_antithetic_per_gradient_step",
+            "gradient_noise_sampling_frequency": "per_gradient_step",
+            "gradient_noise_seed_start": 69300,
+            "paired_environment_and_action_noise_seeds": true,
+            "rollout_beta": 1.25,
+            "selection_rule": "all requested episodes retained"
+          },
+          "raw_arm": "paired_controller",
+          "selection_note": "All 50 predeclared paired rollout episodes are retained; episode intervals condition on this fixed base checkpoint/controller."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_config_sha256": "159805c950779b0e3b341b29afd0cebb09626f7c1ea75edc56f8a3542d7967c7",
+        "checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d"
+      },
+      "expected_config": {
+        "K": 8,
+        "actor_parameter_updates": 0,
+        "baseline_transform": "inverse",
+        "calibration_mode": "censored_uniform_plus_clip_pair_calibration",
+        "critic": "frozen_q1",
+        "critic_parameter_updates": 0,
+        "delta_max": 0.25,
+        "execution_noise_samples": 8,
+        "gradient_noise_seed": 69300,
+        "gradient_objective": "mean_k_q1_of_clipped_command_plus_fresh_antithetic_uniform_noise_per_gradient_step",
+        "gradient_steps": 2,
+        "gradient_steps_per_action": 2,
+        "model_beta": 1.2498948872089386,
+        "q_reducer": "mean_q1",
+        "step_size": 0.1
+      },
+      "expected_cost": {
+        "base_actor_rows_per_adapted_environment_step": 1,
+        "cost_scope": "adapted_arm_deployment_controller_only",
+        "q1_backward_calls_per_adapted_step": 2,
+        "q1_rows_per_adapted_step": 16
+      },
+      "expected_implementation": {
+        "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+        "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+        "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "channel_aware_opex_inverse_anchor",
+      "path": "inverse_residual_confirm/external_controls/ca_opex_inverse_seed10_beta125_50.json",
+      "raw_schema": "channel_opex_v1",
+      "run_id": "external_ca_opex_inverse_seed10",
+      "selection_note": "Primary confirmation method: eta=0.1 CA-OPEX from the inverse anchor, selected over the retained five-point development union grid. The v3 chronology record links all ten raw candidates: selected CA-OPEX and adapter confirmation outputs were unread, while preexisting external baseline arms on the confirmation seeds had been observed.",
+      "training_seed": 10
+    },
+    {
+      "development_selection": {
+        "anchor": "identity",
+        "candidate_count": 10,
+        "evaluator_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "external_baseline_arms_on_confirmation_seeds_preexisting_and_observed": true,
+        "global_confirmation_blindness_claim": false,
+        "pre_evaluation_protocol_sha256": "cba9c40550933fe9e864bafd74013b724b7a3dd95e4117e4274d421fa71796ee",
+        "pre_evaluation_selection_sha256": "603d5a700ede8faaac03297b27d56cfc04e78960f24a1cf530c142314fa51f4a",
+        "pre_evaluation_selector_sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5",
+        "prior_protocol_path": "channel_opex_dev_protocol.json",
+        "prior_protocol_sha256": "91928bd70cf91162c9b796167baa66aadb2818240df3fb7d98f1e17afe7b8bc5",
+        "prior_selection_path": "channel_opex_dev/selection.json",
+        "prior_selection_sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+        "prior_selector_dependency_sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+        "prior_selector_path": "select_channel_opex_dev.py",
+        "protocol_path": "channel_opex_boundary_extension_protocol.json",
+        "protocol_sha256": "4b9f560424b3ae82a03fe5563b31d411cd0c0414e389a5e6daf9b482f02d2dfd",
+        "provenance_revalidation_after_evaluations": true,
+        "selected_adapter_confirmation_outputs_read_before_selection": false,
+        "selected_ca_opex_confirmation_outputs_read_before_selection": false,
+        "selected_candidate_raw_sha256": "e32b7dd211a78050c1c9f0e47d3fa03f8a2fe658b940de1ad4c02b11ab96d0e6",
+        "selected_step_size": 0.3,
+        "selection_path": "channel_opex_dev_extension/selection_provenance_revalidated_v3_final.json",
+        "selection_schema": "channel-opex-boundary-extension-selection-revalidated-v3",
+        "selection_sha256": "b35bb5fc283b9ac793f4db83dda11313015095cf69f4b9eb42dcad25e4f62cba",
+        "selector_path": "select_channel_opex_boundary_extension.py",
+        "selector_sha256": "2ff6e08195806df58f880098705d7bcfa3a0770da366b5172abb6429d7d163c5"
+      },
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "actuator_noise_rng_namespace": "numpy_generator_per_episode",
+            "environment": "Walker2d-v4",
+            "environment_rng_namespace": "gymnasium_env_reset",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "episode_local_gradient_streams_prevent_cross_episode_call_order_coupling": true,
+            "gradient_noise_antithetic": true,
+            "gradient_noise_rng_namespace": "torch_generator_per_episode_fresh_antithetic_per_gradient_step",
+            "gradient_noise_sampling_frequency": "per_gradient_step",
+            "gradient_noise_seed_start": 69300,
+            "paired_environment_and_action_noise_seeds": true,
+            "rollout_beta": 1.25,
+            "selection_rule": "all requested episodes retained"
+          },
+          "raw_arm": "paired_controller",
+          "selection_note": "All 50 predeclared paired rollout episodes are retained; episode intervals condition on this fixed base checkpoint/controller."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_config_sha256": "caa9696f708e51da0ba1800cfb2b97fe09b8f2a936f47cc3f47c8b7b8d68b1e4",
+        "checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae"
+      },
+      "expected_config": {
+        "K": 8,
+        "actor_parameter_updates": 0,
+        "baseline_transform": "identity",
+        "calibration_mode": "censored_uniform_plus_clip_pair_calibration",
+        "critic": "frozen_q1",
+        "critic_parameter_updates": 0,
+        "delta_max": 2.0,
+        "execution_noise_samples": 8,
+        "gradient_noise_seed": 69300,
+        "gradient_objective": "mean_k_q1_of_clipped_command_plus_fresh_antithetic_uniform_noise_per_gradient_step",
+        "gradient_steps": 2,
+        "gradient_steps_per_action": 2,
+        "model_beta": 1.2498948872089386,
+        "q_reducer": "mean_q1",
+        "step_size": 0.3
+      },
+      "expected_cost": {
+        "base_actor_rows_per_adapted_environment_step": 1,
+        "cost_scope": "adapted_arm_deployment_controller_only",
+        "q1_backward_calls_per_adapted_step": 2,
+        "q1_rows_per_adapted_step": 16
+      },
+      "expected_implementation": {
+        "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+        "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+        "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "channel_aware_opex_identity_anchor",
+      "path": "inverse_residual_confirm/external_controls/ca_opex_identity_seed1_beta125_50.json",
+      "raw_schema": "channel_opex_v1",
+      "run_id": "external_ca_opex_identity_seed1",
+      "selection_note": "eta=0.3 was selected for the identity anchor over the retained five-point development union grid. The v3 chronology record links all ten raw candidates: selected CA-OPEX and adapter confirmation outputs were unread, while preexisting external baseline arms on the confirmation seeds had been observed.",
+      "training_seed": 1
+    },
+    {
+      "development_selection": {
+        "anchor": "identity",
+        "candidate_count": 10,
+        "evaluator_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "external_baseline_arms_on_confirmation_seeds_preexisting_and_observed": true,
+        "global_confirmation_blindness_claim": false,
+        "pre_evaluation_protocol_sha256": "cba9c40550933fe9e864bafd74013b724b7a3dd95e4117e4274d421fa71796ee",
+        "pre_evaluation_selection_sha256": "603d5a700ede8faaac03297b27d56cfc04e78960f24a1cf530c142314fa51f4a",
+        "pre_evaluation_selector_sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5",
+        "prior_protocol_path": "channel_opex_dev_protocol.json",
+        "prior_protocol_sha256": "91928bd70cf91162c9b796167baa66aadb2818240df3fb7d98f1e17afe7b8bc5",
+        "prior_selection_path": "channel_opex_dev/selection.json",
+        "prior_selection_sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+        "prior_selector_dependency_sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+        "prior_selector_path": "select_channel_opex_dev.py",
+        "protocol_path": "channel_opex_boundary_extension_protocol.json",
+        "protocol_sha256": "4b9f560424b3ae82a03fe5563b31d411cd0c0414e389a5e6daf9b482f02d2dfd",
+        "provenance_revalidation_after_evaluations": true,
+        "selected_adapter_confirmation_outputs_read_before_selection": false,
+        "selected_ca_opex_confirmation_outputs_read_before_selection": false,
+        "selected_candidate_raw_sha256": "e32b7dd211a78050c1c9f0e47d3fa03f8a2fe658b940de1ad4c02b11ab96d0e6",
+        "selected_step_size": 0.3,
+        "selection_path": "channel_opex_dev_extension/selection_provenance_revalidated_v3_final.json",
+        "selection_schema": "channel-opex-boundary-extension-selection-revalidated-v3",
+        "selection_sha256": "b35bb5fc283b9ac793f4db83dda11313015095cf69f4b9eb42dcad25e4f62cba",
+        "selector_path": "select_channel_opex_boundary_extension.py",
+        "selector_sha256": "2ff6e08195806df58f880098705d7bcfa3a0770da366b5172abb6429d7d163c5"
+      },
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "actuator_noise_rng_namespace": "numpy_generator_per_episode",
+            "environment": "Walker2d-v4",
+            "environment_rng_namespace": "gymnasium_env_reset",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "episode_local_gradient_streams_prevent_cross_episode_call_order_coupling": true,
+            "gradient_noise_antithetic": true,
+            "gradient_noise_rng_namespace": "torch_generator_per_episode_fresh_antithetic_per_gradient_step",
+            "gradient_noise_sampling_frequency": "per_gradient_step",
+            "gradient_noise_seed_start": 69300,
+            "paired_environment_and_action_noise_seeds": true,
+            "rollout_beta": 1.25,
+            "selection_rule": "all requested episodes retained"
+          },
+          "raw_arm": "paired_controller",
+          "selection_note": "All 50 predeclared paired rollout episodes are retained; episode intervals condition on this fixed base checkpoint/controller."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_config_sha256": "159805c950779b0e3b341b29afd0cebb09626f7c1ea75edc56f8a3542d7967c7",
+        "checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d"
+      },
+      "expected_config": {
+        "K": 8,
+        "actor_parameter_updates": 0,
+        "baseline_transform": "identity",
+        "calibration_mode": "censored_uniform_plus_clip_pair_calibration",
+        "critic": "frozen_q1",
+        "critic_parameter_updates": 0,
+        "delta_max": 2.0,
+        "execution_noise_samples": 8,
+        "gradient_noise_seed": 69300,
+        "gradient_objective": "mean_k_q1_of_clipped_command_plus_fresh_antithetic_uniform_noise_per_gradient_step",
+        "gradient_steps": 2,
+        "gradient_steps_per_action": 2,
+        "model_beta": 1.2498948872089386,
+        "q_reducer": "mean_q1",
+        "step_size": 0.3
+      },
+      "expected_cost": {
+        "base_actor_rows_per_adapted_environment_step": 1,
+        "cost_scope": "adapted_arm_deployment_controller_only",
+        "q1_backward_calls_per_adapted_step": 2,
+        "q1_rows_per_adapted_step": 16
+      },
+      "expected_implementation": {
+        "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+        "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+        "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+        "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+      },
+      "method_id": "channel_aware_opex_identity_anchor",
+      "path": "inverse_residual_confirm/external_controls/ca_opex_identity_seed10_beta125_50.json",
+      "raw_schema": "channel_opex_v1",
+      "run_id": "external_ca_opex_identity_seed10",
+      "selection_note": "eta=0.3 was selected for the identity anchor over the retained five-point development union grid. The v3 chronology record links all ten raw candidates: selected CA-OPEX and adapter confirmation outputs were unread, while preexisting external baseline arms on the confirmation seeds had been observed.",
+      "training_seed": 10
+    }
+  ],
+  "freeze_provenance": {
+    "artifact_sources": [
+      {
+        "path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+        "sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+        "size_bytes": 378004533
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001_calibration.json",
+        "sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "size_bytes": 28649
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/latest.pt",
+        "sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "size_bytes": 3492510
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed10/latest.pt",
+        "sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "size_bytes": 3492510
+      }
+    ],
+    "implementation_sources": {
+      "audit_sha256": {
+        "path": "/root/hubl_research_20260914/code/audit_inverse_residual_adapter.py",
+        "sha256": "52d6259bee05147864b27d03b9bc4034525b7b62f1a88f1b28eda28e87810bc4",
+        "size_bytes": 12092
+      },
+      "core_sha256": {
+        "path": "/root/hubl_research_20260914/code/inverse_residual_core.py",
+        "sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+        "size_bytes": 23777
+      },
+      "evaluate_sha256": {
+        "path": "/root/hubl_research_20260914/code/evaluate_inverse_residual_adapter.py",
+        "sha256": "38747e3a732362734757e6bde3715eb2ac5eb9ecd0870ccead2193670da89eed",
+        "size_bytes": 13616
+      },
+      "evaluation_controls_sha256": {
+        "path": "/root/hubl_research_20260914/code/evaluation_controls.py",
+        "sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "size_bytes": 8507
+      },
+      "td3bc_core_sha256": {
+        "path": "/root/hubl_research_20260914/code/td3bc_core.py",
+        "sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+        "size_bytes": 31956
+      },
+      "train_iql_sha256": {
+        "path": "/root/hubl_research_20260914/code/train_iql.py",
+        "sha256": "b3a159fc8c0612c5c23578a1496a6beb858063462c086a824fe7874d09b089ee",
+        "size_bytes": 47135
+      },
+      "train_sha256": {
+        "path": "/root/hubl_research_20260914/code/train_inverse_residual_adapter.py",
+        "sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+        "size_bytes": 57182
+      }
+    },
+    "resolved_implementation_sources_by_filename": {
+      "audit_inverse_residual_adapter.py": {
+        "path": "/root/hubl_research_20260914/code/audit_inverse_residual_adapter.py",
+        "sha256": "52d6259bee05147864b27d03b9bc4034525b7b62f1a88f1b28eda28e87810bc4",
+        "size_bytes": 12092
+      },
+      "evaluate_channel_opex.py": {
+        "path": "/root/hubl_research_20260914/code/evaluate_channel_opex.py",
+        "sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "size_bytes": 37240
+      },
+      "evaluate_inverse_residual_adapter.py": {
+        "path": "/root/hubl_research_20260914/code/evaluate_inverse_residual_adapter.py",
+        "sha256": "38747e3a732362734757e6bde3715eb2ac5eb9ecd0870ccead2193670da89eed",
+        "size_bytes": 13616
+      },
+      "evaluation_controls.py": {
+        "path": "/root/hubl_research_20260914/code/evaluation_controls.py",
+        "sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+        "size_bytes": 8507
+      },
+      "inverse_residual_core.py": {
+        "path": "/root/hubl_research_20260914/code/inverse_residual_core.py",
+        "sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+        "size_bytes": 23777
+      },
+      "td3bc_core.py": {
+        "path": "/root/hubl_research_20260914/code/td3bc_core.py",
+        "sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+        "size_bytes": 31956
+      },
+      "train_inverse_residual_adapter.py": {
+        "path": "/root/hubl_research_20260914/code/train_inverse_residual_adapter.py",
+        "sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+        "size_bytes": 57182
+      },
+      "train_iql.py": {
+        "path": "/root/hubl_research_20260914/code/train_iql.py",
+        "sha256": "b3a159fc8c0612c5c23578a1496a6beb858063462c086a824fe7874d09b089ee",
+        "size_bytes": 47135
+      },
+      "train_td3bc.py": {
+        "path": "/root/hubl_research_20260914/code/train_td3bc.py",
+        "sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737",
+        "size_bytes": 27912
+      }
+    },
+    "results_root_verified_absent": "/root/hubl_research_20260914/results",
+    "selection_rule": "frozen before any predeclared training_dir existed; all artifact hashes matched the predeclared set",
+    "template": {
+      "path": "/root/hubl_research_20260914/code/inverse_residual_frozen_confirmation_manifest.template.json",
+      "sha256": "79778a637d34f5cf4ec840caffcb5181fe333064d3b1c9e097e4a62bd67a8f64",
+      "size_bytes": 123675
+    },
+    "verified_external_sources": [
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/baseline_evals/base_identity_seed1_beta125.json",
+        "role": "external_evaluation:external_base_identity_seed1",
+        "sha256": "f35d36bfb3d02a8aa010e1bded956a95210ebefc888e85d3f1c8ecc31f9db8b1",
+        "size_bytes": 8553
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/latest.pt",
+        "role": "external_checkpoint",
+        "sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "size_bytes": 3492510,
+        "status": "read"
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/config.json",
+        "role": "external_checkpoint_config",
+        "sha256": "caa9696f708e51da0ba1800cfb2b97fe09b8f2a936f47cc3f47c8b7b8d68b1e4",
+        "size_bytes": 7482
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/baseline_evals/base_identity_seed10_beta125.json",
+        "role": "external_evaluation:external_base_identity_seed10",
+        "sha256": "d4fc9691e691b57b7dca0c088e6d46c7a8b7e210dfd3ce13f6da0a6e7a89801d",
+        "size_bytes": 8568
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed10/latest.pt",
+        "role": "external_checkpoint",
+        "sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "size_bytes": 3492510,
+        "status": "read"
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed10/config.json",
+        "role": "external_checkpoint_config",
+        "sha256": "159805c950779b0e3b341b29afd0cebb09626f7c1ea75edc56f8a3542d7967c7",
+        "size_bytes": 7484
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/baseline_evals/base_scalar12_seed1_beta125.json",
+        "role": "external_evaluation:external_scalar12_seed1",
+        "sha256": "87f905390f9731a1c2ced2e29a5d560632dab0776909980f80a78fd5a1f650cd",
+        "size_bytes": 8625
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/latest.pt",
+        "role": "external_checkpoint",
+        "sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "size_bytes": 3492510,
+        "status": "read"
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/config.json",
+        "role": "external_checkpoint_config",
+        "sha256": "caa9696f708e51da0ba1800cfb2b97fe09b8f2a936f47cc3f47c8b7b8d68b1e4",
+        "size_bytes": 7482
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/baseline_evals/base_scalar12_seed10_beta125.json",
+        "role": "external_evaluation:external_scalar12_seed10",
+        "sha256": "f909d79500404c3c7f79cfba8d20550ecdaca184bb985cbbd3d6143e6d845786",
+        "size_bytes": 8607
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed10/latest.pt",
+        "role": "external_checkpoint",
+        "sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "size_bytes": 3492510,
+        "status": "read"
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed10/config.json",
+        "role": "external_checkpoint_config",
+        "sha256": "159805c950779b0e3b341b29afd0cebb09626f7c1ea75edc56f8a3542d7967c7",
+        "size_bytes": 7484
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/baseline_evals/base_oracle_inverse_seed1_beta125.json",
+        "role": "external_evaluation:external_oracle_inverse_seed1",
+        "sha256": "a31d21220b0d157be6b3bb2574bb70b6a2a82975095f8305ba1c8307166283c3",
+        "size_bytes": 8670
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/latest.pt",
+        "role": "external_checkpoint",
+        "sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "size_bytes": 3492510,
+        "status": "read"
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/config.json",
+        "role": "external_checkpoint_config",
+        "sha256": "caa9696f708e51da0ba1800cfb2b97fe09b8f2a936f47cc3f47c8b7b8d68b1e4",
+        "size_bytes": 7482
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/baseline_evals/base_oracle_inverse_seed10_beta125.json",
+        "role": "external_evaluation:external_oracle_inverse_seed10",
+        "sha256": "04ca7431125aa7dbdf3d37a957aed695e9dce6b95e46b98d7b1bd3a00e764819",
+        "size_bytes": 8653
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed10/latest.pt",
+        "role": "external_checkpoint",
+        "sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "size_bytes": 3492510,
+        "status": "read"
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed10/config.json",
+        "role": "external_checkpoint_config",
+        "sha256": "159805c950779b0e3b341b29afd0cebb09626f7c1ea75edc56f8a3542d7967c7",
+        "size_bytes": 7484
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/baseline_evals/dual_identity_seed1_beta125.json",
+        "role": "external_evaluation:external_dual_identity_seed1",
+        "sha256": "d6d1a92c5d390daa4d747c43420051d5753099356a75982c034338d6240cfbf7",
+        "size_bytes": 8594
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/dual_hubl_executed_commanded_25k_seed1/latest.pt",
+        "role": "external_checkpoint",
+        "sha256": "82be74f0af81fe5ab123255aab4e1444617753f9db1b714850292bfc1d36324f",
+        "size_bytes": 3492574,
+        "status": "read"
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/dual_hubl_executed_commanded_25k_seed1/config.json",
+        "role": "external_checkpoint_config",
+        "sha256": "4a32b523c0f7cca34a41b5800ab5042a56d0525a564f0562776d3a358027fcb9",
+        "size_bytes": 7509
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/baseline_evals/dual_identity_seed10_beta125.json",
+        "role": "external_evaluation:external_dual_identity_seed10",
+        "sha256": "f3addfaf97910c8e6b906c31a473d8b10057ca6f6a742e2034e056468271a0c3",
+        "size_bytes": 8601
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/dual_hubl_executed_commanded_25k_seed10/latest.pt",
+        "role": "external_checkpoint",
+        "sha256": "155807b3dccb5a3429e3c94073f534dc36947e82f53baeb147298693b6ca1206",
+        "size_bytes": 3492574,
+        "status": "read"
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/dual_hubl_executed_commanded_25k_seed10/config.json",
+        "role": "external_checkpoint_config",
+        "sha256": "e9920ac4add7124aa5ca11c32178875aa01c0450184fb543d59cbd96d0b197f2",
+        "size_bytes": 7511
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/external_controls/opex_original_seed1_beta125_50.json",
+        "role": "future_external_evaluation:external_opex_original_seed1",
+        "status": "verified_absent_before_confirmation"
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/external_controls/opex_original_seed10_beta125_50.json",
+        "role": "future_external_evaluation:external_opex_original_seed10",
+        "status": "verified_absent_before_confirmation"
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol.json",
+        "role": "opex_development_protocol",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "4b9f560424b3ae82a03fe5563b31d411cd0c0414e389a5e6daf9b482f02d2dfd",
+        "size_bytes": 5599
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/selection_provenance_revalidated_v3_final.json",
+        "role": "opex_development_selection",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "b35bb5fc283b9ac793f4db83dda11313015095cf69f4b9eb42dcad25e4f62cba",
+        "size_bytes": 7995
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_boundary_extension.py",
+        "role": "opex_development_selector",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "2ff6e08195806df58f880098705d7bcfa3a0770da366b5172abb6429d7d163c5",
+        "size_bytes": 14191
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/evaluate_channel_opex.py",
+        "role": "opex_development_evaluator",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "size_bytes": 37240
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol_pre_evaluation.json",
+        "role": "opex_pre_evaluation_protocol",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "cba9c40550933fe9e864bafd74013b724b7a3dd95e4117e4274d421fa71796ee",
+        "size_bytes": 3900
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/selection.json",
+        "role": "opex_pre_evaluation_selection",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "603d5a700ede8faaac03297b27d56cfc04e78960f24a1cf530c142314fa51f4a",
+        "size_bytes": 6658
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_boundary_extension_pre_evaluation.py",
+        "role": "opex_pre_evaluation_selector",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5",
+        "size_bytes": 7819
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_dev_protocol.json",
+        "role": "opex_original_grid_protocol",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "91928bd70cf91162c9b796167baa66aadb2818240df3fb7d98f1e17afe7b8bc5",
+        "size_bytes": 3098
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/selection.json",
+        "role": "opex_original_grid_selection",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+        "size_bytes": 4181
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_dev.py",
+        "role": "opex_original_grid_selector",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed1",
+        "sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+        "size_bytes": 9947
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/external_controls/ca_opex_inverse_seed1_beta125_50.json",
+        "role": "future_external_evaluation:external_ca_opex_inverse_seed1",
+        "status": "verified_absent_before_confirmation"
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol.json",
+        "role": "opex_development_protocol",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "4b9f560424b3ae82a03fe5563b31d411cd0c0414e389a5e6daf9b482f02d2dfd",
+        "size_bytes": 5599
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/selection_provenance_revalidated_v3_final.json",
+        "role": "opex_development_selection",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "b35bb5fc283b9ac793f4db83dda11313015095cf69f4b9eb42dcad25e4f62cba",
+        "size_bytes": 7995
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_boundary_extension.py",
+        "role": "opex_development_selector",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "2ff6e08195806df58f880098705d7bcfa3a0770da366b5172abb6429d7d163c5",
+        "size_bytes": 14191
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/evaluate_channel_opex.py",
+        "role": "opex_development_evaluator",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "size_bytes": 37240
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol_pre_evaluation.json",
+        "role": "opex_pre_evaluation_protocol",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "cba9c40550933fe9e864bafd74013b724b7a3dd95e4117e4274d421fa71796ee",
+        "size_bytes": 3900
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/selection.json",
+        "role": "opex_pre_evaluation_selection",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "603d5a700ede8faaac03297b27d56cfc04e78960f24a1cf530c142314fa51f4a",
+        "size_bytes": 6658
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_boundary_extension_pre_evaluation.py",
+        "role": "opex_pre_evaluation_selector",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5",
+        "size_bytes": 7819
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_dev_protocol.json",
+        "role": "opex_original_grid_protocol",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "91928bd70cf91162c9b796167baa66aadb2818240df3fb7d98f1e17afe7b8bc5",
+        "size_bytes": 3098
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/selection.json",
+        "role": "opex_original_grid_selection",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+        "size_bytes": 4181
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_dev.py",
+        "role": "opex_original_grid_selector",
+        "selection_consumer_run_id": "external_ca_opex_inverse_seed10",
+        "sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+        "size_bytes": 9947
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/external_controls/ca_opex_inverse_seed10_beta125_50.json",
+        "role": "future_external_evaluation:external_ca_opex_inverse_seed10",
+        "status": "verified_absent_before_confirmation"
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol.json",
+        "role": "opex_development_protocol",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "4b9f560424b3ae82a03fe5563b31d411cd0c0414e389a5e6daf9b482f02d2dfd",
+        "size_bytes": 5599
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/selection_provenance_revalidated_v3_final.json",
+        "role": "opex_development_selection",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "b35bb5fc283b9ac793f4db83dda11313015095cf69f4b9eb42dcad25e4f62cba",
+        "size_bytes": 7995
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_boundary_extension.py",
+        "role": "opex_development_selector",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "2ff6e08195806df58f880098705d7bcfa3a0770da366b5172abb6429d7d163c5",
+        "size_bytes": 14191
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/evaluate_channel_opex.py",
+        "role": "opex_development_evaluator",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "size_bytes": 37240
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol_pre_evaluation.json",
+        "role": "opex_pre_evaluation_protocol",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "cba9c40550933fe9e864bafd74013b724b7a3dd95e4117e4274d421fa71796ee",
+        "size_bytes": 3900
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/selection.json",
+        "role": "opex_pre_evaluation_selection",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "603d5a700ede8faaac03297b27d56cfc04e78960f24a1cf530c142314fa51f4a",
+        "size_bytes": 6658
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_boundary_extension_pre_evaluation.py",
+        "role": "opex_pre_evaluation_selector",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5",
+        "size_bytes": 7819
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_dev_protocol.json",
+        "role": "opex_original_grid_protocol",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "91928bd70cf91162c9b796167baa66aadb2818240df3fb7d98f1e17afe7b8bc5",
+        "size_bytes": 3098
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/selection.json",
+        "role": "opex_original_grid_selection",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+        "size_bytes": 4181
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_dev.py",
+        "role": "opex_original_grid_selector",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed1",
+        "sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+        "size_bytes": 9947
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/external_controls/ca_opex_identity_seed1_beta125_50.json",
+        "role": "future_external_evaluation:external_ca_opex_identity_seed1",
+        "status": "verified_absent_before_confirmation"
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol.json",
+        "role": "opex_development_protocol",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "4b9f560424b3ae82a03fe5563b31d411cd0c0414e389a5e6daf9b482f02d2dfd",
+        "size_bytes": 5599
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/selection_provenance_revalidated_v3_final.json",
+        "role": "opex_development_selection",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "b35bb5fc283b9ac793f4db83dda11313015095cf69f4b9eb42dcad25e4f62cba",
+        "size_bytes": 7995
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_boundary_extension.py",
+        "role": "opex_development_selector",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "2ff6e08195806df58f880098705d7bcfa3a0770da366b5172abb6429d7d163c5",
+        "size_bytes": 14191
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/evaluate_channel_opex.py",
+        "role": "opex_development_evaluator",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+        "size_bytes": 37240
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_boundary_extension_protocol_pre_evaluation.json",
+        "role": "opex_pre_evaluation_protocol",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "cba9c40550933fe9e864bafd74013b724b7a3dd95e4117e4274d421fa71796ee",
+        "size_bytes": 3900
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/selection.json",
+        "role": "opex_pre_evaluation_selection",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "603d5a700ede8faaac03297b27d56cfc04e78960f24a1cf530c142314fa51f4a",
+        "size_bytes": 6658
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_boundary_extension_pre_evaluation.py",
+        "role": "opex_pre_evaluation_selector",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "22d3eb49312dda1228cc6a9e7def466f14e2f22647d2f591d1cb411c51c316e5",
+        "size_bytes": 7819
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/channel_opex_dev_protocol.json",
+        "role": "opex_original_grid_protocol",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "91928bd70cf91162c9b796167baa66aadb2818240df3fb7d98f1e17afe7b8bc5",
+        "size_bytes": 3098
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/selection.json",
+        "role": "opex_original_grid_selection",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "35821ef5ff7d05aa526baee0ca35a078617cf7da412cd2523267aa89e5b57135",
+        "size_bytes": 4181
+      },
+      {
+        "path": "/root/hubl_research_20260914/code/select_channel_opex_dev.py",
+        "role": "opex_original_grid_selector",
+        "selection_consumer_run_id": "external_ca_opex_identity_seed10",
+        "sha256": "9a570b258322a982379a3373f24baa19d9a9364f68b9def10c1dc476c1861835",
+        "size_bytes": 9947
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/external_controls/ca_opex_identity_seed10_beta125_50.json",
+        "role": "future_external_evaluation:external_ca_opex_identity_seed10",
+        "status": "verified_absent_before_confirmation"
+      }
+    ],
+    "verified_observation_splits": [
+      {
+        "audit_episode_unit_count": 303,
+        "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+        "audit_fraction": 0.1,
+        "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+        "audit_observation_count": 100060,
+        "considered_observation_count": 1000000,
+        "dataset_path": "/root/hubl_backup_data/action_noise_dev/walker2d_v4_beta1_seed1201.hdf5",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a",
+        "max_observations": null,
+        "realized_audit_fraction": 0.10006,
+        "requested_audit_fraction": 0.1,
+        "split_method": "whole_episode_permutation_to_state_count",
+        "split_seed": 424242,
+        "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d",
+        "train_observation_count": 899940
+      }
+    ],
+    "verified_opex_development_candidates": [
+      {
+        "anchor": "identity",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/identity_t2_k8_d2_eta001_seed0_dev10.json",
+        "role": "opex_development_candidate:identity:0.01",
+        "sha256": "995a33a73e27bd98472038e58cd6eb9a5243aa37eeecdd6a76ae5fec51d45b38",
+        "size_bytes": 10984,
+        "step_size": 0.01,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      },
+      {
+        "anchor": "identity",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/identity_t2_k8_d2_eta003_seed0_dev10.json",
+        "role": "opex_development_candidate:identity:0.03",
+        "sha256": "bcf3c5cd9f65371ba49b138d46c9debca369e4441b13fda84e174cb1943b582f",
+        "size_bytes": 10972,
+        "step_size": 0.03,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      },
+      {
+        "anchor": "identity",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/identity_t2_k8_d2_eta01_seed0_dev10.json",
+        "role": "opex_development_candidate:identity:0.1",
+        "sha256": "54a3a637b94dd04035404a73faf20310a4de29b6ae00c36f9928eacbb96666f5",
+        "size_bytes": 10968,
+        "step_size": 0.1,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      },
+      {
+        "anchor": "identity",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/identity_t2_k8_d2_eta03_seed0_dev10.json",
+        "role": "opex_development_candidate:identity:0.3",
+        "sha256": "e32b7dd211a78050c1c9f0e47d3fa03f8a2fe658b940de1ad4c02b11ab96d0e6",
+        "size_bytes": 10968,
+        "step_size": 0.3,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      },
+      {
+        "anchor": "identity",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/identity_t2_k8_d2_eta1_seed0_dev10.json",
+        "role": "opex_development_candidate:identity:1",
+        "sha256": "5e289fce1df437c60fbbd2e2ac1a022c45a5736a218d0704918fd3e4457b411f",
+        "size_bytes": 10955,
+        "step_size": 1.0,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      },
+      {
+        "anchor": "inverse",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta001_seed0_dev10.json",
+        "role": "opex_development_candidate:inverse:0.01",
+        "sha256": "35f33d2721a2588f332af9a492cd1ec29e9c488a8169b7c289f68e4f5e53ca62",
+        "size_bytes": 11020,
+        "step_size": 0.01,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      },
+      {
+        "anchor": "inverse",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta003_seed0_dev10.json",
+        "role": "opex_development_candidate:inverse:0.03",
+        "sha256": "8da09a90236076a6d6f5fe3c54ff662f04f1fd7e2365ab29b8f518ba4da054aa",
+        "size_bytes": 11011,
+        "step_size": 0.03,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      },
+      {
+        "anchor": "inverse",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev/inverse_t2_k8_d025_eta01_seed0_dev10.json",
+        "role": "opex_development_candidate:inverse:0.1",
+        "sha256": "700276fb6d171976443d111106e9d54926074f58ee37bd4f2648df0db41e299f",
+        "size_bytes": 11024,
+        "step_size": 0.1,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      },
+      {
+        "anchor": "inverse",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/inverse_t2_k8_d025_eta03_seed0_dev10.json",
+        "role": "opex_development_candidate:inverse:0.3",
+        "sha256": "671d2d01ac4c07f8f235d87216b600d950fdc3dcd38e441a31fd3aacf5b43291",
+        "size_bytes": 11019,
+        "step_size": 0.3,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      },
+      {
+        "anchor": "inverse",
+        "episode_count_per_arm": 10,
+        "path": "/root/hubl_research_20260914/results/channel_opex_dev_extension/inverse_t2_k8_d025_eta1_seed0_dev10.json",
+        "role": "opex_development_candidate:inverse:1",
+        "sha256": "15aa49cff3c31cc27e008c868465e2333c4e7791efdd5f3a6c3367fce4c9c71c",
+        "size_bytes": 11016,
+        "step_size": 1.0,
+        "verified_implementation": {
+          "evaluate_sha256": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+          "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+          "inverse_residual_core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+          "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+          "train_inverse_residual_adapter_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4",
+          "train_td3bc_sha256": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737"
+        }
+      }
+    ]
+  },
+  "frozen_implementation": {
+    "audit_sha256": "52d6259bee05147864b27d03b9bc4034525b7b62f1a88f1b28eda28e87810bc4",
+    "core_sha256": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+    "evaluate_sha256": "38747e3a732362734757e6bde3715eb2ac5eb9ecd0870ccead2193670da89eed",
+    "evaluation_controls_sha256": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+    "td3bc_core_sha256": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+    "train_iql_sha256": "b3a159fc8c0612c5c23578a1496a6beb858063462c086a824fe7874d09b089ee",
+    "train_sha256": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4"
+  },
+  "normalization": {
+    "Walker2d-v4": {
+      "reference_max_score": 4592.3,
+      "reference_min_score": 1.629008,
+      "source": "Reference values predeclared for the frozen evaluator"
+    }
+  },
+  "primary_comparison_order": [
+    "seed1_beta125_ca_opex_inverse_minus_ca_opex_identity",
+    "seed10_beta125_ca_opex_inverse_minus_ca_opex_identity",
+    "seed1_beta125_ca_opex_inverse_minus_original_opex",
+    "seed10_beta125_ca_opex_inverse_minus_original_opex",
+    "seed1_beta125_ca_opex_inverse_effect",
+    "seed10_beta125_ca_opex_inverse_effect"
+  ],
+  "results_root": "../results",
+  "runs": [
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/inverse_p001_k8_u5k_seed1/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/inverse_p001_k8_u5k_seed1/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "path": "inverse_residual_confirm/inverse_p001_k8_u5k_seed1/confirm_clean_50.json",
+          "selection_note": "Predeclared 50-episode beta-zero clean-regression rollout using the same seed arrays."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "inverse",
+        "batch_size": 256,
+        "calibration_mode": "pair_calibration",
+        "channel_seed": 271829,
+        "delta_max": 0.25,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 0.0003,
+        "max_observations": null,
+        "model_or_calibration_beta": 1.2498948872089386,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.01,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 1,
+        "updates": 5000,
+        "value_estimator": "sampled_expected_q1"
+      },
+      "expected_status": "complete",
+      "method_id": "inverse_sampled_main",
+      "run_id": "inverse_p001_k8_u5k_seed1",
+      "selection_note": "Predeclared inverse-mean learned-adapter candidate with sampled frozen-Q residual; penalty/delta_max^2 = 0.16. Independent adapter training seed 1; channel seed 271829.",
+      "training_dir": "inverse_residual_confirm/inverse_p001_k8_u5k_seed1"
+    },
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/inverse_p001_k8_u5k_seed10/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/inverse_p001_k8_u5k_seed10/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "path": "inverse_residual_confirm/inverse_p001_k8_u5k_seed10/confirm_clean_50.json",
+          "selection_note": "Predeclared 50-episode beta-zero clean-regression rollout using the same seed arrays."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "inverse",
+        "batch_size": 256,
+        "calibration_mode": "pair_calibration",
+        "channel_seed": 271838,
+        "delta_max": 0.25,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 0.0003,
+        "max_observations": null,
+        "model_or_calibration_beta": 1.2498948872089386,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.01,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 10,
+        "updates": 5000,
+        "value_estimator": "sampled_expected_q1"
+      },
+      "expected_status": "complete",
+      "method_id": "inverse_sampled_main",
+      "run_id": "inverse_p001_k8_u5k_seed10",
+      "selection_note": "Predeclared inverse-mean learned-adapter candidate with sampled frozen-Q residual; penalty/delta_max^2 = 0.16. Independent adapter training seed 10; channel seed 271838.",
+      "training_dir": "inverse_residual_confirm/inverse_p001_k8_u5k_seed10"
+    },
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/identity_p001_k8_u5k_seed1/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/identity_p001_k8_u5k_seed1/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "path": "inverse_residual_confirm/identity_p001_k8_u5k_seed1/confirm_clean_50.json",
+          "selection_note": "Predeclared 50-episode beta-zero clean-regression rollout using the same seed arrays."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "identity",
+        "batch_size": 256,
+        "calibration_mode": "pair_calibration",
+        "channel_seed": 271829,
+        "delta_max": 0.25,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 0.0003,
+        "max_observations": null,
+        "model_or_calibration_beta": 1.2498948872089386,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.01,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 1,
+        "updates": 5000,
+        "value_estimator": "sampled_expected_q1"
+      },
+      "expected_status": "complete",
+      "method_id": "direct_sampled_main",
+      "run_id": "identity_p001_k8_u5k_seed1",
+      "selection_note": "Equal-capacity direct-residual control around the base actor; same optimizer, K, and residual budget as the primary adapter-family configuration. Independent adapter training seed 1; channel seed 271829.",
+      "training_dir": "inverse_residual_confirm/identity_p001_k8_u5k_seed1"
+    },
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/identity_p001_k8_u5k_seed10/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/identity_p001_k8_u5k_seed10/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        },
+        {
+          "evaluation_id": "confirm_clean",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 0
+          },
+          "path": "inverse_residual_confirm/identity_p001_k8_u5k_seed10/confirm_clean_50.json",
+          "selection_note": "Predeclared 50-episode beta-zero clean-regression rollout using the same seed arrays."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "identity",
+        "batch_size": 256,
+        "calibration_mode": "pair_calibration",
+        "channel_seed": 271838,
+        "delta_max": 0.25,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 0.0003,
+        "max_observations": null,
+        "model_or_calibration_beta": 1.2498948872089386,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.01,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 10,
+        "updates": 5000,
+        "value_estimator": "sampled_expected_q1"
+      },
+      "expected_status": "complete",
+      "method_id": "direct_sampled_main",
+      "run_id": "identity_p001_k8_u5k_seed10",
+      "selection_note": "Equal-capacity direct-residual control around the base actor; same optimizer, K, and residual budget as the primary adapter-family configuration. Independent adapter training seed 10; channel seed 271838.",
+      "training_dir": "inverse_residual_confirm/identity_p001_k8_u5k_seed10"
+    },
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/inverse_qmean_p001_k8_u5k_seed1/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/inverse_qmean_p001_k8_u5k_seed1/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "inverse",
+        "batch_size": 256,
+        "calibration_mode": "pair_calibration",
+        "channel_seed": 271829,
+        "delta_max": 0.25,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 0.0003,
+        "max_observations": null,
+        "model_or_calibration_beta": 1.2498948872089386,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.01,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 1,
+        "updates": 5000,
+        "value_estimator": "q1_at_channel_mean"
+      },
+      "expected_status": "complete",
+      "method_id": "inverse_q1_at_channel_mean",
+      "run_id": "inverse_qmean_p001_k8_u5k_seed1",
+      "selection_note": "Value-estimator control: Q1 evaluated at the analytic channel mean, with inverse baseline and all other main hyperparameters fixed. Independent adapter training seed 1; channel seed 271829.",
+      "training_dir": "inverse_residual_confirm/inverse_qmean_p001_k8_u5k_seed1"
+    },
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/inverse_qmean_p001_k8_u5k_seed10/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/inverse_qmean_p001_k8_u5k_seed10/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "inverse",
+        "batch_size": 256,
+        "calibration_mode": "pair_calibration",
+        "channel_seed": 271838,
+        "delta_max": 0.25,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 0.0003,
+        "max_observations": null,
+        "model_or_calibration_beta": 1.2498948872089386,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.01,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 10,
+        "updates": 5000,
+        "value_estimator": "q1_at_channel_mean"
+      },
+      "expected_status": "complete",
+      "method_id": "inverse_q1_at_channel_mean",
+      "run_id": "inverse_qmean_p001_k8_u5k_seed10",
+      "selection_note": "Value-estimator control: Q1 evaluated at the analytic channel mean, with inverse baseline and all other main hyperparameters fixed. Independent adapter training seed 10; channel seed 271838.",
+      "training_dir": "inverse_residual_confirm/inverse_qmean_p001_k8_u5k_seed10"
+    },
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/identity_wide_p064_d2_k8_u5k_seed1/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/identity_wide_p064_d2_k8_u5k_seed1/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "identity",
+        "batch_size": 256,
+        "calibration_mode": "pair_calibration",
+        "channel_seed": 271829,
+        "delta_max": 2,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 3.75e-05,
+        "max_observations": null,
+        "model_or_calibration_beta": 1.2498948872089386,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.64,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 1,
+        "updates": 5000,
+        "value_estimator": "sampled_expected_q1"
+      },
+      "expected_status": "complete",
+      "method_id": "direct_sampled_wide",
+      "run_id": "identity_wide_p064_d2_k8_u5k_seed1",
+      "selection_note": "Wide direct-residual control. penalty/delta_max^2 = 0.64/4 = 0.16, matching the main normalized regularizer; learning_rate*delta_max = 7.5e-5, matching 3e-4*0.25. Independent adapter training seed 1; channel seed 271829.",
+      "training_dir": "inverse_residual_confirm/identity_wide_p064_d2_k8_u5k_seed1"
+    },
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/identity_wide_p064_d2_k8_u5k_seed10/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/identity_wide_p064_d2_k8_u5k_seed10/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "calibration_sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "identity",
+        "batch_size": 256,
+        "calibration_mode": "pair_calibration",
+        "channel_seed": 271838,
+        "delta_max": 2,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 3.75e-05,
+        "max_observations": null,
+        "model_or_calibration_beta": 1.2498948872089386,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.64,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 10,
+        "updates": 5000,
+        "value_estimator": "sampled_expected_q1"
+      },
+      "expected_status": "complete",
+      "method_id": "direct_sampled_wide",
+      "run_id": "identity_wide_p064_d2_k8_u5k_seed10",
+      "selection_note": "Wide direct-residual control. penalty/delta_max^2 = 0.64/4 = 0.16, matching the main normalized regularizer; learning_rate*delta_max = 7.5e-5, matching 3e-4*0.25. Independent adapter training seed 10; channel seed 271838.",
+      "training_dir": "inverse_residual_confirm/identity_wide_p064_d2_k8_u5k_seed10"
+    },
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/identity_nominal_beta0_p064_d2_k8_u5k_seed1/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/identity_nominal_beta0_p064_d2_k8_u5k_seed1/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "calibration_sha256": null,
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "identity",
+        "batch_size": 256,
+        "calibration_mode": "known_beta_without_pair_calibration",
+        "channel_seed": 271829,
+        "delta_max": 2,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 3.75e-05,
+        "max_observations": null,
+        "model_or_calibration_beta": 0,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.64,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 1,
+        "updates": 5000,
+        "value_estimator": "sampled_expected_q1"
+      },
+      "expected_status": "complete",
+      "method_id": "direct_sampled_nominal_beta0",
+      "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed1",
+      "selection_note": "Nominal-Q direct-residual control trained with beta zero and no calibration file. Wide scaling keeps penalty/delta_max^2 = 0.16 and learning_rate*delta_max = 7.5e-5. Independent adapter training seed 1; channel seed 271829.",
+      "training_dir": "inverse_residual_confirm/identity_nominal_beta0_p064_d2_k8_u5k_seed1"
+    },
+    {
+      "audits": [
+        {
+          "audit_id": "heldout_k64",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_beta": 1.25,
+            "audit_episode_units_sha256": "f7cf0ed8e11d6308bd79c2f522fdb50f7b62c6c590427f83a4ec142f7d1b130c",
+            "audit_indices_sha256": "e12718e0aa418e07284c04363d65494ce211b3c0d0878a0d3af54f6c3b4019b3",
+            "noise_samples": 64,
+            "noise_seed": 987654,
+            "selected_observations": 100060,
+            "train_indices_sha256": "f90181e680de975cf43be71f477462513b6e9157453abb96302f9bf46adece5d"
+          },
+          "path": "inverse_residual_confirm/identity_nominal_beta0_p064_d2_k8_u5k_seed10/heldout_audit_k64.json",
+          "selection_note": "Predeclared exact held-out observation split and independent K=64 Uniform[-1.25,1.25] frozen-twin audit."
+        }
+      ],
+      "evaluations": [
+        {
+          "evaluation_id": "confirm_beta125",
+          "evidence_label": "confirmation",
+          "expected_protocol": {
+            "action_noise_seed_start": 49300,
+            "environment": "Walker2d-v4",
+            "environment_seed_start": 39300,
+            "episode_count": 50,
+            "rollout_beta": 1.25
+          },
+          "path": "inverse_residual_confirm/identity_nominal_beta0_p064_d2_k8_u5k_seed10/confirm_beta125_50.json",
+          "selection_note": "Predeclared 50-episode persistent Uniform[-1.25,1.25] rollout using exact paired environment/action-noise seeds."
+        }
+      ],
+      "evidence_label": "confirmation",
+      "expected_artifacts": {
+        "base_checkpoint_sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "calibration_sha256": null,
+        "checkpoint_format": "inverse_residual_adapter_v2",
+        "dataset_sha256": "159a49faaa7786a8444369a1aef758b1a43f26eaaa56146358ace6f9c5b3882a"
+      },
+      "expected_config": {
+        "alpha": 1,
+        "audit_fraction": 0.1,
+        "base_action_pairing": "executed_executed",
+        "baseline_transform": "identity",
+        "batch_size": 256,
+        "calibration_mode": "known_beta_without_pair_calibration",
+        "channel_seed": 271838,
+        "delta_max": 2,
+        "depth": 2,
+        "execution_noise_samples": 8,
+        "extensions": {},
+        "hidden_dim": 128,
+        "learning_rate": 3.75e-05,
+        "max_observations": null,
+        "model_or_calibration_beta": 0,
+        "precompute_batch_size": 8192,
+        "q_scale_epsilon": 1e-06,
+        "residual_penalty": 0.64,
+        "scale_calibration_observations": 4096,
+        "split_seed": 424242,
+        "train_seed": 10,
+        "updates": 5000,
+        "value_estimator": "sampled_expected_q1"
+      },
+      "expected_status": "complete",
+      "method_id": "direct_sampled_nominal_beta0",
+      "run_id": "identity_nominal_beta0_p064_d2_k8_u5k_seed10",
+      "selection_note": "Nominal-Q direct-residual control trained with beta zero and no calibration file. Wide scaling keeps penalty/delta_max^2 = 0.16 and learning_rate*delta_max = 7.5e-5. Independent adapter training seed 10; channel seed 271838.",
+      "training_dir": "inverse_residual_confirm/identity_nominal_beta0_p064_d2_k8_u5k_seed10"
+    }
+  ],
+  "schema_version": "inverse-residual-manifest-v2"
+}

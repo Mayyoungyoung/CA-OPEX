@@ -1,0 +1,46 @@
+{
+  "checkpoint": "/root/hubl_research_20260914/results/dual_action_smoke/executed_commanded/latest.pt",
+  "checkpoint_sha256": "940eb7306f071735215b7d3584ae46cb5aa2d691711856faaa666efd742500f8",
+  "checkpoint_step": 20,
+  "clean": {
+    "episode_seeds": [
+      29000
+    ],
+    "lengths": [
+      91
+    ],
+    "normalized_score_mean": 0.9319541294208988,
+    "normalized_score_std": 0.0,
+    "return_mean": 44.411955878071346,
+    "return_std": 0.0,
+    "returns": [
+      44.411955878071346
+    ]
+  },
+  "environment": "Walker2d-v4",
+  "implementation_sha256": "5ba2f31fad15bfb1e8414f4c5658e3ca53c26cc75a017d7ed8a3b1987d23ebbf",
+  "persistent_action_noise": {
+    "action_clip_fraction": 0.07142857142857142,
+    "action_noise_beta": 1.0,
+    "action_noise_distribution": "iid_uniform_minus_beta_plus_beta_per_step",
+    "action_noise_seeds": [
+      39000
+    ],
+    "environment_seeds": [
+      29000
+    ],
+    "executed_commanded_action_mse": 0.32775632023831636,
+    "lengths": [
+      21
+    ],
+    "normalized_score_mean": 0.13281945044181617,
+    "normalized_score_std": 0.0,
+    "return_mean": 7.72631198316627,
+    "return_std": 0.0,
+    "returns": [
+      7.72631198316627
+    ]
+  },
+  "status": "complete",
+  "wall_time_seconds": 1.028024428000208
+}

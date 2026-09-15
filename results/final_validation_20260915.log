@@ -1,0 +1,17 @@
+utc=2026-09-14T20:56:12Z
+cwd=/root/hubl_research_20260914/code
+Python 3.10.13
+command=pytest -q
+9f78809ac62d7e3a931ded3130d3a91f979baef5d65553a06977d61625d7911d  run_ca_opex_walker_scaleup.sh
+20b8ddfe74ab253d29a74be7b0c39bb58423a74950b369516958a040975e3cac  aggregate_ca_opex_walker_scaleup.py
+c653db20f20142450f53ae8732ccc4c98a24f9ac1567cee1886135e5aa419459  tests/test_ca_opex_walker_scaleup_script.py
+cde5101b054124ffb9f9cd8df1d82882635e8dca5dd66f609185c278d567beac  tests/test_aggregate_ca_opex_walker_scaleup.py
+fc8fb274f283cd32ef6d45d8a944bff9cdb6757f3927816af9b8a9f17d7cf034  equal_compute_nominal_control_protocol.json
+c5cd5a3631ffc38e8806c16471f77ab48c00894aff266a44e9e9ee6490a564c1  run_equal_compute_nominal_control.py
+053d3d823bf23475385b956426f67d78c213bd0cc74b482cf995d7c9ddf2da90  verify_equal_compute_nominal_control.py
+........................................................................ [ 31%]
+........................................................................ [ 62%]
+........................................................................ [ 93%]
+................                                                         [100%]
+232 passed in 9.43s
+pytest_exit_code=0

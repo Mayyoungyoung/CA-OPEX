@@ -1,0 +1,208 @@
+{
+  "schema_version": "equal-compute-nominal-control-protocol-v1",
+  "evidence_label": "post_confirmation_fresh_rollout_mechanism_audit",
+  "chronology": {
+    "created_after_formal_confirmation_results_were_read": true,
+    "formal_results_seen_before_protocol_freeze": true,
+    "globally_blind_confirmation_claim": false,
+    "holdout_rollout_seeds_fresh_relative_to_formal_confirmation": true,
+    "interpretation": "This is a post-confirmation mechanism audit on fresh rollout seeds, not a second blind confirmation block."
+  },
+  "purpose": "Test whether the calibrated channel expectation and inverse anchor outperform a nominal-Q controller after matching CA-OPEX inference rows/backward calls and giving nominal Q its own development-only step-size selection.",
+  "paths": {
+    "python_bin": "/root/hubl_backup_env/bin/python",
+    "code_dir": "/root/hubl_research_20260914/code",
+    "output_root": "/root/hubl_research_20260914/results/equal_compute_nominal_control",
+    "evaluator": "evaluate_channel_opex.py"
+  },
+  "implementation": {
+    "evaluate_channel_opex.py": "cf659f47fddd8f848c84f5f114be1fcb9081a55470fe59e8c073d4f84af0bff1",
+    "inverse_residual_core.py": "5700efa8bbefac91c991a76878c3b78c5b3e84aea83568987f7a7e8919e50041",
+    "td3bc_core.py": "e27cec131b533dd542e77ba9de2de492db4890c6fb9723796f59a02002d1f052",
+    "train_td3bc.py": "28094abb38441633f3e52386a9d3ac0747b9df8a4f2bd03403bf46d1d5234737",
+    "evaluation_controls.py": "24318269a6696fd22c8112b2d96913bdceb830d83de9df31ca234e1505f1aec9",
+    "train_inverse_residual_adapter.py": "fb065682c78e6c058d1165fa68f680fb682d235ec8c9c3abe70b8098177ee0e4"
+  },
+  "environment": {
+    "name": "Walker2d-v4",
+    "rollout_action_noise_beta": 1.25,
+    "reference_min_score": 1.629008,
+    "reference_max_score": 4592.3,
+    "normalization_label": "D4RL-style reference normalization on Gymnasium Walker2d-v4"
+  },
+  "channel_calibration": {
+    "path": "/root/hubl_research_20260914/results/channel_calibration/beta125_n512_seed27001_calibration.json",
+    "sha256": "b1769bdeb0eb99aa653ae5d98ef00e3f843e938fb62963821e0f2e348f904354",
+    "pair_count": 512,
+    "estimated_beta": 1.2498948872089386
+  },
+  "development": {
+    "base_checkpoint": {
+      "path": "/root/hubl_research_20260914/results/channel_dev/hubl_constant_executed_beta05_25k_seed0/latest.pt",
+      "sha256": "d29501edf9b6961225bcbc157d7d7034bc5b625856dedcbbf9421eea25898106",
+      "training_seed": 0
+    },
+    "controller": {
+      "semantic_alias": "equal_compute_nominal_q_identity_development",
+      "baseline_transform": "identity",
+      "model_action_noise_beta": 0.0,
+      "gradient_noise_samples": 8,
+      "gradient_steps": 2,
+      "delta_max": 2.0,
+      "q_reducer": "mean_q1",
+      "critic": "frozen_q1"
+    },
+    "step_size_grid": [
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0
+    ],
+    "endpoint_extension": {
+      "if_lower_endpoint_selected": 0.003,
+      "if_upper_endpoint_selected": 3.0,
+      "run_exactly_one_outward_point_only_if_endpoint_wins_initial_grid": true
+    },
+    "episode_count_per_arm": 10,
+    "environment_seed_start": 28300,
+    "action_noise_seed_start": 38300,
+    "gradient_noise_seed_start": 58300,
+    "evidence_use": "hyperparameter_selection_only_not_holdout_evidence"
+  },
+  "selection": {
+    "primary_metric": "adapted_normalized_score_mean_over_all_development_episodes",
+    "rule": "maximize the primary metric; exact ties select the smaller step size",
+    "endpoint_test_applied_before_final_selection": true,
+    "selection_is_frozen_before_any_holdout_controller_is_run": true,
+    "all_development_runs_retained": true
+  },
+  "holdout": {
+    "base_checkpoints": [
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed1/latest.pt",
+        "sha256": "22b47965695bfa312533741abaa1e17e3cbbc091f3c5e6ba7fc8953fbc8ca6ae",
+        "training_seed": 1
+      },
+      {
+        "path": "/root/hubl_research_20260914/results/inverse_residual_confirm/base_hubl_executed_25k_seed10/latest.pt",
+        "sha256": "eba1af040aa73823ceba28048e10d3af2eef54c59f09c1e0194f27aa0ed4944d",
+        "training_seed": 10
+      }
+    ],
+    "episode_count_per_arm": 50,
+    "environment_seed_start": 79300,
+    "action_noise_seed_start": 89300,
+    "gradient_noise_seed_start": 99300,
+    "controllers": {
+      "nominal_tuned": {
+        "semantic_alias": "equal_compute_nominal_q_identity_tuned",
+        "baseline_transform": "identity",
+        "model_source": "known_zero_beta_without_pair_calibration",
+        "model_action_noise_beta": 0.0,
+        "step_size_source": "frozen_development_selection",
+        "gradient_noise_samples": 8,
+        "gradient_steps": 2,
+        "delta_max": 2.0
+      },
+      "nominal_matched_eta_0.3": {
+        "semantic_alias": "equal_compute_nominal_q_identity_eta_0p3",
+        "baseline_transform": "identity",
+        "model_source": "known_zero_beta_without_pair_calibration",
+        "model_action_noise_beta": 0.0,
+        "step_size": 0.3,
+        "skip_if_identical_to_nominal_tuned": true,
+        "gradient_noise_samples": 8,
+        "gradient_steps": 2,
+        "delta_max": 2.0
+      },
+      "calibrated_identity_eta_0.3": {
+        "semantic_alias": "equal_compute_calibrated_q_identity_eta_0p3",
+        "baseline_transform": "identity",
+        "model_source": "pair_calibration",
+        "step_size": 0.3,
+        "gradient_noise_samples": 8,
+        "gradient_steps": 2,
+        "delta_max": 2.0
+      },
+      "complete_calibrated_inverse_eta_0.1": {
+        "semantic_alias": "complete_ca_opex_calibrated_inverse_eta_0p1",
+        "baseline_transform": "inverse",
+        "model_source": "pair_calibration",
+        "step_size": 0.1,
+        "gradient_noise_samples": 8,
+        "gradient_steps": 2,
+        "delta_max": 0.25
+      }
+    },
+    "identity_baseline_elementwise_check": {
+      "required": true,
+      "reference_controller": "nominal_tuned",
+      "comparison_controller": "calibrated_identity_eta_0.3",
+      "fields": [
+        "environment_seeds",
+        "action_noise_seeds",
+        "returns",
+        "lengths"
+      ]
+    }
+  },
+  "statistics": {
+    "unit": "paired_rollout_case_within_fixed_checkpoint",
+    "normalized_delta_orientation": "left_controller_minus_right_controller",
+    "sample_standard_deviation_ddof": 1,
+    "t_interval": {
+      "confidence": 0.95,
+      "quantile": "scipy.stats.t.ppf(0.975, n_episode_pairs - 1)"
+    },
+    "bootstrap": {
+      "replicates": 20000,
+      "confidence": 0.95,
+      "bit_generator": "numpy_PCG64",
+      "seed_root": 20260915,
+      "seed_formula": "seed_root + 1000 * training_seed + comparison_index"
+    },
+    "cross_checkpoint_summary": "descriptive_mean_of_two_checkpoint_level_means_only_no_training_seed_interval_or_p_value",
+    "comparisons_in_order": [
+      {
+        "id": "complete_minus_nominal_tuned",
+        "left": "complete_calibrated_inverse_eta_0.1",
+        "right": "nominal_tuned"
+      },
+      {
+        "id": "complete_minus_nominal_matched_eta_0.3",
+        "left": "complete_calibrated_inverse_eta_0.1",
+        "right": "nominal_matched_eta_0.3",
+        "skip_if_right_controller_is_duplicate": true
+      },
+      {
+        "id": "complete_minus_calibrated_identity_eta_0.3",
+        "left": "complete_calibrated_inverse_eta_0.1",
+        "right": "calibrated_identity_eta_0.3"
+      },
+      {
+        "id": "calibrated_identity_minus_nominal_tuned",
+        "left": "calibrated_identity_eta_0.3",
+        "right": "nominal_tuned"
+      },
+      {
+        "id": "calibrated_identity_minus_nominal_matched_eta_0.3",
+        "left": "calibrated_identity_eta_0.3",
+        "right": "nominal_matched_eta_0.3",
+        "skip_if_right_controller_is_duplicate": true
+      }
+    ]
+  },
+  "artifacts": {
+    "development_directory": "development",
+    "selection_json": "selection.json",
+    "holdout_directory": "holdout",
+    "aggregate_directory": "aggregate",
+    "aggregate_json": "equal_compute_nominal_control.json",
+    "aggregate_csv": "equal_compute_nominal_control.csv",
+    "aggregate_markdown": "equal_compute_nominal_control.md",
+    "raw_output_policy": "immutable_fail_closed",
+    "resume_policy": "--resume-missing validates every existing raw artifact before running only missing artifacts"
+  },
+  "interpretation_guardrail": "Development episodes select only nominal-Q eta. Holdout intervals condition on each fixed base checkpoint. Two checkpoint-level means are descriptive and must not be presented as an independent training-seed confidence interval."
+}

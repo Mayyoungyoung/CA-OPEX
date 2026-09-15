@@ -1,0 +1,14 @@
+{
+  "aggregate_path": "/root/hubl_research_20260914/results/crosstask_hopper/multiseed_aggregate.json",
+  "aggregate_sha256": "eebe852bbb0ec9ad566e214e5841a8d49585dd4b0417881a5732ed777eb54209",
+  "checks_performed": 57,
+  "failure_count": 0,
+  "failures": [],
+  "schema_version": "ca-opex-hopper-multiseed-verify-v1",
+  "status": "verified_complete",
+  "training_seeds": [
+    2,
+    3,
+    4
+  ]
+}
